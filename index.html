@@ -53,46 +53,51 @@
         /* </span> */
         
         /* <figure> Banners */
-        .carousel img {width: 100%}
-        .arrow {position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; cursor: pointer}
-    	.left {left: 0}
-        .right {right: 0}
+        .carousel {margin: 0}
+        .carousel img {width: 100%;}
+        .arrow {position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; cursor: pointer; }
+    	.left {left: 0;}
+        .right {right: 0;}
         /* </figure> Banners*/
         
+        /* <div class="tudo"> */
+        .tudo {background-color: white; margin: 0 5% 5% 5%}
+        /* </div> */
+        
         /* <article1> */
-        .article1 {background-color: #b81414; margin: 5%; border-radius: 20px 20px 0 0; padding-top: 10px;}
-        .article1 table {width: 100%}
-        .article1 h3 {color: white; text-align: center}
-        .produto1 {background-color: white; border: 1px solid #b81414; padding: 5px; transition: transform 0.2s ease; text-align: center}
-        .produto1:hover {transform: scale(1.1); background-color: #ffcccc}
+        .article1 {margin: 0 3% 3% 3%; border-radius: 20px 20px 0 0; padding-top: 10px;}
+        .article1 h3 {color: #b81414; text-align: center; margin: 50px 0 40px 0; border-bottom: 3px solid #b81414;}
+        .produtos1 {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
+        .produto1 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 50px; flex: 0 0 calc(15% - 1px); padding: 5px}
+        .produto1:hover {transform: scale(1.1); background-color: #ffcccc; }
         .produto1 a {text-decoration: none}
-        .produto1 img {width: 100%; max-width: 200px; min-width: 90px; display: block; margin: 0 auto;}
-        .produto1 h6 {color: #b81414}
-        .produto1 h4 {color: green}
+        .produto1 img {width: 100%; max-width: 250px; min-width: 80px; display: block; margin: 0 auto;}
+        .produto1 h6 {color: #b81414;}
+        .produto1 h5 {color: green;}
         /* </article1> */
         
         /* <article2> */
-        .article2 {background-color: white; margin: 5%; border-radius: 20px 20px 0 0; padding-top: 10px; border: 1px solid #b81414}
-        .article2 table {width: 100%}
-        .article2 h3 {color: #b81414; margin-left: 10px; text-align: center}
-        .produto2 {background-color: white; border: 1px solid #b81414; padding: 5px; transition: transform 0.2s ease; text-align: center}
+        .article2 {margin: 0 3% 3% 3%; border-radius: 20px 20px 0 0; padding-top: 10px;}
+        .article2 h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414;}
+        .produtos2 {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
+        .produto2 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 100px; flex: 0 0 calc(15% - 1px); padding: 5px}
         .produto2:hover {transform: scale(1.1); background-color: #ffcccc;}
         .produto2 a {text-decoration: none}
-        .produto2 img {width: 100%; max-width: 200px; min-width: 90px; display: block; margin: 0 auto;}
+        .produto2 img {width: 100%; max-width: 200px; min-width: 80px; display: block; margin: 0 auto;}
         .produto2 h6 {color: #b81414}
         .produto2 p {color: grey; font-size: 12px}
-        .produto2 h4 {color: green}
+        .produto2 h5 {color: green}
         /* </article2> */
         
         /* <figure> Anúncio*/
-        .anuncio img {width: 70%; display: block; margin: 0 auto; border-radius: 30px 0 30px 0}
+        .anuncio img {width: 60%; display: block; margin: 0 auto; border-radius: 30px 0 30px 0}
         /* </figure> Anúncio*/
         
         /* <section> */
-        section {margin: 5%}
+        section {margin: 100px 3% 100px 3%}
         section h3 {color: #b81414; margin-bottom: 20px}
         .produtos {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
-        .produto {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 20px; flex: 0 0 calc(20% - 20px); padding: 5px}
+        .produto {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 20px; flex: 0 0 calc(20% - 20px); padding: 5px; float: left; margin-bottom: 30px}
         .produto:hover {transform: scale(1.1); background-color: #ffcccc;}
         .produto a {text-decoration: none}
         .produto img {display: block; margin: 0 auto; width: 100%;}
@@ -185,119 +190,118 @@
                 <div class="arrow left" onclick="prevSlide()">&#10094;</div>
                 <div class="arrow right" onclick="nextSlide()">&#10095;</div>
             </figure>
-            
+         
+         	<div class="tudo">
             <article class="article1">
-            	<table>
-                	<thead>
-            			<tr><h3>Queima De Estoque</h3></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="produto1">
+            	<h3>Queima De Estoque</h3>
+            		<div class="produtos1">
+                            	<div class="produto1">
                             	<a href="suporte.html">
                             	<img src="https://http2.mlstatic.com/D_NQ_NP_750444-MLB44662340166_012021-O.webp">
                                 <h6>Suporte De Acrílico Para Celular</h6>
-                                <h4>R$ 5,00</h4>
+                                <h5>R$5,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto1">
+                                </div>
+
+                            	<div class="produto1">
                             	<a href="mochila.html">
-                            	<img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lkww739vds36ef">
+                            	<img src="https://i.postimg.cc/5281WVNh/mochila.jpg">
                                 <h6>Mochila Semi Impermeável Preta</h6>
-                                <h4>R$ 60,00</h4>
+                                <h5>R$60,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto1">
+                                </div>
+
+                            	<div class="produto1">
                             	<a href="pino.html">
                             	<img src="https://down-br.img.susercontent.com/file/sg-11134201-7rbl6-lphgr8lgcz072e">
                                 <h6>Pino De Led Para Válvulas Bike</h6>
-                                <h4>R$ 6,00</h4>
+                                <h5>R$6,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto1">
+                                </div>
+
+                            	<div class="produto1">
                             	<a href="borrachinha.html">
                             	<img src="https://down-br.img.susercontent.com/file/ef14ecf0f503368d08f89f6a2555f719">
                                 <h6>Kit 12 Pares Borrachinha Fone</h6>
-                                <h4>R$ 24,00</h4>
+                                <h5>R$24,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto1">
+                                </div>
+
+                            	<div class="produto1">
                             	<a href="tabua.html">
                             	<img src="https://i.postimg.cc/5NhmmFPw/Addidas.jpg">
-                                <h6>Tábua De Corte Rústica Hidratada</h6>
-                                <h4>R$ 100,00</h4>
+                                <h6>Tábua Corte Rústica Hidratada</h6>
+                                <h5>R$100,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto1">
+                                </div>
+
+                            	<div class="produto1">
                             	<a href="protetor.html">
                             	<img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSXILzpi94oItkz9cdXYipWha6hHw1tQgKmazRtQ-a0ktGvxYxGaho5vNOspSIPg3HTiMEfZ8yF5wZNV1_acsdMUaFSve51lw&usqp=CAE">
                                 <h6>Protetor De Silicone Para Cabos</h6>
-                                <h4>R$ 2,00</h4>
+                                <h5>R$2,00</h5>
                                 </a>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
+                                </div>
+                </div>
             </article>
             
             <article class="article2">
-            	<table>
-                	<thead>
-            			<tr><h3>Mais Vendidos</h3></tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th class="produto2">
+            	<h3>Mais Vendidos</h3>
+            	<div class="produtos2">
+                            	<div class="produto2">
                             	<a href="fonele35.html">
                             	<img src="https://i.postimg.cc/Qd6Fy4jY/fonele35.png">
                                 <h6>Fone De Ouvido A Fio LE-35 Leon...</h6>
                                 <p>VA Imports</p>
-                                <h4>R$ 25,00</h4>
+                                <h5>R$25,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto2">
+                                </div>
+
+                            	<div class="produto2">
                             	<a href="fonexej005.html">
                             	<img src="https://i.postimg.cc/xCLx5bL5/fonexej005.png">
                                 <h6>Fone De Ouvido A Fio XEJ-005...</h6>
                                 <p>VA Imports</p>
-                                <h4>R$ 30,00</h4>
+                                <h5>R$30,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto2">
+                                </div>
+                                
+                                <div class="produto2">
                             	<a href="fonefxs8.html">
                             	<img src="https://i.postimg.cc/1RgrcFrZ/fonefxs8.png">
                                 <h6>Fone De Ouvido A Fio FX-S8 Leon...</h6>
                                 <p>VA Imports</p>
-                                <h4>R$ 25,00</h4>
+                                <h5>R$25,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto2">
+                                </div>
+                                
+								<div class="produto2">
                             	<a href="massageador.html">
                             	<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ8F1uy8M6yEepbjQ777-qzEizY2l4K49EgfBcEEd80LA1d59cb3SLvwhlIxgipAjoM8-otpcMjKqacrWSmvFcyiy3djSLShaUmQgFRuCg&usqp=CAE">
                                 <h6>Massageador Recarregável EMS...</h6>
                                 <p>VA Imports</p>
-                                <h4>R$ 30,00</h4>
+                                <h5>R$30,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto2">
+                                </div>
+                                
+                            	<div class="produto2">
                             	<a href="botas.html">
                             	<img src="https://i.postimg.cc/WpBJ5BB7/1.png">
                                 <h6>Botas Caterpillar Adventure...</h6>
                                 <p>Jessy Modas</p>
-                                <h4>R$ 125,00</h4>
+                                <h5>R$125,00</h5>
                                 </a>
-                            </th>
-                            <th class="produto2">
+                                </div>
+                                
+                            	<div class="produto2">
                             	<a href="olympikusveloz.html">
                             	<img src="https://i.postimg.cc/T3kCZMFK/1.png">
                                 <h6>Tênis Olympikus Veloz Unissex</h6>
                                 <p>Jessy Modas</p>
-                                <h4>R$ 100,00</h4>
+                                <h5>R$100,00</h5>
                                 </a>
-                            </th>
-                        </tr>
-                    </tbody>
-                </table>
+                                </div>
+                </div>
             </article>
             
             <figure class="anuncio">
@@ -307,7 +311,7 @@
             <section>
             	<h3>Todos Os Produtos</h3>
             		<div class="produtos">
-                    	<div class="produto" data-name="1">
+                    	<div class="produto" data-name="Tênis Olympikus Veloz Unissex esportivo corrida atividades físicas treino Características Preço Onde comprar Avaliações Desempenho Design Cores disponíveis Conforto Durabilidade leveza resistência amortecimento flexibilidade qualidade material respirabilidade performance estilo resistente à água tração pisada neutra responsivo tecnologia Olympikus calçado esportivo masculino feminino esportista caminhada lazer estabilidade suporte ajuste preciso ajustável impacto desgaste inovação ergonômico alta excelente aderência sola antiderrapante deslizamento dinâmico versatilidade polivalente estabilidade suporte ajuste confortável longa duração custo-benefício revestimento interno macio contemporâneo moda esportiva sapato multiuso otimizado arco eficaz superior urbano adequado todas idades esportes jessy modas 100,00">
                         	<a href="olympikusveloz.html">
                             	<img src="https://i.postimg.cc/T3kCZMFK/1.png">
                                 <h6>Tênis Olympikus Veloz Unissex</h6>
@@ -316,72 +320,185 @@
                              </a>
                         </div>
                         
-						<div class="produto" data-name="1">
-                        	<a href="olympikusveloz.html">
-                            	<img src="https://i.postimg.cc/T3kCZMFK/1.png">
-                                <h6>Tênis Olympikus Veloz Unissex</h6>
-                                <p>Jessy Modas</p>
-                                <h4>R$ 100,00</h4>
-                             </a>
+                        <div class="produto" data-name="Suporte Acrílico Celular Smartphone Stand Mesa Escritório Transparente Portátil Dobrável Design Moderno Estável Robusto Leve Transporte Prático Visualização Confortável Mãos Livres Uso Facilitado Compatível Diversos Modelos iPhone Samsung Android Tablet iPad Ajustável Angulação Ergonômico Estilo Minimalista Qualidade Material Resistente Arranhões Proteção Segurança Vertical Horizontal Multifuncional Utilidade Ambiente Trabalho Casa Viagem Compacto Elegante Econômico Instalação Fácil Manutenção Limpeza Rápida Durabilidade Longa Vida Útil Organização Espaço Economia Solução Prática Inovadora Escrivaninha Balcão Prateleira Aparência Atraente Exposição Clareza Acabamento Perfeito Armazenamento Seguro Conforto Ergonomia Cotidiano Experiência Usuário Melhorada acessorios produto oficial jgloot 5,00">
+                        	<a href="suporte.html">
+                            	<img src="https://http2.mlstatic.com/D_NQ_NP_750444-MLB44662340166_012021-O.webp">
+                                <h6>Suporte De Acrilico Para Celular</h6>
+                                <p>Oficial JGLoot</p
+                                ><h4>R$5,00</h4>
+                            </a>
                         </div>
-                        
-                        <div class="produto" data-name="1">
-                        	<a href="olympikusveloz.html">
-                            	<img src="https://i.postimg.cc/T3kCZMFK/1.png">
-                                <h6>Tênis Olympikus Veloz Unissex</h6>
-                                <p>Jessy Modas</p>
-                                <h4>R$ 100,00</h4>
-                             </a>
-                        </div>
-                        
-                        <div class="produto" data-name="1">
-                        	<a href="olympikusveloz.html">
-                            	<img src="https://i.postimg.cc/T3kCZMFK/1.png">
-                                <h6>Tênis Olympikus Veloz Unissex</h6>
-                                <p>Jessy Modas</p>
-                                <h4>R$ 100,00</h4>
-                             </a>
-                        </div>
-                        
-                        <div class="produto" data-name="Suporte para celular acrilico acessorios R$10,00 10,00 10 reais, Suporte acrílico para mesa, Apoio para celular em acrílico, Suporte de mesa para smartphone, Suporte para celular com design acrílico, Suporte de mesa transparente para smartphone, Acessório para celular em acrílico, Suporte ergonômico para celular, Suporte para celular de mesa resistente, Suporte de acrílico para uso em escritório." data-category="acessorios"><a href="htmlproduto1.html"><img class="imgproduto" src="https://http2.mlstatic.com/D_NQ_NP_750444-MLB44662340166_012021-O.webp"><p class="nomeproduto" style="text-align: justify">Suporte Para Celular Acri...</p><h6 class="loja">Oficial JGLoot</h6><h4 class="precoproduto">R$10,00</h4></a></div>
   
-	<div class="produto" data-name="Óleo 5w30 veiculos R$62,00 62,00 62 reais| Sintético | Petronas Selenia | Perform | 1 litro | Lubrificante | Motor | Qualidade | Desempenho | Manutenção | Viscosidade | Proteção | Lubrificação | Alto desempenho | Especificações técnicas | Normas de qualidade | Proteção contra desgaste | Eficiência energética | Redução do atrito | Lubrificação de longa duração" data-category="veiculos"><a href="htmlproduto2.html"><img class="imgproduto" src="https://i.postimg.cc/N0fNKRsP/oleo5w30.png"><p class="nomeproduto" style="text-align: justify">Óleo Selenia 5w30 Peform...</p><h6 class="loja">Lancia</h6><h4 class="precoproduto">R$62,00</h4></a></div>
+						<div class="produto" data-name="Óleo Selenia 5w30 Perform Lubrificante Motor Veículo Automóvel Especificação Técnica Desempenho Qualidade Marca Selenia Produto Original Recomendado Fabricante Características Viscosidade Proteção Componentes Internos Motor Manutenção Lubrificação Alta Performance Resistência Temperaturas Extremas Redução Atrito Proteção Contra Desgaste Proteção Contra Oxidação Limpeza Interna Circulação Óleo Compatibilidade Motores Gasolina Diesel Tecnologia Avançada Formulação Especial Sistemas Injeção Direta Turboalimentados Sistemas Pós-tratamento Gases Escape Baixas Emissões Ambientais Econômico Consumo Combustível Intervalos Troca Estendidos Confiabilidade Segurança Confiança Durabilidade Longa Vida Útil Custobenefício Opção Econômica Disponibilidade Amplo Mercado Garantia Qualidade Produto Certificado Normas Regulamentação Indústria Automotiva Especificações Aprovadas Normas Internacionais veiculos lancia auto mecanica 62,00">
+                        	<a href="oleo.html">
+                            	<img src="https://i.postimg.cc/N0fNKRsP/oleo5w30.png">
+                                <h6>Óleo Selenia 5w30 Peform Pe...</h6>
+                                <p>Lancia Auto Mecânica</p>
+                                <h4>R$62,00</h4>
+                            </a>
+                        </div>
 
-	<div class="produto" data-name="R$80,00 80 Mochila, Mochila para notebook, Mochila preta, Mochila semi impermeável, Mochila resistente à água, Mochila para laptop, Mochila para trabalho, Mochila para estudos, Mochila para escola, Mochila para viagem, Mochila com compartimento para notebook, Mochila para proteção de eletrônicos, Mochila para uso diário, Mochila com zíper impermeável, Mochila com design moderno, Mochila durável, Mochila confortável, Mochila com alças acolchoadas, Mochila com bolsos organizadores, Mochila com compartimentos multifuncionais." data-category="acessorios"><a href="htmlproduto3.html"><img class="imgproduto" src="https://i.postimg.cc/sD7tHB3j/1.png"><p class="nomeproduto" style="text-align: justify">Mochilas Semi Impermeav...</p><h6 class="loja">OFicial JGLoot</h6><h4 class="precoproduto">R$80,00</h4></a></div>
+						<div class="produto" data-name="Mochila Semi Impermeável Resistente Água Chuva Durável Tecido Impermeabilizado Material de Alta Qualidade Compartimentos Proteção Interna Externa Bolso Impermeável Zíperes Resistentes Água Tecido Repelente Resistente à Umidade Design Ergonômico Confortável Uso Diário Viagens Esportes Atividades Ao Ar Livre Caminhadas Acampamentos Bolsos Laterais Frontais Superiores Inferiores Fundo Compartimento Notebook Laptop Tablet Organização Interior Espaçoso Ajustável Alças Ombro Acolchoadas Ajustáveis Costas Ventiladas Ajuste Personalizado Fecho Seguro Prático Bolsos Internos Externos Fechamento Zíper Fivelas Reguláveis Durabilidade Longa Vida Útil Estilo Moderno Versatilidade Praticidade Porta Garrafas Rede Lateral Bolsos Laterais Rede Acessórios Alças Reforçadas Ergonomia Conforto Durabilidade Resistência Qualidade Alta Performance Aventuras Urbano Rústico Escritório Escola Faculdade Universidade Proteção Eletrônicos Documentos Roupa Manutenção Fácil Limpeza Pano Úmido Praticidade Versatilidade Funcionalidade Design Contemporâneo Estilo acessorios papelaria produto oficial jgloot 60,00">
+                        	<a href="mochila.html">
+                            	<img src="https://i.postimg.cc/5281WVNh/mochila.jpg">
+                                <h6>Mochilas Semi Impermeavel P...</h6>
+                                <p>OFicial JGLoot</p>
+                                <h4>R$60,00</h4>
+                            </a>
+                        </div>
 	
-	<div class="produto" data-name="Tábua De Corte Rústica Para Frios Churrasco Já Hidratada E Selada Pronto Para Uso" data-category="acessorios"><a href="htmlproduto4.html"><img class="imgproduto" src="https://i.postimg.cc/NjP1y8nb/1.png"><p class="nomeproduto" style="text-align: justify">Tábua De Corte Rústica Para...</p><h6 class="loja">Oficial JGLoot</h6><h4 class="precoproduto">R$120,00</h4></a></div>
+						<div class="produto" data-name="Tábua de Corte Rústica Madeira Natural Hidratada Selada Pronto para Uso Frios Queijos Carnes Churrasco Aperitivos Antipasto Alimentos Seguros Higiênicos Superfície Larga Espaçosa Cortes Precisos Resistente Durável Longa Durabilidade Qualidade Artesanal Madeira Maciça Acabamento Natural Estilo Rústico Design Charmoso Decoração Cozinha Casa Gourmet Preparo Alimentos Praticidade Versatilidade Manuseio Fácil Limpeza Simples Conservação Preservação Higiene Segurança Alimentos Tratamento Anti-bacteriano Proteção contra Contaminação Cuidado com Utensílios Culinários Artesanato Artesanal Produto Feito à Mão Peça Exclusiva Autêntica Originalidade Confiabilidade Resistência Desgaste Qualidade Premium Beleza Naturalidade Rusticidade acessorio produto oficial jgloot 100,00">
+                        	<a href="tabua.html">
+                            	<img src="https://i.postimg.cc/5NhmmFPw/Addidas.jpg">
+                                <h6>Tábua De Corte Rústica Para...</h6>
+                                <p>Oficial JGLoot</p>
+                                <h4>R$100,00</h4>
+                           	</a>
+                        </div>
 	
-	<div class="produto" data-name="HAYLOU GT7 Neo, eletronicos R$220,00 220,00 220 reais Fone de Ouvido Bluetooth HAYLOU, Fone de Ouvido HAYLOU GT7, Fone Bluetooth GT7 Neo, Fone sem fio HAYLOU, Fone de Ouvido GT7 Neo, Fone de Ouvido Bluetooth sem fio, HAYLOU GT7 Neo review, Fone de Ouvido True Wireless HAYLOU GT7 Neo, Fone de Ouvido Intra-auricular HAYLOU GT7 Neo, Fone de Ouvido Estéreo Bluetooth HAYLOU, Fone de Ouvido TWS (True Wireless Stereo) HAYLOU GT7 Neo, Fone de Ouvido com Cancelamento de Ruído HAYLOU GT7 Neo, Fone de Ouvido Esportivo Bluetooth HAYLOU, Compatibilidade HAYLOU GT7 Neo, Onde comprar HAYLOU GT7 Neo, Preço HAYLOU GT7 Neo, Características HAYLOU GT7 Neo, Manual do usuário HAYLOU GT7 Neo, Fone de Ouvido com Microfone HAYLOU GT7 Neo." data-category="eletronicos"><a href="htmlproduto5.html"><img class="imgproduto" src="https://i.postimg.cc/BQjH47kQ/1.png"><p class="nomeproduto" style="text-align: justify">Fone Bluetooth HAYLOU GT7...</p><h6 class="loja">David Gonçalves</h6><h4 class="precoproduto">R$220,00</h4></a></div>
+						<div class="produto" data-name="Fone Bluetooth HAYLOU GT7 Fones Ouvido Sem Fio Earbuds Tecnologia Bluetooth 5.2 Conexão Estável Autonomia Bateria Longa Duração Cancelamento Ruído Microfone Integrado Controle Touch Resistente Água IPX4 Design Ergonômico Leve Portátil Estilo Moderno Recarga Rápida Estojo Carregamento Wireless Compatibilidade Dispositivos Android iOS Chamadas Mãos Livres Qualidade Som Alta Definição Graves Profundos Agudos Claros Conforto Uso Prolongado Ajuste Perfeito Esportes Academia Corrida Atividades Ar Livre Controles Intuitivos Multifuncionais Estabilidade Conexão Emparelhamento Rápido Reprodução Música Podcasts Chamadas Telefônicas Compacto Durável Praticidade Mobilidade Liberdade Movimento Versatilidade Conveniência eletronicos david goncalves 220,00">
+                        	<a href="haylou.html">
+                            	<img src="https://i.postimg.cc/BQjH47kQ/1.png">
+                                <h6>Fone Bluetooth HAYLOU GT7...</h6>
+                                <p>David Gonçalves</p>
+                                <h4>R$220,00</h4>
+                            </a>
+                        </div>
   
-	<div class="produto" data-name="Brinquedos de pelúcia personalizados, Pelúcia personalizada, Presentes personalizados, Brinquedos de pelúcia feitos sob medida, Pelúcia artesanal, Brinquedos de pelúcia únicos, Presentes personalizados para crianças, Pelúcia com nome, Brinquedos de pelúcia exclusivos, Presentes feitos à mão." data-category="acessorio"><a href="htmlproduto6.html"><img class="imgproduto" src="https://i.postimg.cc/FH9bMMjp/1.png"><p class="nomeproduto" style="text-align: justify">Brinquedos De Pelúcia Per...</p><h6 class="loja">Sol A Sol...</h6><h4 class="precoproduto">R$15,00</h4></a></div>
+						<div class="produto" data-name="Especial Personalizado Personalização Preferências Gosto Pessoal Emoção Afeição Satisfação Clientes Surpresa Encantadora Criatividade Personalizável Adorável Personalidade Única Design Exclusivo Produção Artesanal Presente Especial Fofura Experiência Inesquecível Estilo Encanto Infantil Infância Lembrança Carinho Ternura Momentos Felicidade Afeto Alegria Sentimentos Mágicos Personalização Detalhada Produção Artesanal Conforto Maciez Segurança Alta Qualidade Durabilidade Beleza Estética Aconchego Memórias Afetivas Versatilidade Opções Variadas Amor Infinito Dedicação Exclusividade Originalidade Celebração Festividade Estimado acessorios sol a sol 25,00">
+                        	<a href="peluciapolvo.html">
+                            	<img src="https://i.postimg.cc/FH9bMMjp/1.png">
+                            	<h6>Brinquedos De Pelúcia Perso...</h6>
+                            	<p>Sol A Sol</p>
+                            	<h4>R$25,00</h4>
+                          	</a>
+                        </div>
 	
-	<div class="produto" data-name="1 Par De Borrachinha Para Fone De Ouvido P M e G Preto" data-category="acessorios"><a href="htmlproduto7.html"><img class="imgproduto" src="https://down-br.img.susercontent.com/file/ef14ecf0f503368d08f89f6a2555f719"><p class="nomeproduto" style="text-align: justify">1 Par De Borrachinha Para...</p><h6 class="loja">Oficial JGLoot</h6><h4 class="precoproduto">R$3,00</h4></a></div>
+						<div class="produto" data-name="Kit 12 Pares Borrachinha Fone preto Fones Ouvido Acessório Silicone Borracha Ajuste Confortável Substituição Universais Adaptadores Tamanhos Diferentes Flexíveis Duráveis Praticidade Reposição Original Fácil Instalação Compatibilidade Modelos Earbuds Intra-auriculares Cancelamento Ruído Isolamento Sonoro Qualidade Sonora Melhorada Conforto Uso Prolongado Estabilidade Fixação Segura Design Ergonômico Higiene Proteção Auditiva Redução Desconforto Estilo Personalização Opções Cores Variadas Versatilidade Opções Escolha Estojo Armazenamento Organização Portátil Viagens Uso Diário Acessório Essencial Melhoria Experiência Auditiva Perfeito Encaixe Flexibilidade Durabilidade Resistência Acessório Prático Econômico Qualidade Material Anti-alérgico Hipoalergênico Segurança Saúde Orelhas Conveniência acessorios produto oficial jgloot 2,00">
+                        	<a href="borrachinha.html">
+                            	<img src="https://down-br.img.susercontent.com/file/ef14ecf0f503368d08f89f6a2555f719">
+                                <h6>Kit 12 Pares Borrachinha Fo...</h6>
+                                <p>Oficial JGLoot</p>
+                                <h4>R$2,00</h4>
+                            </a>
+                        </div>
 	
-	<div class="produto" data-name="Cabo Carregador Lightning Turbo USB-C, eletronicos R$50,00 50,00 50 reais Carregador rápido Lightning USB-C, Adaptador de carga rápida para iPhone com conector USB-C, Carregador de alta velocidade para dispositivos Apple, Cabo de carregamento rápido Lightning para USB-C, Carregador rápido compatível com iPhone e iPad, Carregador turbo para dispositivos Apple com conector USB-C, Adaptador de energia rápido para iPhone com porta USB-C, Carregador rápido certificado para dispositivos iOS, Cabo de carregamento rápido para iPhone com USB-C." data-category="eletronicos"><a href="htmlproduto8.html"><img class="imgproduto" src="https://i.postimg.cc/XYRgC1FZ/1.png"><p class="nomeproduto" style="text-align: justify">Cabo Carregador Lightning...</p><h6 class="loja">Lira Imports</h6><h4 class="precoproduto">R$50,00</h4></a></div>
+						<div class="produto" data-name="Cabo Carregador Lightning Turbo USB-C Carregamento Rápido Conexão Estável Velocidade Transferência Dados Alta Performance Durabilidade Resistência Flexível Compatibilidade Universal Dispositivos Apple iPhone iPad iPod Android Samsung Huawei Xiaomi LG Sony Google Nexus OnePlus Motorola Lenovo ASUS HTC Conector Reforçado Design Ergonômico Portátil Praticidade Uso Diário Viagens Trabalho Casa Qualidade Material Premium Proteção Contra Sobrecarga Curto-circuito Aquecimento Excesso Corrente Tecnologia Avançada Eficiência Econômico Reforçado Desgaste Nylon Trançado Conveniência Seguro Certificação MFi Power Delivery PD 3.0 Qualcomm Quick Charge QC 4.0 Confiabilidade Eficiência Versatilidade Confiança Conexão Segura acessorios eletronicos lira imports 55,00">
+                        	<a href="carregador.html">
+                            	<img src="https://i.postimg.cc/XYRgC1FZ/1.png">
+                            	<h6>Cabo Carregador Lightning...</h6>
+                                <p>Lira Imports</p>
+                                <h4>R$55,00</h4>
+                            </a>
+                        </div>
    
-	<div class="produto" data-name="Fone de ouvido Bluetooth Pro4, eletronicos R$95,00 95,00 95 reais Pro4 Bluetooth earphones, Fone de ouvido sem fio Pro4, Pro4 wireless headphones, Pro4 earbuds, Especificações Pro4 Bluetooth, Avaliações Pro4 Bluetooth, Onde comprar Pro4 Bluetooth, Preço do fone de ouvido Pro4, Comparação de fones de ouvido Bluetooth Pro4, Compatibilidade Pro4 Bluetooth, Recursos Pro4 earphones, Pro4 noise-cancelling, Bateria Pro4 wireless, Manual do usuário Pro4, Pro4 conectividade Bluetooth, Melhores ofertas Pro4 Bluetooth, Pro4 resistente à água, Pro4 cancelamento de ruído, Pro4 especificações técnicas." data-category="eletronicos"><a href="htmlproduto9.html"><img class="imgproduto" src="https://i.postimg.cc/Bn752x7K/1.png"><p class="nomeproduto" style="text-align: justify">Fone De Ouvido Pro 4 Blue...</p><h6 class="loja">Lira Imports</h6><h4 class="precoproduto">R$95,00</h4></a></div>
+						<div class="produto" data-name="Fone Ouvido Pro 4 Fones Ouvido Headphones Auscultadores Bluetooth Sem Fio Tecnologia Avançada Qualidade Som Nítido Cancelamento Ruído Microfone Integrado Conforto Durabilidade Design Moderno Estilo Premium Ajuste Personalizado Conexão Estável Autonomia Bateria Longa Duração Controles Touch Praticidade Portabilidade Resistência Suor Água Esportes Atividades Físicas Academia Corrida Treino Viagens Trabalho Casa Uso Diário Compatibilidade Dispositivos Android iOS Tablet PC Laptop Ergonomia Conveniência Mobilidade Liberdade Movimento Alta Performance Experiência Auditiva Imersiva Versatilidade Versão Atualizada Tecnologia Última Geração Qualidade Construção Acabamento Fio Resistente Tendência Popularidade Avaliações Positivas Opiniões Usuários acessorios eletronicos lira imports 95,00">
+                        	<a href="pro4.html">
+                            	<img src="https://i.postimg.cc/Bn752x7K/1.png">
+                                <h6>Fone De Ouvido Pro 4 Blueto...</h6>
+                                <p>Lira Imports</p>
+                                <h4>R$95,00</h4>
+                             </a>
+                        </div>
    
-	<div class="produto" data-name="Garrafa Térmica Stanley 500ml, acessorios R$100,00 10,00 100 reais Stanley Thermos 500ml, Garrafa Térmica com 3 copos, Stanley Flask 500ml with 3 cups, Stanley Thermal Bottle 500ml 3 cups, Stanley Thermos Set 500ml 3 cups, Stanley Vacuum Bottle 500ml with cups, Stanley Thermal Flask 500ml and 3 cups, Stanley 500ml thermos and cups, Garrafa Térmica Stanley com 3 copos, Stanley Flask 500ml 3-piece set, Stanley Insulated Bottle 500ml 3 cups, Stanley 500ml thermos set, Stanley Classic Vacuum Bottle 500ml 3 cups, Garrafa Térmica Stanley 500ml conjunto 3 peças, Stanley Stainless Steel Thermos 500ml with 3 cups, Stanley 500ml Vacuum Insulated Flask with cups, Garrafa Térmica Stanley 500ml e 3 copos, Stanley Outdoor Thermos 500ml 3 cups, Stanley Adventure Series 500ml Thermos with 3 cups." data-category="acessorios"><a href="htmlproduto10.html"><img class="imgproduto" src="https://i.postimg.cc/Df6yBFLq/1.png"><p class="nomeproduto" style="text-align: justify">Garrafa Térmica Stanley 5...</p><h6 class="loja">Lira Imports</h6><h4 class="precoproduto">R$100,00</h4></a></div>
+						<div class="produto" data-name="Garrafa Térmica Stanley 500ml 3 Copos Inox Aço Inoxidável Durabilidade Isolamento Térmico Alta Qualidade Performance Design Clássico Resistência Vazamentos Preservação Temperatura Manutenção Bebidas Quentes Frio Durante Horas Praticidade Portabilidade Conveniência Viagens Piqueniques Acampamentos Escritório Casa Uso Diário Versatilidade Versão Compacta Capacidade Adequada 3 Copos Inclusos Compartilhamento Refeições Momentos Especiais Ergonomia Conforto Usuário Facilidade Limpeza Duradoura Higiene Segurança Alimentos Bebidas Material Livre BPA Saúde Ambientalmente Amigável Investimento Duradouro Sustentável Tecnologia Vácuo Parede Dupla Proteção Impactos Impactos Fácil Manuseio Transporte Moda Estilo Aventuras Ao Ar Livre acessorios lira imports 105,00">
+                        	<a href="stanley3copos.html">
+                            	<img src="https://i.postimg.cc/Df6yBFLq/1.png">
+                                <h6>Garrafa Térmica Stanley 500...</h6>
+                                <p>Lira Imports</p>
+                                <h4>R$105,00</h4>
+                            </a>
+                        </div>
    
-	<div class="produto" data-name="Conjunto Tecido Scuba, Moda, moda R$125,00 125,00 125 reais Estilo, Elegância, Conforto, Tendência, Roupa, Look, Design, Fashion, Beleza, Sofisticação, Vestuário, Combinação, Moderno, Versátil, Estampa, Cores Vibrantes, Textura, Modelagem, Exclusivo, Casual, Chique, Glamour, Praticidade, Despojado, Trendy, Autêntico, Coleção." data-category="moda"><a href="htmlproduto11.html"><img class="imgproduto" src="https://i.postimg.cc/RFx38W6T/1.png"><p class="nomeproduto" style="text-align: justify">Conjunto No Tecido Scuba...</p><h6 class="loja">AlCloset</h6><h4 class="precoproduto">R$125,00</h4></a></div>
+						<div class="produto" data-name="Conjunto Tecido Scuba Roupas Elástico Flexível Durável Resistente Moda Versátil Contemporâneo Elegante Sofisticado Look Completo Saia Blusa Vestido Calça Jaqueta Casual Formal Eventos Especiais Trabalho Noite Ajuste Perfeito Único Originalidade Tendência Fashion Tamanhos Cores Disponíveis Estampas Diversas Conforto Movimento Liberdade Praticidade Lavagem Fácil Secagem Rápida Qualidade Premium Costura Reforçada Acabamento Perfeito Toque Macio Sensação Agradável Atual Charme Estilo Trendy Fashionista Modernidade Efeito 3D Design Inovador Peças Exclusivas Conforto Inigualável Modelagem Versátil Luxo Casualidade Sofisticação Conveniência Tendência Temporada Combinações Infinitas Coleção Destaque Must-have Atualização Guarda-Roupa Personalidade Próprio Combinações Ilimitadas Coleção Primavera/Verão Peças-chave Coleção Outono/Inverno Lançamento Essentials Duradouro Clássicas Modernas Elegantes Despojado Ousadia Chique Atitude moda vestuario alcloset 125,00">
+                        	<a href="conjuntoscuba.html">
+                            	<img src="https://i.postimg.cc/RFx38W6T/1.png">
+                                <h6>Conjunto No Tecido Scuba Pre...</h6>
+                                <p>AlCloset<p>
+                                <h4>R$125,00</h4>
+                            </a>
+                        </div>
    
-	<div class="produto" data-name="Leon GTS M-902: áudio de alta qualidade, conforto ergonômico, drivers de alta fidelidade, controles integrados, design moderno, versatilidade de dispositivos, som imersivo, compatibilidade versátil, praticidade e elegância. fone de ouvido a fio" data-category="acessorios"><a href="htmlproduto12.html"><img class="imgproduto" src="https://i.postimg.cc/K8B1pxCv/imagensproduto.png"><p class="nomeproduto" style="text-align: justify">Fone De Ouvido Leon GTS...</p><h6 class="loja">Sol A Sol...</h6><h4 class="precoproduto">R$10,00</h4></a></div>
+						<div class="produto" data-name="Fone Ouvido Leon GTS m-902 Fones Ouvido Headphones Auscultadores Áudio Tecnologia Qualidade Som Microfone Integrado Cancelamento Ruído Estilo Moderno Conforto Durabilidade Design Atraente Resistência Portabilidade Praticidade Uso Diário Viagens Trabalho Casa Compatibilidade Dispositivos Android iOS Conexão Estável Autonomia Bateria Longa Duração Controles Integrados Conveniência Ergonomia Ajuste Personalizado Acessórios Extras Versatilidade Personalização Performance Sonora Alta Definição Graves Profundos Agudos Claros Isolamento Sonoro Design Ergonômico Moda Atual Tendência Experiência Auditiva Imersiva Cabo Durável Cabo Flexível Cabo Resistente Ajuste Confortável Confortável Acessório Tecnológico fone de ouvido com microfone acessorios eletronicos sol a sol 20,00">
+                        	<a href="fonem902.html">
+                            	<img src="https://i.postimg.cc/K8B1pxCv/imagensproduto.png">
+                                <h6>Fone De Ouvido Leon GTS M-90...</h6>
+                                <p>Sol A Sol</p>
+                                <h4>R$20,00</h4>
+                            </a>
+                        </div>
    
-	<div class="produto" data-name="Chaveiro Algema Em Couro Sintético Com Argola Em Metal Brasil Fetiche Acessório sensual, sexshop sexyshop sex shop sexy shop R$5,00 5,00 5 reais Brinquedo erótico, Fantasia íntima, Prazer adulto, Design elegante, Estilo fetichista, Qualidade durável, Sensualidade, Ajustável, Prende e solta, Jogo de dominação, Estimulação erótica, Fantasia sexual, Presente provocante." data-category="sexshop"><a href="htmlproduto13.html"><img class="imgproduto" src="https://i.postimg.cc/zBRXHScg/CHAP054-Preto-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">Chaveiro Algema Em Couro...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$5,00</h4></a></div>
+						<div class="produto" data-name="Chaveiro Algema Couro Sintético Argola Metal Brasil Fetiche Acessório Moda Design Estilo Couro Sintético Material Resistente Durável Segurança Conforto Uso Prático Portátil Transporte Fácil Utilidade Versatilidade Fetiche Sensualidade Estímulo Sensações Experiência Diferenciada Personalidade Única Foco Detalhes Originalidade Tendência Fashion Combinação Estilo Beleza Conveniência Praticidade Durabilidade Versatilidade Funcionalidade Estilo Único Toque Sensual Elegância Autenticidade Inovação Design Arrojado Moderno Atraente Charme Sofisticação Sedução Acessório Personalizado Diferenciado Criatividade Originalidade Liberdade Expressão Identidade acessorios sexshop seducao feminina 5,00">
+                        	<a href="chaveiro.html">
+                            	<img src="https://i.postimg.cc/zBRXHScg/CHAP054-Preto-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>Chaveiro Algema Em Couro Sin...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$5,00</h4>
+                            </a>
+                        </div>
    
-	<div class="produto" data-name="Love Lub, Hot Lub, Lubrificante corporal, La Pimienta, Estimulação térmica, Prazer intenso, Sensação quente, Aquecimento sensual, Gel íntimo, Intimidade ardente, Relaxamento sensual, Lubrificação duradoura, Formulação especial, Facilitador sexual, Prazer compartilhado, Experiência íntima, Gel sensual, Estimulante térmico, Sensualidade intensificada, Pré-aquecido, 60g." data-category="sexshop"><a href="htmlproduto14.html"><img class="imgproduto" src="https://i.postimg.cc/05zS1jp6/L053-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">Love Lub Hot Lubrificante...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$25,00</h4></a></div>
+						<div class="produto" data-name="Love Lub Hot Lubrificante Corporal Íntimo Sensualidade Prazer Estímulo Calor Lubrificação Hidratação Pele Sensações Estimulantes Excitação Sensualidade Fragrância Aroma Erótico Aquecimento Sensação Térmica Deliciosa Toque Suave Deslizamento Perfeito Conforto Textura Sedosa Longa Duração Fórmula Exclusiva Ingredientes Naturais Seguros Compatível Látex Seguro Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Duradouro Fantasia Sensual Erótica Novas Sensações Prazer Intenso Momentos Íntimos Romance Sedução Aventura Romance Apimentado Produtos Sensuais Fantasia Erótica Satisfação Sexual Estímulo Sensual Relação Amorosa Qualidade Premium Inovação sexshop seducao feminina 25,00">
+                        	<a href="lovelubhot.html">
+                            	<img src="https://i.postimg.cc/05zS1jp6/L053-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>Love Lub Hot Lubrificante C...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$25,00</h4>
+                            </a>
+                        </div>
    
-	<div class="produto" data-name="Love Lub, Ice Lub, Lubrificante corporal, sexshop sexyshop sex shop sexy shop R$25,00 25,00 25 reais La Pimienta, Estimulação térmica, Prazer intenso, Sensação frio, Esfriamento sensual, Gel íntimo, Intimidade ardente, Relaxamento sensual, Lubrificação duradoura, Formulação especial, Facilitador sexual, Prazer compartilhado, Experiência íntima, Gel sensual, Estimulante térmico, Sensualidade intensificada, Pré-aquecido, 60g." data-category="sexshop"><a href="htmlproduto15.html"><img class="imgproduto" src="https://i.postimg.cc/rm2MzhDR/L063-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">Love Lub Ice Lubrificante...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$25,00</h4></a></div>
+						<div class="produto" data-name="Love Lub Ice Lubrificante Corporal Íntimo Sensualidade Prazer Estímulo Refrescância Lubrificação Hidratação Pele Sensações Geladas Excitação Sensualidade Fragrância Aroma Refrescante Sensação Térmica Deliciosa Toque Suave Deslizamento Perfeito Conforto Textura Sedosa Longa Duração Fórmula Exclusiva Ingredientes Naturais Seguros Compatível Látex Seguro Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Duradouro Fantasia Sensual Erótica Novas Sensações Prazer Intenso Momentos Íntimos Romance Sedução Aventura Romance Apimentado Produtos Sensuais Fantasia Erótica Satisfação Sexual Estímulo Sensual Relação Amorosa Qualidade Premium Inovação sexshop seducao feminina 25,00">
+                        	<a href="lovelubice.html">
+                            	<img src="https://i.postimg.cc/rm2MzhDR/L063-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>Love Lub Ice Lubrificante C...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$25,00</h4>
+                            </a>
+                        </div>
       
-	<div class="produto" data-name="Love Lub, Lubrificante corporal, Neutro, sexshop sexyshop sex shop sexy shop R$25,00 25,00 25 reais La Pimienta, Gel íntimo, Lubrificação duradoura, Formulação suave, Intimidade confortável, Prazer sensual, Facilitador sexual, Sensação natural, Gel neutro, Experiência íntima, 60g, Textura agradável, Compatível com brinquedos sexuais, Hidratação íntima, Sensualidade sem fragrância, Relaxamento íntimo." data-category="sexshop"><a href="htmlproduto16.html"><img class="imgproduto" src="https://i.postimg.cc/YCgpkK9B/L052-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">Love Lub Neutro Lubrificante...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$25,00</h4></a></div>
+						<div class="produto" data-name="Love Lub Neutro Lubrificante Íntimo Corporal Sensualidade Prazer Estímulo Lubrificação Hidratação Pele Sensações Excitação Fragrância Aroma Neutro Toque Suave Deslizamento Conforto Textura Sedosa Longa Duração Fórmula Exclusiva Ingredientes Naturais Seguros Compatível Látex Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Duradouro Sensual Fantasia Erótica Sensações Novas Intensas Momentos Íntimos Romance Sedução Aventura Produtos Sensuais Satisfação Estímulo Relação Amorosa Qualidade Premium Inovação Confiança sexshop seducao feminina 25,00">
+                        	<a href="lovelubneutro.html">
+                                <img src="https://i.postimg.cc/YCgpkK9B/L052-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>Love Lub Neutro Lubrificant...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$25,00</h4>
+                        	</a>
+                     	</div>
     
-	<div class="produto" data-name="KGEL, Lubrificante íntimo, Tradicional, Gel íntimo, sexshop sexyshop sex shop sexy shop R$20,00 20,00 20 reais Lubrificação duradoura, Prazer sensual, Facilitador sexual, Textura suave, Fórmula tradicional, Intimidade confortável, Gel de longa duração, 50g, Hidratação íntima, Sensação natural, Prático e discreto, Para uso adulto, Compatível com preservativos, Estimulação suave, Experiência íntima aprimorada." data-category="sexshop"><a href="htmlproduto17.html"><img class="imgproduto" src="https://i.postimg.cc/BZB3mcz4/PKC208-50-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">KGEL Lubrificante Íntimo...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$20,00</h4></a></div>
+						<div class="produto" data-name="KGEL Lubrificante Íntimo Corporal Sensualidade Prazer Estímulo Lubrificação Hidratação Pele Sensações Excitação Fragrância Aroma Textura Gel Toque Suave Deslizamento Conforto Longa Duração Fórmula Exclusiva Ingredientes Naturais Seguros Compatível Látex Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Duradouro Sensual Fantasia Erótica Sensações Novas Intensas Momentos Íntimos Romance Sedução Aventura Produtos Sensuais Satisfação Estímulo Relação Amorosa Qualidade Premium Inovação Confiança sexshop seducao feminina 20,00">
+                        	<a href="kgel.html">
+                            	<img src="https://i.postimg.cc/BZB3mcz4/PKC208-50-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>KGEL Lubrificante Íntimo...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$20,00</h4>
+                            </a>
+                        </div>
     
-	<div class="produto" data-name="D4, Lubrificante íntimo, Neutro, Sexy Fantasy, Gel íntimo, sexshop sexyshop sex shop sexy shop R$27,00 27,00 27 reais Lubrificação duradoura, Fórmula suave, Intimidade confortável, Prazer sensual, Facilitador sexual, Sensação natural, Gel neutro, Experiência íntima, 60g, Textura agradável, Compatível com brinquedos sexuais, Hidratação íntima, Sem fragrância, Relaxamento íntimo, Marca Sexy Fantasy." data-category="sexshop"><a href="htmlproduto18.html"><img class="imgproduto" src="https://i.postimg.cc/59Q18QcS/4003-Neutro-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">D4 Lubrificante Íntimo Neutro...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$27,00</h4></a></div>
+						<div class="produto" data-name="D4 Lubrificante Íntimo Neutro Corporal Sensualidade Prazer Estímulo Lubrificação Hidratação Pele Sensações Fragrância Aroma Neutro Toque Suave Deslizamento Conforto Textura Longa Duração Fórmula Exclusiva Ingredientes Naturais Seguros Compatível Látex Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Duradouro Sensual Fantasia Erótica Novas Sensações Momentos Íntimos Romance Sedução Aventura Produtos Sensuais Satisfação Estímulo Relação Amorosa Qualidade Premium Inovação Confiança sexshop seducao feminina 27,00">
+                        	<a href="d4lubrificante.html">
+                            	<img src="https://i.postimg.cc/59Q18QcS/4003-Neutro-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>D4 Lubrificante Íntimo Neut...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$27,00</h4>
+                            </a>
+                        </div>
     
-	<div class="produto" data-name="Xana Loka, Excitante feminino, 15g, sexshop sexyshop sex shop sexy shop R$24,00 24,00 24 reais Linha Brasileirinhos, Hot Flowers, Estimulante íntimo, Prazer feminino, Sensação excitante, Gel sensual, Estimulação intensa, Intimidade ardente, Fórmula especial, Para uso adulto, Textura suave, Experiência íntima aprimorada, Marca Hot Flowers." data-category="sexshop"><a href="htmlproduto19.html"><img class="imgproduto" src="https://i.postimg.cc/NG8tNqMK/HC611-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">Xana Loka Excitante Femini...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$24,00</h4></a></div>
+						<div class="produto" data-name="Xana Loka Excitante Feminino Estimulante Sensualidade Prazer Íntimo Feminino Estímulo Sensações Intensas Aumento Desejo Sexualidade Excitação Orgasmo Sensualidade Aroma Fragrância Sensações Especiais Sensualidade Toque Suave Despertar Sensações Fórmula Exclusiva Ingredientes Naturais Seguros Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Intenso Duradouro Sensualidade Fantasia Erótica Novas Sensações Momentos Íntimos Romance Sedução Aventura Produtos Sensuais Satisfação Estímulo Relação Amorosa Qualidade Premium Inovação Confiança sexshop seducao feminina 24,00">
+                        	<a href="xanaloka.html">
+                            	<img src="https://i.postimg.cc/NG8tNqMK/HC611-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>Xana Loka Excitante Feminin...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$24,00</h4>
+                            </a>
+                        </div>
     
-	<div class="produto" data-name="Chines Gel Prolongador, 15ML, Gel estimulante, Prolongamento da ereção, Prazer duradouro, Estimulação masculina, sexshop sexyshop sex shop sexy shop R$20,00 20,00 20 reais Sensação intensificada, Fórmula especial, Uso adulto, Textura suave, Fácil aplicação, Sensualidade aprimorada, Embalagem prática, Estimulante íntimo, Marca ou produto específico não mencionado." data-category="sexshop"><a href="htmlproduto20.html"><img class="imgproduto" src="https://i.postimg.cc/hv0fgX1w/SL041-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp"><p class="nomeproduto" style="text-align: justify">Chines Gel Prolongador 15...</p><h6 class="loja">Sedução Femi...</h6><h4 class="precoproduto">R$20,00</h4></a></div>
+						<div class="produto" data-name="Chines Gel Prolongador 15ml Estimulante Sensualidade Prazer Íntimo Masculino Estímulo Sensações Intensas Aumento Desejo Sexualidade Excitação Orgasmo Masculino Sensualidade Aroma Fragrância Sensações Especiais Toque Suave Despertar Sensações Fórmula Exclusiva Ingredientes Naturais Seguros Dermatologicamente Testado Segurança Confiança Intimidade Relação Sexualidade Experiência Única Prazer Intenso Duradouro Sensualidade Fantasia Erótica Novas Sensações Momentos Íntimos Romance Sedução Aventura Produtos Sensuais Satisfação Estímulo Relação Amorosa Qualidade Premium Inovação Confiança sexshop seducao feminina 20,00">
+                        	<a href="chinesgel.html">
+                            	<img src="https://i.postimg.cc/hv0fgX1w/SL041-1-Jo-o-Gabriel-Vasconcelos-Trindade.webp">
+                                <h6>Chines Gel Prolongador 15ml...</h6>
+                                <p>Sedução Feminina</p>
+                                <h4>R$20,00</h4>
+                            </a>
+                        </div>
     
 	<div class="produto" data-name="110 reais R$110 câmera Wi-Fi, Jortan Branca, monitoramento remoto, segurança residencial, câmera de vigilância, visão noturna, detecção de movimento, gravação em nuvem, aplicativo móvel, instalação fácil, resolução de vídeo, áudio bidirecional, câmera IP, conexão wireless, câmera de segurança, dispositivo inteligente, visão panorâmica, câmera dome, monitoramento em tempo real." data-category="eletronicos"><a href="htmlproduto21.html"><img class="imgproduto" src="https://i.postimg.cc/RZdPrQDj/1.png"><p class="nomeproduto" style="text-align: justify">Câmera Wi-Fi Jortan Branca...</p><h6 class="loja">VA Imports</h6><h4 class="precoproduto">R$110,00</h4></a></div>
 
@@ -665,6 +782,7 @@
 
                 	</div>
             </section>
+            </div>
         </main>
 
         <footer>
