@@ -57,7 +57,7 @@
         .carousel img {width: 100%;height: auto;display: none;}
         .carousel img.active {display: block;animation: fade 1s ease-in-out;}
         @keyframes fade {from {opacity: 0;}to {opacity: 1;}}
-    	.prev,.next {position: absolute;top: 50%;transform: translateY(-50%);background-color: rgba(0, 0, 0, 0.5);color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 2;}
+    	.prev,.next {position: absolute;top: 50%;transform: translateY(-50%); color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 2;}
         .prev {left: 0;}
 		.next {right: 0;}
         /* </figure> Banners*/
@@ -119,15 +119,19 @@
         /* </footer> */
         
         @media screen and (max-width: 700px) {
-        body {background-color: white; margin-top: 80px}
+        body {background-color: white; margin-top: 70px}
         /* <header> */
         .iconmenu {width: 25px; margin-left: 30px}
-        .logo {width: 75px; margin-left: 20px}
+        .logo {width: 70px; margin-left: 20px}
         .cxpesquisa {height: 45px; padding: 10px}
     	.inputpesquisa {width: 70%; font-size: 14px}
         .carrinho-container {padding-right: 30px}
         .propaganda {display: none}
         /* </header> */
+        
+        /* <span> */
+        span p {font-size: 13px}
+        /* </span> */
         
         /* <div class="tudo"> */
         .tudo {margin: 0}
