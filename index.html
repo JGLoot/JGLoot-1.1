@@ -48,16 +48,18 @@
         
         /* <span> */
         span {background-color: white; color: #b81414; display: flex; justify-content: center; align-items: center;}
-        span h6 {margin: 5px}
+        span p {margin: 5px; font-size: 14px; font-weight: bold; text-align: center}
         .seta {width: 20px}
         /* </span> */
         
         /* <figure> Banners */
-        .carousel {margin: 0}
-        .carousel img {width: 100%;}
-        .arrow {position: absolute; top: 50%; transform: translateY(-50%); background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; cursor: pointer; }
-    	.left {left: 0;}
-        .right {right: 0;}
+        .carousel {position: relative; margin: auto; background-color: #b81414}
+        .carousel img {width: 100%;height: auto;display: none;}
+        .carousel img.active {display: block;animation: fade 1s ease-in-out;}
+        @keyframes fade {from {opacity: 0;}to {opacity: 1;}}
+    	.prev,.next {position: absolute;top: 50%;transform: translateY(-50%);background-color: rgba(0, 0, 0, 0.5);color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 2;}
+        .prev {left: 0;}
+		.next {right: 0;}
         /* </figure> Banners*/
         
         /* <div class="tudo"> */
@@ -65,7 +67,7 @@
         /* </div> */
         
         /* <article1> */
-        .article1 {margin: 0 3% 3% 3%; border-radius: 20px 20px 0 0; padding-top: 10px;}
+        .article1 {margin: 0 3% 3% 3%; padding-top: 10px;}
         .article1 h3 {color: #b81414; text-align: center; margin: 50px 0 40px 0; border-bottom: 3px solid #b81414;}
         .produtos1 {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
         .produto1 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 50px; flex: 0 0 calc(15% - 1px); padding: 5px}
@@ -77,10 +79,10 @@
         /* </article1> */
         
         /* <article2> */
-        .article2 {margin: 0 3% 3% 3%; border-radius: 20px 20px 0 0; padding-top: 10px;}
+        .article2 {margin: 0 3% 5% 3%; padding-top: 10px;}
         .article2 h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414;}
         .produtos2 {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
-        .produto2 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 100px; flex: 0 0 calc(15% - 1px); padding: 5px}
+        .produto2 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 50px; flex: 0 0 calc(15% - 1px); padding: 5px}
         .produto2:hover {transform: scale(1.1); background-color: #ffcccc;}
         .produto2 a {text-decoration: none}
         .produto2 img {width: 100%; max-width: 200px; min-width: 80px; display: block; margin: 0 auto;}
@@ -90,12 +92,12 @@
         /* </article2> */
         
         /* <figure> Anúncio*/
-        .anuncio img {width: 60%; display: block; margin: 0 auto; border-radius: 30px 0 30px 0}
+        .anuncio img {width: 60%; display: block; margin: 100px auto 100px auto; border-radius: 30px 0 30px 0}
         /* </figure> Anúncio*/
         
         /* <section> */
-        section {margin: 100px 3% 100px 3%}
-        section h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414;}
+        section {margin: 0 3% 100px 3%}
+        section h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414; padding-top: 5%}
         .produtos {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
         .produto {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 20px; flex: 0 0 calc(20% - 20px); padding: 6px; float: left; margin-bottom: 30px}
         .produto:hover {transform: scale(1.1); background-color: #ffcccc;}
@@ -115,6 +117,34 @@
         .p a {color: white; font-weight: bold}
         .copy {color: white; font-size: 12px}
         /* </footer> */
+        
+        @media screen and (max-width: 700px) {
+        body {background-color: white; margin-top: 80px}
+        /* <header> */
+        .iconmenu {width: 25px; margin-left: 30px}
+        .logo {width: 75px; margin-left: 20px}
+        .cxpesquisa {height: 45px; padding: 10px}
+    	.inputpesquisa {width: 70%; font-size: 14px}
+        .carrinho-container {padding-right: 30px}
+        .propaganda {display: none}
+        /* </header> */
+        
+        /* <div class="tudo"> */
+        .tudo {margin: 0}
+        /* </div> */
+        
+        /* <article1> */
+        .produto1 {flex: 0 0 calc(33% - 5px)}
+        /* </article1> */
+        
+        /* <article2> */
+        .produto2 {flex: 0 0 calc(33% - 5px)}
+        /* </article2> */
+        
+        /* <section> */
+        .produto {flex: 0 0 calc(33% - 5px)}
+        /* </section> */
+        }
 	</style>
 	</head>
 	<body>
@@ -137,21 +167,21 @@
                             <hr style="border: 1px solid white">
                             <h5>Categorias:</h5>
                             <br>
-                            <p>&#8986; Acessórios</p>
+                            <p onclick="categoriasmenu('acessorios')">&#8986; Acessórios</p>
                             <br>
-                            <p>&#128241; Eletrônicos</p>
+                            <p onclick="categoriasmenu('eletronicos')">&#128241; Eletrônicos</p>
                             <br>
-                            <p>&#128132; Beleza</p>
+                            <p onclick="categoriasmenu('beleza')">&#128132; Beleza</p>
                             <br>
-                            <p>&#128095; Esportes e Calçados</p>
+                            <p onclick="categoriasmenu('esportes')">&#128095; Esportes e Calçados</p>
                             <br>
-                            <p>&#9999; Papelaria</p>
+                            <p onclick="categoriasmenu('papelaria')">&#9999; Papelaria</p>
                             <br>
-                            <p>&#128663; Veículos</p>
+                            <p onclick="categoriasmenu('veiculos')">&#128663; Veículos</p>
                             <br>
-                            <p>&#128139; Sex shop</p>
+                            <p onclick="categoriasmenu('sexshop')">&#128139; Sex shop</p>
                             <br>
-                            <p>	&#128085; Vestuário</p>
+                            <p onclick="categoriasmenu('vestuario')">&#128085; Vestuário</p>
 							<br>
                     	</div>
                     </td>
@@ -166,10 +196,12 @@
 			</td>
 				
                 	<td class="carrinho-container">
-    				<div class="carrinho-inner">
-        				<img class="carrinho" src="https://i.postimg.cc/yNKD8bxK/carrinho.png" alt="carrinho"> <!-- Icone Carrinho -->
-        				<p class="quanticar">0</p> <!-- Quantidade Carrinho -->
-    				</div>
+                    <a href="carrinho.html">
+                        <div class="carrinho-inner">
+                            <img class="carrinho" src="https://i.postimg.cc/yNKD8bxK/carrinho.png" alt="carrinho"> <!-- Icone Carrinho -->
+                            <p class="quanticar">0</p> <!-- Quantidade Carrinho -->
+                        </div>
+                    </a>
 			</td>
 
                  	<td><a href="https://api.whatsapp.com/send?phone=5593991991685"><img class="propaganda" src="https://i.postimg.cc/T36mL6xH/propagandatopo.png" alt="propaganda"></a></td> <!-- Propaganda -->
@@ -179,7 +211,7 @@
 		<main>
             <span> <!-- Sessão digite oq procura -->
             		<img class="seta" src="https://i.postimg.cc/cJ8S6NYt/2.jpg" alt="seta2">
-            		<h6>Digite o que procura em “Busca instantânea” e olhe a baixo</h6>
+            		<p>Digite o que procura em “Busca instantânea” e olhe a baixo</p>
             		<img class="seta" src="https://i.postimg.cc/Njntg0yw/1.jpg" alt="seta1">
             </span>
 
@@ -187,8 +219,8 @@
                 <img src="https://i.postimg.cc/ZqVJ6syZ/QUEIMA.jpg" alt="Queima de estoque">
                 <img src="https://i.postimg.cc/sDhfbJb9/ENTREGAS.jpg" alt="Entrega">
                 <img src="https://i.postimg.cc/XYKjYYjr/FRETE.jpg" alt="Frete">
-                <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-                <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+                <div class="prev" onclick="prevImage()">&#10094;</div>
+                <div class="next" onclick="nextImage()">&#10095;</div>
             </figure>
          
          	<div class="tudo">
@@ -310,7 +342,7 @@
             
             <section>
             	<h3>Todos Os Produtos</h3>
-            		<div class="produtos">
+            		<div class="produtos" id="produtos">
                         
                         <div class="produto" data-name="Suporte Acrílico Celular Smartphone Stand Mesa Escritório Transparente Portátil Dobrável Design Moderno Estável Robusto Leve Transporte Prático Visualização Confortável Mãos Livres Uso Facilitado Compatível Diversos Modelos iPhone Samsung Android Tablet iPad Ajustável Angulação Ergonômico Estilo Minimalista Qualidade Material Resistente Arranhões Proteção Segurança Vertical Horizontal Multifuncional Utilidade Ambiente Trabalho Casa Viagem Compacto Elegante Econômico Instalação Fácil Manutenção Limpeza Rápida Durabilidade Longa Vida Útil Organização Espaço Economia Solução Prática Inovadora Escrivaninha Balcão Prateleira Aparência Atraente Exposição Clareza Acabamento Perfeito Armazenamento Seguro Conforto Ergonomia Cotidiano Experiência Usuário Melhorada acessorios produto oficial jgloot 5,00">
                         	<a href="suporte.html">
@@ -1474,7 +1506,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Bateria Recarregável LI-ION Leon GTS" data-category="eletronicos">
+  						<div class="produto" data-name="BateriaRecarregável LI-ION Leon GTS EnergiaDuradoura Recarregável TecnologiaLítio-Íon FonteEnergia AutonomiaBateria LongaDuração DurabilidadeAltaPerformance DesempenhoEficiente EnergiaSustentável PotênciaRecarregável RecargaRápida EficiênciaEnergética FontePortátil EconomiaEnergia BateriaRemovível CapacidadeLongaVida DesempenhoConfiável EnergiaIninterrupta ConectividadeDurável PortabilidadeConveniente UsoConveniente CarregamentoPrático TecnologiaAvançada SustentabilidadeEnergética DurabilidadeAvançada RecarregamentoFácil FonteDeEnergiaSegura EcoFriendly OperaçãoSimples ConveniênciaDuranteUso EficiênciaEnergética AutonomiaEstendida FonteConfiança FontePotente BateriaSegura DurabilidadeConstrução FonteSustentável FonteResistente RecursosEnergéticos RecargaConveniente BateriaSeguraEcoFriendly DesempenhoSeguro FonteRecarregável FonteEficiente SegurançaRecarregável SustentabilidadeConstrução TecnologiaSegura CarregamentoEficiente PortabilidadeSimples FonteRecarregávelPortátil EnergiaIninterrupta SustentabilidadeEcoFriendly EficiênciaRecarregável AutonomiaConfiável CarregamentoRápido FonteDurável FonteVersátil RecursosRecarregáveis DurabilidadeEnergética FonteSeguraEcoFriendly FonteEficaz DurabilidadeRecarregável FonteEconômica TecnologiaSustentável CarregamentoSeguro FonteDuradoura BateriaConfiável FonteEficienteEnergia FonteConfiávelEcoFriendly RecarregamentoConveniente SegurançaDuranteUso FonteSustentávelAutonomiaVersátil TecnologiaAvançadaRecarregável FonteSeguraEconômica eletronicos sol a sol 20,00">
                         	<a href="bateriarecarregavel.html">
                             	<img src="https://i.postimg.cc/Jz0KkL65/imagensproduto.png">
                                 <h6>Bateria Recarregável LI-ION Leon...</h6>
@@ -1483,7 +1515,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Antena HD Para TV Digital Leon GTS" data-category="eletronicos">
+  						<div class="produto" data-name="Antena HD TVDigital Leon GTS RecepçãoClara SinalDigital AltaDefinição TecnologiaHD RecebimentoEficiente DesignCompacto InstalaçãoFácil CaboCoaxial QualidadeImagem TransmissãoNítida AntenaInterna RecebimentoPotente CanaisLocais SintoniaPrecisa CaptaçãoSinal MelhoriaRecepção ImagemCristalina CanaisHD TransmissãoEstável InstalaçãoSimples SintoniaAutomática CaptaçãoSinalEstável AltaSensibilidade ReproduçãoClara SemInterferências DesignElegante MelhoriaQualidade DesignInovador DurabilidadeConstrução CaboResistente DurabilidadeLongaVida DesempenhoConfiável TransmissãoIninterrupta RecepçãoSemFalhas AltaPerformance SintoniaRápida FácilConfiguração UsoConveniente TecnologiaAvançada EstabilidadeSinal CompatibilidadeUniversal CanaisLocaisHD ReproduçãoIninterrupta EstabilidadeRecepção AltaSensibilidade RecepçãoPotente FácilInstalação SintoniaPrecisa DesignSimples CaptaçãoSinalEstável CanaisDisponíveis TransmissãoEstável DesignPortátil DesempenhoElevado CaboDurável SintoniaAutomática AltaSensibilidade SinalDigitalHD CaptaçãoPotente ReproduçãoNítida EstabilidadeRecepção TransmissãoSemInterferências QualidadeRecepção DesignLeve TransmissãoEstável TecnologiaAvançadaRecepção SinalHD RecebimentoEstável ReproduçãoHD SintoniaRápida CanaisLocaisDisponíveis InstalaçãoRápida TransmissãoClara AntenaDigital AltaSensibilidade SemInterferências SintoniaPrecisa DesempenhoExcepcional UsoSimplesCompatibilidadeUniversalConfiguraçãoFácil eletronicos sol a sol 40,00">
                         	<a href="antena1.html">
                             	<img src="https://i.postimg.cc/7LTFS7s9/imagensproduto.png">
                                 <h6>Antena HD Para TV Digital Leon...</h6>
@@ -1492,7 +1524,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Fone Bluetooth Aidots Redm" data-category="eletronicos">
+  						<div class="produto" data-name="FoneBluetooth Aidots Redm SemFio ÁudioPortátil ConexãoBluetooth DesignCompacto Leve Portátil EstiloModerno TecnologiaBluetooth MicrofoneIntegrado ControleTátil ConfortoAudição ReproduçãoSemFio BateriaRecarregável CarregamentoRápido Ergonômico AjusteConfortável AltaQualidade SomImersivo DurabilidadeLongaVida ChamadasTelefônicas MúsicasPodcasts CompatibilidadeDispositivos FacilidadeUso AutonomiaBateria DesignElegante ConectividadeSimples PerformanceAcústica LiberdadeMovimento QualidadeÁudio LiberdadeSemFio ReproduçãoContínua TecnologiaTWS EstabilidadeConexão TecnologiaSemFio ControleVoz AtendimentoChamadas ReproduçãoMúsica ChamadasNítidas EstabilidadeSinal ConexãoSemFio DesignErgonômico ConfortoDuradouro CompatibilidadeUniversal Leveza PortabilidadeDurável OperaçãoSimples TecnologiaAvançada ConfiguraçãoFácil MúsicaCristalina EstiloVidaAtivo ConveniênciaSemFio eletronicos sol a sol 50,00">
                         	<a href="foneairdots.html">
                             	<img src="https://i.postimg.cc/s2YvwB1P/imagensproduto.png">
                                 <h6>Fone Bluetooth Aidots Redm</h6>
@@ -1501,7 +1533,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Fone de ouvido dobrável sem fio LEF-137" data-category="eletronicos">
+  						<div class="produto" data-name="Fone de Ouvido sem fio Dobrável Sem Fio LEF-137 ÁudioPortátil ConexãoSemFio DesignDobrável Leve Portátil EstiloModerno TecnologiaBluetooth MicrofoneIntegrado ControleTátil ConfortoAudição ReproduçãoSemFio BateriaRecarregável CarregamentoRápido Ergonômico AjusteConfortável AltaQualidade SomImersivo DurabilidadeLongaVida ChamadasTelefônicas MúsicasPodcasts CompatibilidadeDispositivos FacilidadeUso AutonomiaBateria DesignElegante ConectividadeSimples PerformanceAcústica LiberdadeMovimento QualidadeÁudio LiberdadeSemFio ReproduçãoContínua EstabilidadeConexão TecnologiaSemFio ControleVoz AtendimentoChamadas ReproduçãoMúsica ChamadasNítidas EstabilidadeSinal ConexãoSemFio DesignErgonômico ConfortoDuradouro CompatibilidadeUniversal Leveza PortabilidadeDurável OperaçãoSimples TecnologiaAvançada ConfiguraçãoFácil MúsicaCristalina EstiloVidaAtivo ConveniênciaSemFio fone bluetooth fone de ovido bluetooth eletronicos va imports 80,00">
                         	<a href="fonele137.html">
                             	<img src="https://i.postimg.cc/cHq5NL7L/imagensproduto.png">
                                 <h6>Fone De Ouvido Dobrável...</h6>
@@ -1510,7 +1542,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="KIT RELÓGIO + ACESSÓRIOS + CAIXINHA + BATERIA EXTRA" data-category="moda">
+  						<div class="produto" data-name="KIT RELÓGIO + ACESSÓRIOS + CAIXINHA + BATERIA EXTRA KitRelógio Acessórios Caixinha BateriaExtra ConjuntoRelógio AcessóriosInclusos EstojoCaixinha BateriaAdicional RelógioDigital PulseiraSilicone ConjuntoCompleto AcessóriosVariados EstojoPortátil BateriaReserva ConjuntoVersátil RelógioEstiloso ConjuntoPrático AcessóriosEssenciais EstojoCompacto BateriaExtraRecarregável RelógioElegante ConjuntoConveniente AcessóriosFuncionais EstojoProtetor BateriaSuplementar RelógioDigitalTelaLED ConjuntoVersátil AcessóriosModernos EstojoProtetorPortátil BateriaAdicionalRecarregável RelógioEsportivo ConjuntoEssencial AcessóriosDiversificados EstojoOrganizador BateriaExtraLongaVida RelógioInteligente ConjuntoFuncional AcessóriosEstilosos EstojoResistente BateriaAdicionalLongoPrazo RelógioAnálogo ConjuntoCompleto AcessóriosÚteis EstojoAcolchoado BateriaReservaRecarregável RelógioFashion ConjuntoInovador AcessóriosVersáteis EstojoCompactoPortátil BateriaExtraRecarregável RelógioClássico ConjuntoElegante AcessóriosVariados EstojoPrático BateriaAdicionalDurável RelógioModerno ConjuntoDurável AcessóriosEstilosos EstojoProteção BateriaSuplementarRecarregável RelógioDigitalTelaTátil ConjuntoConveniente AcessóriosFuncionais EstojoCompactoPortátilProtetor BateriaExtraReserva RelógioEsportivoTecnológico ConjuntoPrático AcessóriosEssenciais EstojoResistenteProteção BateriaRecarregávelExtra moda acessorios vestuario beleza jessy modas 80,00">
                         	<a href="kitrelogio1.html">
                             	<img src="https://i.postimg.cc/W3SQMJqf/1.png">
                                 <h6>KIT RELÓGIO + ACESSÓRIOS...</h6>
@@ -1519,7 +1551,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="KIT PALLYJANE OU DHP FEMININO" data-category="moda">
+  						<div class="produto" data-name="Relógio feminino elegância moda estilo tendência glamour sofisticação beleza versatilidade exclusividade chique modernidade fashion autenticidade contemporâneo luxo delicadeza charme casual romântico atemporal estiloso praticidade estampa estilização personalidade requinte detalhes descontração brilho textura estamparia originalidade harmonia audácia fluidez frescor sedução jovialidade vibrante vestuario beleza jessy modas 80,00">
                         	<a href="kitrelogio2.html">
                             	<img src="https://i.postimg.cc/d3JJFTzq/1.png">
                                 <h6>KIT PALLYJANE OU DHP FEMI...</h6>
@@ -1528,7 +1560,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="KIT PALLYJANE OU DHP FEMININO" data-category="moda">
+  						<div class="produto" data-name="Relógio feminino elegância moda estilo tendência glamour sofisticação beleza versatilidade exclusividade chique modernidade fashion autenticidade contemporâneo luxo delicadeza charme casual romântico atemporal estiloso praticidade estampa estilização personalidade requinte detalhes descontração brilho textura estamparia originalidade harmonia audácia fluidez frescor sedução jovialidade vibrante vestuario beleza jessy modas 80,00">
                         	<a href="kitrelogio3.html">
                             	<img src="https://i.postimg.cc/3RhmpnsY/1.png">
                                 <h6>KIT PALLYJANE OU DHP FEMI...</h6>
@@ -1537,7 +1569,7 @@
                             </a>
                         </div>
 
-  						<div class="produto" data-name="Chinelo Kenner Red Sandália Emborrachado Casual Praia Moda" data-category="esportes">
+  						<div class="produto" data-name="Chinelo Kenner Red Sandália Emborrachado Casual Praia Moda conforto estilo tendência glamour elegância versatilidade exclusividade chique modernidade fashion autenticidade contemporâneo luxo praticidade estampa estilização personalidade requinte detalhes brilho textura estamparia originalidade harmonia audácia fluidez frescor sedução jovialidade vibrante durabilidade resistência confortável anatômico leveza design inovador resistente moda verão casualidade descontração sofisticado charmoso robusto contemporâneo casualidade elegância impacto moda praia único impressionante autenticidade trendy ousado autêntico marca renomada qualidade superior esportes elo modas 90,00">
                         	<a href="chinelokenner1.html">
                             	<img src="https://i.postimg.cc/MpCKmYmr/imagensproduto.png">
                                 <h6>Chinelo Kenner Red Sandália...</h6>
@@ -1546,7 +1578,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Chinelo Kenner Rakka Sandália Emborrachado Casual Praia Moda" data-category="esportes">
+  						<div class="produto" data-name="Chinelo Kenner Rakka Sandália Emborrachado Casual Praia Moda conforto estilo tendência glamour elegância versatilidade exclusividade chique modernidade fashion autenticidade contemporâneo luxo praticidade estampa estilização personalidade requinte detalhes brilho textura estamparia originalidade harmonia audácia fluidez frescor sedução jovialidade vibrante durabilidade resistência confortável anatômico leveza design inovador resistente moda verão casualidade descontração sofisticado charmoso robusto contemporâneo casualidade elegância impacto moda praia único impressionante autenticidade trendy ousado autêntico marca renomada qualidade superior esportes elo modas 110,00">
                         	<a href="chinelokenner2.html">
                             	<img src="https://i.postimg.cc/MpwhWtV1/1.png">
                                 <h6>Chinelo Kenner Rakka Sandália...</h6>
@@ -1555,7 +1587,7 @@
                             </a>
                         </div>
 
-  						<div class="produto" data-name="Sandálias Infantil Adidas e Hugo Boss" data-category="esportes">
+  						<div class="produto" data-name="Sandálias Infantil Adidas Hugo Boss conforto estilo tendência glamour elegância versatilidade exclusividade chique modernidade fashion autenticidade contemporâneo luxo praticidade estampa estilização personalidade requinte detalhes brilho textura estamparia originalidade harmonia audácia fluidez frescor sedução jovialidade vibrante durabilidade resistência confortável anatômico leveza design inovador resistente moda verão casualidade descontração sofisticado charmoso robusto contemporâneo casualidade elegância impacto moda praia único impressionante autenticidade trendy ousado autêntico marca renomada qualidade superior esportes elo modas 65,00">
                         	<a href="sandalia1.html">
                             	<img src="https://i.postimg.cc/pXvckWQQ/1.png">
                                 <h6>Sandálias Infantil Adidas E H...</h6>
@@ -1564,7 +1596,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Sandálias Infantil Feminina Papete" data-category="esportes">
+  						<div class="produto" data-name="Sandálias Infantil Feminina Papete conforto estilo tendência glamour elegância versatilidade exclusividade chique modernidade fashion autenticidade contemporâneo luxo praticidade estampa estilização personalidade requinte detalhes brilho textura estamparia originalidade harmonia audácia fluidez frescor sedução jovialidade vibrante durabilidade resistência confortável anatômico leveza design inovador resistente moda verão casualidade descontração sofisticado charmoso robusto contemporâneo casualidade elegância impacto moda praia único impressionante autenticidade trendy ousado autêntico marca renomada qualidade superior esportes elo modas 65,00">
                         	<a href="sandalia2.html">
                             	<img src="https://i.postimg.cc/mDKHggjP/1.png">
                                 <h6>Sandálias Infantil Feminina P...</h6>
@@ -1573,7 +1605,7 @@
                             </a>
                         </div>
 
-  						<div class="produto" data-name="Catraca para carga amarrao 10 metros  um prendedor de carga com catraca, indicado para amarrao de Carga de Caminhes, Carros, motos, jet-ski, lanchas, karts, etc. Capacidade de carga: 5000Kg (amarrao) no entanto o uso  imobilizao de carga (amarrao) e no elevao. David Gonçalves David Goncalves" data-category="acessorios">
+  						<div class="produto" data-name="Catraca para carga amarração 10 metros resistência segurança praticidade eficiência durabilidade confiabilidade robustez engenharia qualidade precisão versatilidade facilidade operação inovação agilidade ergonomia desempenho precisão resistente impacto durável resistência intempéries segurança carga amarração transporte ajustável resistente corrosão uso profissional industrial construção naval logística transporte carga pesada leve portátil eficaz confiável performance alto desempenho operação simples design ergonômico operação suave fácil manuseio armazenamento compacto economia espaço robusto confiável longa vida útil sistema travamento eficiente controle tensão cordas cabos correias qualidade superior David Goncalves acessorios veiculos 100,00">
                         	<a href="cinta.html">
                             	<img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lr387vlh32g4aa">
                                 <h6>Cinta Catraca Carga 800kg...</h6>
@@ -1582,7 +1614,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Elegante e sedutor, Silver Scent de Jacques Bogart é o lado mágico e misterioso do cinema representado numa fragrância cheia de personalidade. A fragrância abre com uma mistura refrescante de Limão Gelado, Laranja da Terra e Flor de Azahar. O coração se desenvolve de forma elegante com notas de Noz-moscada, Coriandro, Romero, Cardamomo e Lavanda e Gerânio Selvagem. Por fim, um rastro marcante de Vetiver, Madeira Teca, Líquen e Fava Tonka. Perfume Masculino Silver Scent Jacques Bogart 100ml Original Importado dos Estados Unidos" data-category="beleza">
+  						<div class="produto" data-name="Perfume Masculino Silver Scent Jacques Bogart aroma elegância sofisticação masculinidade frescor virilidade sensualidade charme sedução exclusividade modernidade estilo confiança requinte notas cítricas amadeiradas especiarias fragrância marcante durabilidade intensidade equilíbrio envolvente irresistível poder atração magnetismo refinamento autenticidade masculino distinção personalidade singularidade fragrância única inconfundível luxo sedutor mistério carisma autoconfiança sofisticação modernidade elegância refinamento refinado contemporâneo clássico atemporal audácia distinção charmoso cativante impressionante qualidade superior beleza david goncalves 225,00">
                         	<a href="perfume1.html">
                             	<img src="https://down-br.img.susercontent.com/file/d7aaaf45925206e2467fd893ad32b789">
                                 <h6>Perfume Masculino Silver Scent...</h6>
@@ -1591,7 +1623,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Mini Depilador A Laser Eletrico Aparador de Pelos Portatil Mulher Face Corpo" data-category="eletronicos">
+  						<div class="produto" data-name="Mini Depilador Laser Elétrico Aparador Pelos Portátil Mulher Face Corpo remoção pelos depilação eficiente praticidade portátil compacto fácil uso recarregável tecnologia laser seguro delicado eficaz resultado duradouro suave pele macia cuidado dermatológico preciso áreas sensíveis rosto corpo design ergonômico leve transporte viagens conveniência higiene pessoal autoconfiança beleza feminina confiança praticidade eficiência versatilidade modernidade estilo feminino elegância praticidade segurança eficácia qualidade superior eletronicos va imports 40,00">
                         	<a href="minidepilador1.html">
                             	<img src="https://down-br.img.susercontent.com/file/sg-11134201-7rccm-ls4jo62kvzsb57">
                                 <h6>Mini Depilador Eletrico Aparador...</h6>
@@ -1600,7 +1632,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Caixa de Som Bluetooth Sem Fio Resistente a Água Banheiro Portatil Bateria" data-category="eletronicos">
+  						<div class="produto" data-name="Caixa Som Bluetooth Sem Fio Resistente Água Banheiro Portátil Bateria música som alta qualidade conectividade versatilidade portabilidade durabilidade resistência água design compacto praticidade conveniência entretenimento relaxamento energia vida moderna tecnologia avançada desempenho excelente experiência áudio imersiva liberdade movimento fácil uso resistente choques poeira impactos robustez duradoura diversão funcionalidade estilo moderno elegante qualidade superior eletronicos va imports 65,00">
                         	<a href="somaprovadagua.html">
                             	<img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-ln2zcih08g1va6">
                                 <h6>Caixa de Som Bluetooth Sem...</h6>
@@ -1609,7 +1641,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Rádio com carga solar KTF-1650" data-category="eletronicos">
+  						<div class="produto" data-name="Rádio carga solar KTF-1650 sustentável energia renovável praticidade portabilidade durabilidade resistência energia solar recarregável conexão AM/FM sintonizador rádio entrada USB SD reprodução MP3 iluminação LED emergência duradouro funcionalidade versatilidade design compacto resistente intempéries outdoor aventuras viagens emergências sobrevivência uso cotidiano conveniência eficiência qualidade sonora clareza excelente desempenho confiabilidade tecnologia avançada inovação ambientalmente amigável estilo moderno qualidade superior eletronicos va imports 80,00">
                         	<a href="somktf1650.html">
                             	<img src="https://down-br.img.susercontent.com/file/sg-11134202-7qven-lg12rqz150t23a">
                                 <h6>Rádio Com Carga Solar KTF-1650</h6>
@@ -1618,7 +1650,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Caixa De Som KAPCOM" data-category="eletronicos">
+  						<div class="produto" data-name="Caixa Som KAPCOM áudio qualidade portabilidade estilo moderno conectividade versatilidade design compacto elegante potência som clareza excepcional desempenho alto-falantes nitidez equilibrada tecnologia avançada funcionalidade conveniência conectividade Bluetooth entrada auxiliar USB reprodução música praticidade durabilidade resistência materiais premium construção robusta uso cotidiano viagens entretenimento diversão qualidade superior eletronicos va imports 80,00">
                         	<a href="somkapbom.html">
                             	<img src="https://i.postimg.cc/vTy8Z7Hr/miniatura.png">
                                 <h6>Caixa De Som KAPBOM</h6>
@@ -1627,7 +1659,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Antena Externa Digital Dtv-1500 Tv televisão Aquário" data-category="acessorios">
+  						<div class="produto" data-name="Antena Externa Digital Dtv-1500 TV Televisão Aquário recepção sinal alta definição canais digitais VHF UHF amplificação sinal tecnologia avançada resistente intempéries durabilidade qualidade imagem som nítidos design compacto instalação fácil praticidade eficiência captura sinal estável alcance longo conectividade versátil televisão digital moderna inovação funcionalidade conforto entretenimento alta performance qualidade superior acessorios va imports 100,00">
                         	<a href="antena2.html">
                             	<img src="https://a-static.mlcdn.com.br/1500x1500/kit-antena-externa-digital-dtv-1500-acessorios-aquario/boxeletronic2021/sku0422/d478152c585adf44fde485132255dc2f.jpeg">
                                 <h6>Antena Externa Digital Dtv...</h6>
@@ -1636,7 +1668,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Caixa De Som Leon PRO" data-category="acessorios">
+  						<div class="produto" data-name="Caixa Som Leon PRO áudio qualidade portabilidade estilo moderno conectividade versatilidade design compacto elegante potência som clareza excepcional desempenho alto-falantes nitidez equilibrada tecnologia avançada funcionalidade conveniência conectividade Bluetooth entrada auxiliar USB reprodução música praticidade durabilidade resistência materiais premium construção robusta uso cotidiano viagens entretenimento diversão qualidade superior acessorios eletronicos va imports 100,00">
                         	<a href="somleonpro.html">
                             	<img src="https://i.postimg.cc/25X2YTGt/miniatura.png">
                                 <h6>Caixa De Som Leon PRO</h6>
@@ -1654,7 +1686,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Conjunto De Chave Canhão Luatex LWJ-138 ferramenta" data-category="acessorios">
+  						<div class="produto" data-name="Conjunto Chave Canhão Luatex LWJ-138 ferramenta versatilidade precisão eficiência resistência durabilidade qualidade superior manuseio fácil ergonômico design compacto funcionalidade praticidade profissionalismo construção robusta engenharia avançada confiabilidade alto desempenho ferramenta essencial chave canhão variedade tamanhos uso profissional doméstico reparos mecânicos manutenção automóveis motocicletas bicicletas equipamentos qualidade duradoura acessorios veiculos va imports 55,00">
                         	<a href="conjuntodechave.html">
                             	<img class="imgproduto" src="https://i.postimg.cc/rwtqLYqd/miniatura.png">
                                 <h6>Conjunto De Chave Canhão L...</h6>
@@ -1663,7 +1695,7 @@
                             </a>
                         </div>
 
-  						<div class="produto" data-name="Chuteira Adidas Society" data-category="esportes">
+  						<div class="produto" data-name="Chuteira Adidas Society desempenho qualidade conforto estilo durabilidade resistência design moderno tecnologia avançada aderência precisão tração superfícies campo gramado sintético performance excepcional agilidade velocidade controle bola precisão movimentos jogo alto nível competitividade profissionalismo excelência esportiva confiabilidade renomada marca esportiva adidas chuteira society esportes elo modas 105,00">
                         	<a href="chuteiraadidas1.html">
                             	<img src="https://i.postimg.cc/7Y6cMnnd/chuteira-adidas-society.png">
                                 <h6>Chuteira Adidas Society</h6>
@@ -1672,7 +1704,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Chuteira Nike Society" data-category="esportes">
+  						<div class="produto" data-name="Chuteira Nike Society desempenho qualidade conforto estilo durabilidade resistência design moderno tecnologia avançada aderência precisão tração superfícies campo gramado sintético performance excepcional agilidade velocidade controle bola precisão movimentos jogo alto nível competitividade profissionalismo excelência esportiva confiabilidade renomada marca esportiva chuteira society Nike esportes elo modas 105,00">
                         	<a href="chuteiranike1.html">
                             	<img src="https://i.postimg.cc/XYtTvBFh/chuteira-nike-society.png">
                                 <h6>Chuteira Nike Society</h6>
@@ -1681,7 +1713,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Sandália Papete Feminina Infantil" data-category="esportes">
+  						<div class="produto" data-name="Sandália Papete Feminina Infantil conforto estilo moda versatilidade praticidade leveza frescor design moderno materiais resistentes durabilidade ajuste perfeito ajustável correias ajustáveis calce fácil segurança estabilidade solado antiderrapante palmilha acolchoada confortável diversão brincadeiras passeios atividades ao ar livre cores vibrantes estampas divertidas personagens crianças meninas qualidade confiabilidade marca renomada conforto moda crianças esportes elo modas 70,00">
                         	<a href="papete1.html">
                             	<img src="https://i.postimg.cc/C1c7z9X1/papete.png">
                                 <h6>Sandália Papete Feminina Infantil</h6>
@@ -1690,7 +1722,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Meias Soquetes e Cano Longo Kit Com 3 Pares" data-category="esportes">
+  						<div class="produto" data-name="Meias Soquetes e Cano Longo Kit Com 3 Pares conforto qualidade durabilidade estilo versatilidade design moderno materiais respiráveis elasticidade ajuste perfeito variedade cores neutras estampas diversificadas ocasiões diversas atividades diárias lazer esportes trabalho confortáveis duráveis conveniência praticidade conjunto econômico essencial guarda-roupa uso cotidiano moda conforto confiabilidade esportes vestuario elo modas 25,00">
                         	<a href="meias1.html">
                             	<img src="https://i.postimg.cc/76HXPqBd/meia-masculina.png">
                                 <h6>Meias Soquetes e Cano Longo</h6>
@@ -1699,7 +1731,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Meias Soquetes e Cano Longo Kit Com 3 Pares" data-category="esportes">
+  						<div class="produto" data-name="Meias Soquetes e Cano Longo Kit Com 3 Pares conforto qualidade durabilidade estilo versatilidade design moderno materiais respiráveis elasticidade ajuste perfeito variedade cores neutras estampas diversificadas ocasiões diversas atividades diárias lazer esportes trabalho confortáveis duráveis conveniência praticidade conjunto econômico essencial guarda-roupa uso cotidiano moda conforto confiabilidade esportes vestuario elo modas 25,00">
                         	<a href="meias2.html">
                             	<img src="https://i.postimg.cc/yYkQSYVz/meia-feminina.png">
                             	<h6>Meias Soquetes e Cano Longo</h6>
@@ -1708,7 +1740,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Meiao Longo Sportivo Adulto" data-category="esportes">
+  						<div class="produto" data-name="Meião Longo Sportivo Adulto conforto qualidade durabilidade estilo versatilidade design moderno materiais respiráveis elasticidade ajuste perfeito performance esportiva alta performance absorção suor controle temperatura suporte compressão estabilidade proteção conforto durante prática esportes variedade cores neutras vibrantes praticidade funcionalidade essencial guarda-roupa esportista moda conforto confiabilidade esportes vestuario elo modas 25,00">
                         	<a href="meiao1.html">
                             	<img src="https://i.postimg.cc/ZqFVhWL6/meiao.png">
                                 <h6>Meiao Longo Sportivo Adulto</h6>
@@ -1717,7 +1749,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Tênis Nike Air Force New York Yankees" data-category="esportes">
+  						<div class="produto" data-name="Tênis Nike Air Force New York Yankees estilo moda urbana inspiração esportiva design exclusivo colaboração Nike e New York Yankees conforto durabilidade tecnologia Air amortecimento impacto sola aderente estabilidade suporte ajuste perfeito performance alta qualidade estética inovadora detalhes personalizados logo equipe Nova York Yankees qualidade confiabilidade renomada marca esportiva Nike esportes elo modas 105,00">
                         	<a href="newyorkyankees.html">
                             	<img src="https://i.postimg.cc/WbF81WnN/T-nis-Nike-Air-Force-New-York-Yankees.png">
                                 <h6>Tênis Nike Air Force New...</h6>
@@ -1726,7 +1758,7 @@
                             </a>
                         </div>
 
-  						<div class="produto" data-name="Balança Digital De Alimentos 40kg" data-category="esportes">
+  						<div class="produto" data-name="Balança Digital de Alimentos 40kg precisão eficiência praticidade durabilidade versatilidade design moderno leveza compacta tecnologia digital display LCD fácil leitura precisão gramas quilogramas função tara zeragem rápida pesagem materiais alimentos cozinha comércio feira restaurantes conveniência uso profissional doméstico qualidade confiabilidade acessorios eletronicos va imports 300,00">
                         	<a href="balanca1.html">
                             	<img src="https://i.postimg.cc/h4bg3sxG/balan-a-digital-40-kg.png">
                                 <h6>Balança Digital De Alimentos...</h6>
@@ -1735,7 +1767,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Kit Facas Churrasco 8 Peças" data-category="esportes">
+  						<div class="produto" data-name="Kit Facas Churrasco 8 Peças qualidade durabilidade precisão design ergonômico lâminas aço inoxidável resistência corrosão conforto cabo madeira tratada segurança manuseio praticidade variedade tipos cortes carne legumes versatilidade churrasco cozinha uso doméstico profissional elegância estilo utensílios culinários qualidade superior acessorios va imports 150,00">
                         	<a href="kitfacas1.html">
                             	<img src="https://i.postimg.cc/mDBpcYrd/kit-churrasco.png">
                             	<h6>Kit Facas Churrasco 8 Peças</h6>
@@ -1744,7 +1776,7 @@
                             </a>
                         </div>
   
-  						<div class="produto" data-name="Faca Punhal Adaga Tática faca" data-category="esportes">
+  						<div class="produto" data-name="Faca Punhal Adaga Tática resistência durabilidade precisão design robusto lâmina afiada aço inoxidável cabo antiderrapante aderência segura versatilidade uso tático defesa pessoal camping sobrevivência outdoor aventuras segurança confiabilidade qualidade superior acessorios va imports 50,00">
                         	<a href="faca1.html">
                             	<img src="https://i.postimg.cc/g0vBkSGX/faca.png">
                                 <h6>Faca Punhal Adaga Tática</h6>
@@ -1776,68 +1808,109 @@
 		</footer>
 		<script type="text/javascript" src="./jsindex.js"></script>
         <script>
-        /////////////////////////////////////////////////// MENU CELULAR//////////////////////////////////////////////////////////////////////////
-
-var overlay = document.getElementById('overlay');
-function openNav() {
-    overlay.classList.add('active');
-	if (window.innerWidth < 700) {
-    document.getElementById("mySidenav").style.width = "50%";
-	} else {
-    document.getElementById("mySidenav").style.width = "400px";
-	}
-}
-function closeNav() {
-	overlay.classList.remove('active');
-	document.getElementById("mySidenav").style.width = "0";
-}
-overlay.addEventListener('click', closeNav);
-
-let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel img');
-    const totalSlides = slides.length;
-
-    function showSlide() {
-      slides.forEach((slide, index) => {
-        if (index === currentSlide) {
-          slide.style.display = 'block';
-        } else {
-          slide.style.display = 'none';
+        //Menu celular
+        var overlay = document.getElementById('overlay');
+        function openNav() {
+            overlay.classList.add('active');
+            if (window.innerWidth < 700) {
+            document.getElementById("mySidenav").style.width = "50%";
+            } else {
+            document.getElementById("mySidenav").style.width = "400px";
+            }
         }
-      });
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      showSlide();
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      showSlide();
-    }
-
-    // Iniciar o carrossel
-    showSlide();
-
-    // Automaticamente avança os slides a cada 6 segundos
-    setInterval(nextSlide, 6000);
-    
-    
-const searchInput = document.getElementById('campopesquisa');
-        const produtos = document.querySelectorAll('.produto');
-
-        searchInput.addEventListener('input', function() {
-            const filtro = this.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            produtos.forEach(produto => {
-                const dataName = produto.getAttribute('data-name').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                if (dataName.includes(filtro)) {
-                    produto.style.display = 'block';
+        function closeNav() {
+            overlay.classList.remove('active');
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        overlay.addEventListener('click', closeNav);
+        
+        function categoriasmenu(categoria) {
+            var produtos = document.querySelectorAll(".produto");
+            var article = document.querySelectorAll('article');
+            var figure = document.querySelectorAll('figure');
+            produtos.forEach(function(produto) {
+                var categoriasProduto = produto.getAttribute("data-name").split(" ");
+                if (categoriasProduto.includes(categoria)) {
+                    produto.style.display = "block";
                 } else {
-                    produto.style.display = 'none';
+                    produto.style.display = "none";
                 }
             });
+            article.forEach(function(elem) {
+                elem.style.display = "none";
+            });
+            figure.forEach(function(elem) {
+                elem.style.display = "none";
+            });
+            document.getElementById("mySidenav").style.width = "0";
+            overlay.classList.remove('active');
+        }
+		
+        //banners
+        let currentImageIndex = 0;
+		const images = document.querySelectorAll('.carousel img');
+
+		function showImage(index) {
+  			images.forEach((image, i) => {
+    			if (i === index) {
+      				image.classList.add('active');
+    			} else {
+      				image.classList.remove('active');
+    			}
+  			});
+		}
+
+        function prevImage() {
+          	currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          	showImage(currentImageIndex);
+        }
+
+        function nextImage() {
+          	currentImageIndex = (currentImageIndex + 1) % images.length;
+          	showImage(currentImageIndex);
+        }
+
+		showImage(currentImageIndex);
+        setInterval(nextImage, 7000);
+
+		//busca intantânea	
+        const searchInput = document.getElementById('campopesquisa');
+        const produtos = document.querySelectorAll('.produto');
+        var article = document.querySelectorAll('article');
+        var figure = document.querySelectorAll('figure');
+
+        searchInput.addEventListener('input', function() {
+        	const filtro = this.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            if (filtro === "") {
+                // Se o campo de pesquisa estiver vazio, exiba o figure e o article
+                article.forEach(articleItem => {
+                    articleItem.style.display = 'block';
+                });
+                figure.forEach(figureItem => {
+                    figureItem.style.display = 'block';
+                });
+            } else {
+                // Se houver texto no campo de pesquisa, oculte o figure e o article
+                article.forEach(articleItem => {
+                    articleItem.style.display = 'none';
+                });
+                figure.forEach(figureItem => {
+                    figureItem.style.display = 'none';
+                });
+
+                // Exiba ou oculte os produtos com base no filtro
+                produtos.forEach(produto => {
+                    const dataName = produto.getAttribute('data-name').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    if (dataName.includes(filtro)) {
+                        produto.style.display = 'block';
+                    } else {
+                        produto.style.display = 'none';            
+                    }
+                });
+            }
         });
+
         </script>
 	</body>
 </html>
