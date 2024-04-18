@@ -24,15 +24,15 @@
         header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 2}
         .topo {width: 100%;}
         .overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 1}
-		.overlay.active {display: block}
+	.overlay.active {display: block}
         .iconmenu {width: 30px; margin-left: 50px; cursor: pointer}
         #mySidenav {height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: #b81414; overflow-x: hidden; padding-top: 40px; transition: 0.5s; text-align: center}
-		#mySidenav a {text-decoration: none; font-size: 15px; color: white; display: block; transition: 0.2s;}
-		#mySidenav a:hover {color: grey;}
+	#mySidenav a {text-decoration: none; font-size: 15px; color: white; display: block; transition: 0.2s;}
+	#mySidenav a:hover {color: grey;}
         #mySidenav h5 {color: white}
         #mySidenav p {color: white; cursor: pointer; font-size: 15px;}
         #mySidenav p:hover {color: grey}
-		#mySidenav .closebtn {position: absolute; top: 0; right: 10px; font-size: 36px;}
+	#mySidenav .closebtn {position: absolute; top: 0; right: 10px; font-size: 36px;}
         .logo {width: 90px; margin-left: 50px}
         .cxpesquisa {height: 50px; background-color: white; border-radius: 30px; padding: 12px}
     	.inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
@@ -40,9 +40,9 @@
         .inputpesquisa:focus {outline: none;}
         .lupa {width: 25px; float: right; cursor: pointer}
         .carrinho-container {position: relative; cursor: pointer}
-		.carrinho-inner {position: relative; text-align: center;}
-		.carrinho {display: inline-block; max-width: 60px; height: auto;}
-		.quanticar {position: absolute; top: 45%; left: 60%; transform: translate(-50%, -50%); margin: 0; color: #b81414; font-weight: bold}
+	.carrinho-inner {position: relative; text-align: center;}
+	.carrinho {display: inline-block; max-width: 60px; height: auto;}
+	.quanticar {position: absolute; top: 45%; left: 60%; transform: translate(-50%, -50%); margin: 0; color: #b81414; font-weight: bold}
         .propaganda {width: 190px; float: right; margin-left: 10px;}
         /* </header> */
         
@@ -57,9 +57,9 @@
         .carousel img {width: 100%;height: auto;display: none;}
         .carousel img.active {display: block;animation: fade 1s ease-in-out;}
         @keyframes fade {from {opacity: 0;}to {opacity: 1;}}
-    	.prev,.next {position: absolute;top: 50%;transform: translateY(-50%); color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 2;}
+    	.prev,.next {position: absolute;top: 50%;transform: translateY(-50%); color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 1;}
         .prev {left: 0;}
-		.next {right: 0;}
+	.next {right: 0;}
         /* </figure> Banners*/
         
         /* <div class="tudo"> */
@@ -157,7 +157,7 @@
         	<table class="topo">
             	<div id="overlay" class="overlay"></div>
                 	<td><img onclick="openNav()" class="iconmenu" src="https://i.postimg.cc/LsRgvpfc/menu.jpg" alt="icone menu" > <!-- Icone Menu -->
-						<div id="mySidenav">
+			<div id="mySidenav">
                         
                             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Botão de fechar -->
                             
@@ -186,7 +186,7 @@
                             <p onclick="categoriasmenu('sexshop')">&#128139; Sex shop</p>
                             <br>
                             <p onclick="categoriasmenu('vestuario')">&#128085; Vestuário</p>
-							<br>
+			    <br>
                     	</div>
                     </td>
                         
@@ -200,19 +200,19 @@
 			</td>
 				
                 	<td class="carrinho-container">
-                    <a href="carrinho.html">
+                    	<a href="carrinho.html">
                         <div class="carrinho-inner">
                             <img class="carrinho" src="https://i.postimg.cc/yNKD8bxK/carrinho.png" alt="carrinho"> <!-- Icone Carrinho -->
                             <p class="quanticar">0</p> <!-- Quantidade Carrinho -->
                         </div>
-                    </a>
+                    	</a>
 			</td>
 
                  	<td><a href="https://api.whatsapp.com/send?phone=5593991991685"><img class="propaganda" src="https://i.postimg.cc/T36mL6xH/propagandatopo.png" alt="propaganda"></a></td> <!-- Propaganda -->
         	</table>
         </header>
         
-		<main>
+	<main>
             <span> <!-- Sessão digite oq procura -->
             		<img class="seta" src="https://i.postimg.cc/cJ8S6NYt/2.jpg" alt="seta2">
             		<p>Digite o que procura em “Busca instantânea” e olhe a baixo</p>
@@ -227,7 +227,7 @@
                 <div class="next" onclick="nextImage()">&#10095;</div>
             </figure>
          
-         	<div class="tudo">
+            <div class="tudo">
             <article class="article1">
             	<h3>Queima De Estoque</h3>
             		<div class="produtos1">
@@ -278,7 +278,7 @@
                                 <h5>R$2,00</h5>
                                 </a>
                                 </div>
-                </div>
+            	</div>
             </article>
             
             <article class="article2">
@@ -311,7 +311,7 @@
                                 </a>
                                 </div>
                                 
-								<div class="produto2">
+				<div class="produto2">
                             	<a href="massageador.html">
                             	<img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQ8F1uy8M6yEepbjQ777-qzEizY2l4K49EgfBcEEd80LA1d59cb3SLvwhlIxgipAjoM8-otpcMjKqacrWSmvFcyiy3djSLShaUmQgFRuCg&usqp=CAE">
                                 <h6>Massageador Recarregável EMS...</h6>
@@ -337,7 +337,7 @@
                                 <h5>R$100,00</h5>
                                 </a>
                                 </div>
-                </div>
+            	</div>
             </article>
             
             <figure class="anuncio">
