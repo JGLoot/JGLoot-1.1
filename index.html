@@ -1,3 +1,4 @@
+
 <!-- @autor JG -->
 <!doctype html>
 <html lang="pt-br">
@@ -119,13 +120,14 @@
         /* </footer> */
         
         @media screen and (max-width: 700px) {
-        body {background-color: white; margin-top: 70px}
+        body {background-color: white; margin-top: 60px}
         /* <header> */
         .iconmenu {width: 25px; margin-left: 30px}
-        .logo {width: 70px; margin-left: 20px}
-        .cxpesquisa {height: 45px; padding: 10px}
+        .logo {width: 60px; margin-left: 20px}
+        .cxpesquisa {height: 40px; padding: 8px}
     	.inputpesquisa {width: 70%; font-size: 14px}
         .carrinho-container {padding-right: 30px}
+        .carrinho {width: 50px}
         .propaganda {display: none}
         /* </header> */
         
@@ -1915,6 +1917,15 @@
             }
         });
 
+		//embaralhar produtos
+        function shuffleDivs() {
+            var produtos = document.getElementById("produtos");
+            for (var i = produtos.children.length; i >= 0; i--) {
+                produtos.appendChild(produtos.children[Math.random() * i | 0]);
+            }
+    	}
+
+    	shuffleDivs();
         </script>
 	</body>
 </html>
