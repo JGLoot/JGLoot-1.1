@@ -120,7 +120,7 @@ footer h6 {color: white}
 .produto2 h6 {color: #b81414}
 .produto2 p {color: grey; font-size: 12px}
 .produto2 h5 {color: green}
-.article2 span {display: block; margin: 0 auto; background-color: #b81414; padding: 10px; font-weight: bold; border-radius: 10px; cursor: pointer}
+.article2 span {display: block; margin: 0 auto; background-color: #b81414; padding: 10px; font-weight: bold; border-radius: 10px; cursor: pointer; width: 50%; text-align: center}
 .article2 span a {text-decoration: none; color: white}
 /* </article2> */
 
@@ -222,9 +222,9 @@ footer h6 {color: white}
                 
 				<div class="col inforproduto">
                 
-                    <h5>Suporte Para Celular Acrilico Apoio Mesa</h5>
-                    <a href="https://www.instagram.com/_jgloot_/">Produto Oficial JGLoot</a>
-                    <h1>R$5,00</h1>
+                    <h5 id="nomedoproduto">Suporte Para Celular Acrilico Apoio Mesa</h5>
+                    <a href="https://www.instagram.com/_jgloot_/" id="loja">Produto Oficial JGLoot</a>
+                    <h1 id="precodoproduto">R$5,00</h1>
                     <hr>
                     
                     <label>Frete:</label><br>
@@ -349,8 +349,11 @@ footer h6 {color: white}
                                 </a>
                                 </div>
                                 
-                                <span><a href="https://jgloot.com.br/#produtos">Ver todos os produtos</a></span>
+                                
             	</div>
+                
+                <span><a href="https://jgloot.com.br/#produtos">Ver todos os produtos</a></span>
+                
             </article>
             
             <figure class="anuncio">
@@ -422,25 +425,26 @@ function mudarImagemCor(novaImagemURL) {
 /////////////////////////////////////////////////// ADD ITEM //////////////////////////////////////////////////////////////////////////
 
 function additem() {
-verificarCorSelecionada();
-    var nomeProduto = document.querySelector('.nomeprodutopino').textContent;
-    var precoProduto = parseFloat(document.querySelector('.precoprodutopino').textContent.replace('R$', '').trim());
+    var nomeProduto = document.getElementById('nomedoproduto').textContent;
+    var loja = document.getElementById('loja').textContent;
+    var precoProduto = parseFloat(document.getElementById('precodoproduto').textContent.replace('R$', '').trim());
     var corSelecionada = document.querySelector('input[name="cor"]:checked').value;
     var quantidadeProduto = document.getElementById('quantidade').value;
-    var imgproduto = document.getElementById('mainImage').src;
+    var imgproduto = document.getElementById('img-principal').src;
+    
     var produto = {
         nome: nomeProduto,
+        loja: loja,
         preco: precoProduto,
         cor: corSelecionada,
         quantidade: quantidadeProduto,
-        imagem: imgproduto
+        img: imgproduto
     };
+
     var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinho.push(produto);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    exibirCarrinho();
-    calcularPrecoTotalCarrinho();
-    calculofinal();
+    
     alert('Produto adicionado ao carrinho!');
 }
 
@@ -476,6 +480,21 @@ function mostrarDivEntrega() {
         mostrarDivEntrega();
     });
     
+//__________Buscar produtos__________//
+
+document.getElementById('campopesquisa').addEventListener('keyup', function(event) {
+	if (event.keyCode === 13) {
+		buscar();
+    }
+});
+    
+function buscar() {
+	var termoBusca = document.getElementById('campopesquisa').value.trim();
+	if (termoBusca !== '') {
+    	window.location.href = 'https://jgloot.com.br/#produtos?termo=' + encodeURIComponent(termoBusca);
+  	}
+}
+
 ///////////////////////////////////////////////////////// CEPS GRATIS ///////////////////////////////////////////////////////////////////////
   
   var cepsFreteGratis = [ 
