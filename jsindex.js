@@ -35,7 +35,7 @@ window.onload = function() {
 
         // Função para rolar a página até a seção de produtos
         function rolarParaProdutos() {
-            var produtosSection = document.querySelectorAll(".anuncio");
+            var produtosSection = document.getElementById("produtos");
             if (produtosSection) {
                 produtosSection.scrollIntoView({ behavior: 'smooth' });
             }
