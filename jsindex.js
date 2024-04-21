@@ -26,9 +26,6 @@ window.onload = function() {
                     produto.style.display = 'block';
                 });
             }
-
-            // Exibe a div de produtos após a filtragem
-            document.getElementById('produtos').style.display = 'block';
         }
 
         // Função para obter o termo de pesquisa da URL
