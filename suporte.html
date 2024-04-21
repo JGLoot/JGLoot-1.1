@@ -48,7 +48,8 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 .inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
 .inputpesquisa::placeholder {color: #b81414; font-weight: bold}
 .inputpesquisa:focus {outline: none;}
-.lupa {width: 25px; float: right; cursor: pointer}
+.lupa {width: 25px; cursor: pointer;}
+.cxpesquisa button {border: 0; background-color: transparent; float: right; padding-top: 0}
 .carrinho-container {position: relative; cursor: pointer}
 .carrinho-inner {position: relative; text-align: center;}
 .carrinho {display: inline-block; max-width: 60px; height: auto;}
@@ -172,13 +173,13 @@ footer h6 {color: white}
                     	</div>
                     </td>
                         
-                 	<td><img class="logo" src="https://i.postimg.cc/BbfF2nQ8/logojgloot.png" alt="logo"></td> <!-- Logo -->
+                 	<td><a href="index.html"><img class="logo" src="https://i.postimg.cc/BbfF2nQ8/logojgloot.png" alt="logo"></a></td> <!-- Logo -->
 
                  	<td>
 				<div class="cxpesquisa"> <!-- Caixa De Pesquisa -->
 				<form action="index.html" method="GET">
                  		<input class="inputpesquisa" id="campopesquisa" type="text" name="termo" placeholder="Busca instantânea"> <!-- Input De Busca-->
-                 		<img class="lupa" type="submit" src="https://i.postimg.cc/V65b3F61/lupa.jpg" alt="lupa"> <!-- Lupa -->
+                 		<button type="submit"><img class="lupa" src="https://i.postimg.cc/V65b3F61/lupa.jpg" alt="lupa"></button> <!-- Lupa -->
 				</form>
                  		</div>
 			</td>
@@ -398,10 +399,32 @@ function setPrecoCookie() {
 }
 
 window.onload = function() {
-	var listaProdutos = JSON.parse(localStorage.getItem('carrinho')) || [];
-    	document.querySelector('.quanticar').textContent = listaProdutos.length;
+	var listaProdutos = JSON.parse(localStorage.getItem('listaProdutos')) || [];
+    document.querySelector('.quanticar').textContent = listaProdutos.length;
 }
-	
+
+//Menu celular
+var overlay = document.getElementById('overlay');
+function openNav() {
+		overlay.classList.add('active');
+		if (window.innerWidth < 700) {
+			document.getElementById("mySidenav").style.width = "50%";
+		} else {
+			document.getElementById("mySidenav").style.width = "400px";
+		}
+}
+
+function closeNav() {
+		overlay.classList.remove('active');
+		document.getElementById("mySidenav").style.width = "0";
+}
+overlay.addEventListener('click', closeNav);
+
+function categoriasmenu(categoria) {
+            // Atualiza a URL da página adicionando o termo da categoria como parâmetro
+            window.location.href = 'https://jgloot.github.io/JGLoot-1.1/index.html?termo=' + categoria;
+}
+
 function zoomImage(event) {
       const img = document.getElementById('img-principal');
       const container = document.querySelector('.imgzoom');
