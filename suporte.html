@@ -397,6 +397,11 @@ function setPrecoCookie() {
     document.cookie = 'preco_produto=' + precoTotal.toFixed(2) + '; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/';
 }
 
+window.onload = function() {
+	var listaProdutos = JSON.parse(localStorage.getItem('carrinho')) || [];
+    	document.querySelector('.quanticar').textContent = listaProdutos.length;
+}
+	
 function zoomImage(event) {
       const img = document.getElementById('img-principal');
       const container = document.querySelector('.imgzoom');
