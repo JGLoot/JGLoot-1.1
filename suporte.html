@@ -176,8 +176,10 @@ footer h6 {color: white}
 
                  	<td>
 				<div class="cxpesquisa"> <!-- Caixa De Pesquisa -->
+				<form action="index.html#produtos" method="GET">
                  		<input class="inputpesquisa" id="campopesquisa" type="text" placeholder="Busca instantânea"> <!-- Input De Busca-->
-                 		<img class="lupa" onclick="buscar()" src="https://i.postimg.cc/V65b3F61/lupa.jpg" alt="lupa"> <!-- Lupa -->
+                 		<img class="lupa" type="submit" src="https://i.postimg.cc/V65b3F61/lupa.jpg" alt="lupa"> <!-- Lupa -->
+				</form>
                  		</div>
 			</td>
 				
@@ -480,21 +482,6 @@ function mostrarDivEntrega() {
         mostrarDivEntrega();
     });
     
-//__________Buscar produtos__________//
-
-document.getElementById('campopesquisa').addEventListener('keyup', function(event) {
-	if (event.keyCode === 13) {
-		buscar();
-    }
-});
-    
-function buscar() {
-	var termoBusca = document.getElementById('campopesquisa').value.trim();
-	if (termoBusca !== '') {
-    	window.location.href = 'https://jgloot.github.io/JGLoot-1.1/#produtos?termo=' + encodeURIComponent(termoBusca);
-  	}
-}
-
 ///////////////////////////////////////////////////////// CEPS GRATIS ///////////////////////////////////////////////////////////////////////
   
   var cepsFreteGratis = [ 
