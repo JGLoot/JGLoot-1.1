@@ -1,26 +1,51 @@
-//Função para recuperar o termo de busca da URL
-function getTermoBusca() {
-  var urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get('termo');
-}
+window.onload = function() {
+            // Função para filtrar os produtos com base no termo da pesquisa na URL
+            function filtrarProdutos(termo) {
+                // Seleciona todos os elementos com a classe "produto"
+                var produtos = document.querySelectorAll('.produto');
 
-//Função para exibir os resultados da busca
-function exibirResultados() {
-    var termoBusca = getTermoBusca();
-    if (termoBusca) {
-        // Filtrar os produtos com base no termo de busca
-        var produtos = document.querySelectorAll('.produto');
-        var resultadosEncontrados = false; // Variável para rastrear se algum resultado foi encontrado
-        produtos.forEach(function(produto) {
-            var nomeProduto = produto.getAttribute('data-name').toLowerCase();
-            if (nomeProduto.includes(termoBusca.toLowerCase())) {
-                produto.style.display = 'block';
-                resultadosEncontrados = true; // Definir como verdadeiro se algum resultado for encontrado
-            } else {
-                produto.style.display = 'none';
+                produtos.forEach(function(produto) {
+                    // Obtém o valor do atributo "data-name" de cada produto
+                    var nomeProduto = produto.getAttribute('data-name');
+                    
+                    // Verifica se o termo de pesquisa está presente no nome do produto
+                    if (nomeProduto.toLowerCase().includes(termo.toLowerCase())) {
+                        // Se o termo estiver presente, exibe o produto
+                        produto.style.display = 'block';
+                    } else {
+                        // Se não, esconde o produto
+                        produto.style.display = 'none';
+                    }
+                });
             }
-        });
-    }
+
+            // Função para obter o termo de pesquisa da URL
+            function obterTermoPesquisa() {
+                // Obtém a parte da URL após o caractere '#'
+                var urlParams = window.location.hash.substring(1);
+                
+                // Divide a parte da URL em um array usando o caractere '?'
+                var paramsArray = urlParams.split('?');
+
+                // Verifica se há parâmetros na URL
+                if (paramsArray.length > 1) {
+                    // Divide os parâmetros em um array usando o caractere '='
+                    var queryParams = paramsArray[1].split('=');
+
+                    // Verifica se o primeiro parâmetro é 'termo'
+                    if (queryParams[0] === 'termo') {
+                        // Retorna o valor do termo de pesquisa
+                        return queryParams[1];
+                    }
+                }
+
+                // Se não houver termo de pesquisa na URL, retorna uma string vazia
+                return '';
+            }
+
+            // Obtém o termo de pesquisa da URL e filtra os produtos ao carregar a página
+            var termoPesquisa = obterTermoPesquisa();
+            filtrarProdutos(termoPesquisa);
 }
 
 //Menu celular
