@@ -4,11 +4,6 @@ window.onload = function() {
             // Seleciona todos os elementos com a classe "produto"
             var produtos = document.querySelectorAll('.produto');
 
-            // Exibe todos os produtos
-            produtos.forEach(function(produto) {
-                produto.style.display = 'block';
-            });
-
             // Verifica se há um termo de pesquisa
             if (termo.trim() !== '') {
                 // Oculta os produtos que não correspondem ao termo de pesquisa
@@ -20,7 +15,15 @@ window.onload = function() {
                     if (!nomeProduto.includes(termo.toLowerCase())) {
                         // Se o termo não estiver presente, esconde o produto
                         produto.style.display = 'none';
+                    } else {
+                        // Se o termo estiver presente, exibe o produto
+                        produto.style.display = 'block';
                     }
+                });
+            } else {
+                // Se não houver termo de pesquisa, exibe todos os produtos
+                produtos.forEach(function(produto) {
+                    produto.style.display = 'block';
                 });
             }
 
