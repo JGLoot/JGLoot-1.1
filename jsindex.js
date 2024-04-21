@@ -1,3 +1,28 @@
+//Função para recuperar o termo de busca da URL
+function getTermoBusca() {
+  var urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('termo');
+}
+
+//Função para exibir os resultados da busca
+function exibirResultados() {
+    var termoBusca = getTermoBusca();
+    if (termoBusca) {
+        // Filtrar os produtos com base no termo de busca
+        var produtos = document.querySelectorAll('.produto');
+        var resultadosEncontrados = false; // Variável para rastrear se algum resultado foi encontrado
+        produtos.forEach(function(produto) {
+            var nomeProduto = produto.getAttribute('data-name').toLowerCase();
+            if (nomeProduto.includes(termoBusca.toLowerCase())) {
+                produto.style.display = 'block';
+                resultadosEncontrados = true; // Definir como verdadeiro se algum resultado for encontrado
+            } else {
+                produto.style.display = 'none';
+            }
+        });
+    }
+}
+
 //Menu celular
 var overlay = document.getElementById('overlay');
 function openNav() {
