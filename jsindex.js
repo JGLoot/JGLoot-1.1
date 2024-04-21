@@ -1,7 +1,7 @@
 window.onload = function() {
 	var listaProdutos = JSON.parse(localStorage.getItem('carrinho')) || [];
     	document.querySelector('.quanticar').textContent = listaProdutos.length;
-	executarPesquisa()
+	executarPesquisa();
 }
 // Função para ler o termo de pesquisa da URL
         function obterTermoPesquisa() {
