@@ -1,6 +1,7 @@
 window.onload = function() {
 	var listaProdutos = JSON.parse(localStorage.getItem('carrinho')) || [];
     	document.querySelector('.quanticar').textContent = listaProdutos.length;
+	executarPesquisa()
 }
 // Função para ler o termo de pesquisa da URL
         function obterTermoPesquisa() {
@@ -49,9 +50,6 @@ window.onload = function() {
                 rolarParaProdutos();
             }
         }
-
-        // Chama a função principal quando a página é carregada
-        window.onload = executarPesquisa;
 
 //Menu celular
 var overlay = document.getElementById('overlay');
