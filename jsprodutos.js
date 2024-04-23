@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Função para atualizar a quantidade de produtos salvos
     function atualizarQuantidadeProdutosSalvos() {
-        var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
-        var quantidadeProdutosSalvos = produtosSalvos.length;
-        var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
-    	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
+          var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+	  var quantidadeTotalProdutos = carrinho.length;
+	  var quanticarElement = document.querySelector('.quanticar');
+	  if (quanticarElement) {
+	    quanticarElement.textContent = quantidadeTotalProdutos.toString();
+	  }
     }
 
     // Chamar a função inicialmente
