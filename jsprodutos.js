@@ -62,10 +62,11 @@ function additem() {
     var loja = document.getElementById('loja').textContent;
     var precoProduto = parseFloat(document.getElementById('precodoproduto').textContent.replace('R$', '').trim());
     var corSelecionada = document.querySelector('input[name="cor"]:checked').value;
-    var tamanho = document.querySelector('input[name="tamanho"]:checked').value;
     var quantidadeProduto = document.getElementById('quantidade').value;
     var imgproduto = document.getElementById('img-principal').src;
-    
+    var tamanhoSelecionado = document.querySelector('input[name="tamanho"]:checked');
+    var tamanho = tamanhoSelecionado ? tamanhoSelecionado.value : "N/A";
+	
     var produto = {
         nome: nomeProduto,
         loja: loja,
