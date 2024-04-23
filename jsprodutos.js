@@ -1,8 +1,10 @@
-//Quantidade carrinho
-window.onload = function() {
-	  var listaProdutos = JSON.parse(localStorage.getItem('listaProdutos')) || [];
-    document.querySelector('.quanticar').textContent = listaProdutos.length;
-}
+document.addEventListener('DOMContentLoaded', function () {
+    var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];    
+    // Mostrar a quantidade de produtos salvos
+    var quantidadeProdutosSalvos = produtosSalvos.length;
+    var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
+});
 
 //Menu celular
 var overlay = document.getElementById('overlay');
