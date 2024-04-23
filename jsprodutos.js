@@ -62,6 +62,7 @@ function additem() {
     var loja = document.getElementById('loja').textContent;
     var precoProduto = parseFloat(document.getElementById('precodoproduto').textContent.replace('R$', '').trim());
     var corSelecionada = document.querySelector('input[name="cor"]:checked').value;
+    var tamanho = document.querySelector('input[name="tamanho"]:checked').value;
     var quantidadeProduto = document.getElementById('quantidade').value;
     var imgproduto = document.getElementById('img-principal').src;
     
@@ -71,7 +72,8 @@ function additem() {
         preco: precoProduto,
         cor: corSelecionada,
         quantidade: quantidadeProduto,
-        img: imgproduto
+        img: imgproduto,
+	tamanho: tamanho
     };
 
     var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
