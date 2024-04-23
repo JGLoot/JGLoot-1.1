@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
-        function atualizarExibicao() {
-            // Recupera os dados do carrinho do localStorage
-            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-            
-            // Calcula a quantidade total de produtos no carrinho
-            let quantidadeTotal = carrinho.reduce((total, produto) => total + produto.quantidade, 0);
-            
-            // Atualiza a exibição com a quantidade total de produtos
-            document.querySelector('.quanticar').textContent = quantidadeTotal;
-        }
+    function atualizarExibicao() {
+        // Recupera os dados do carrinho do localStorage
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        
+        // Calcula a quantidade total de produtos no carrinho
+        let quantidadeTotal = carrinho.reduce((total, produto) => total + produto.quantidade, 0);
+        
+        // Atualiza a exibição com a quantidade total de produtos
+        document.querySelector('.quanticar').textContent = quantidadeTotal;
+    }
+    atualizarExibicao();
     executarPesquisa();
-)};
+});
+
 
 //Menu celular
 var overlay = document.getElementById('overlay');
