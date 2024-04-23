@@ -1,162 +1,425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>JGLoot</title> <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/SQ9jc494/favicon-JG.png"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+<title>JGLoot</title>
+<link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/SQ9jc494/favicon-JG.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 <style>
-body {background-color: #ebebeb;}
+body {background-color: #dcdcdc; margin-top: 95px}
 
-.logo {max-width: 80px; float: right; margin-right: 20px}
+/* <header> */
+header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 2}
+.topo {width: 100%;}
+.overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 1}
+.overlay.active {display: block}
+.iconmenu {width: 30px; margin-left: 50px; cursor: pointer}
+#mySidenav {height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: #b81414; overflow-x: hidden; padding-top: 40px; transition: 0.5s; text-align: center}
+#mySidenav a {text-decoration: none; font-size: 15px; color: white; display: block; transition: 0.2s;}
+#mySidenav a:hover {color: grey;}
+#mySidenav h5 {color: white}
+#mySidenav p {color: white; cursor: pointer; font-size: 15px;}
+#mySidenav p:hover {color: grey}
+#mySidenav .closebtn {position: absolute; top: 0; right: 10px; font-size: 36px;}
+.logo {width: 90px; margin-left: 30px}
+.cxpesquisa {height: 50px; background-color: white; border-radius: 30px; padding: 12px}
+.inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
+.inputpesquisa::placeholder {color: #b81414; font-weight: bold}
+.inputpesquisa:focus {outline: none;}
+.lupa {width: 25px; cursor: pointer;}
+.cxpesquisa button {border: 0; background-color: transparent; float: right; padding-top: 0}
+.carrinho-container {position: relative; cursor: pointer}
+.carrinho-inner {position: relative; text-align: center;}
+.carrinho {display: inline-block; max-width: 60px; height: auto;}
+.quanticar {position: absolute; top: 45%; left: 60%; transform: translate(-50%, -50%); margin: 0; color: #b81414; font-weight: bold}
+.propaganda {width: 190px; float: right; margin-left: 10px;}
+/* </header> */
 
-.voltar {display: none;}
+/* <main> */
+/*---------------------------------------------------Carrinho--------------------------------------------------*/
+#mensagemCarrinhoVazio {margin-top: 30%; text-align: center; display: flex; justify-content: center; align-items: center; height: 100vh;}
+.botaoconferir {background-color: #191919; border-radius: 20px; padding: 20px; color: white; margin-top: 300px}    
+#txcarrinho {color: #b81414; margin: 150px 5% 0 5%}
+#divglobal {margin: 5% 5% 300px 5%}
+.divcarrinho {width: 100%; background-color: white; border-radius: 10px; box-shadow: 0px 0px 5px #b81414;}
+.divcarrinho th, .divcarrinho td {padding: 8px;}
+.divcarrinho td {border-top: 1px solid grey}
+.divcarrinho img {width: 100%; vertical-align: top;}
+.produto-input {border: 0; width: 100%; font-weight: bold}
+.produto-input:focus {outline: none}
+#nome {color: #b81414}
+#loja {color: grey; font-size: 15px}
+#preco {color: green}
+#cor {color: grey}
+#total {color: green; text-align: center}
+.quantidade-input {background-color: #b81414; color: white; text-align: center; width: 50%; display: block; margin: 0 auto; border: 0; border-radius: 5px}
+.quantidade-input::-webkit-inner-spin-button,
+.quantidade-input::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0;}
+.quantidade-input{-moz-appearance: textfield;}
+.remover-produto {min-width: 30px; cursor: pointer} 
+.ths {border-bottom: 20px solid #dcdcdc}
+.thproduto {width: 10%;}
+.thvazio {width: 40%}
+.thquantidade {width: 20%; text-align: center}
+.thtotal {width: 25%; text-align: center}
+.remover {width: 4%}
+.linhaproduto {border-top: 1px solid grey}
+.inforcarrinho {background-color: white; border-radius: 10px; padding: 10px; box-shadow: 0px 0px 5px #b81414; position: fixed; bottom: 0; width: 90%; box-sizing: border-box;}
+.tabletotal {width: 100%}
+.tabletotal h5 {margin-bottom: 10px; width: 100%}
+#precoTotal {width: 100%; border: 0; font-size: 20px; font-weight: bold; text-align: right}
+#campofrete {background-color: #b81414; border: 0; color: white; border-radius: 5px; padding: 4px; width: 50%; max-width: 150px}
+#campofrete::placeholder {color: white;}
+.calcular {background-color: green; color: white; border-radius: 5px; padding: 4px}
+#frete {font-size: 15px}
+.todoofrete {width: 100%; text-align: right}
+#precoTotal:focus {outline: none}
+#precofinal {width: 100%; text-align: right; border: 0; border-radius: 10px; padding: 5px; font-size: 20px; font-weight: bold;}
+.continuar {width: 100%; background-color: green; margin-top: 5px; color: white; border-radius: 10px; padding: 10px; margin-bottom: 10px; border: 0; text-align: center}
 
-.fc {float: left; margin-top: 10px; margin-left: 40px}
+.limite {height: 20px}
 
-.fundo {background-color: #b81414; width: 100%; top:0; height: 80px; color: white; font-size: 40px; font-weight: 700}
+.entrega {display: none; padding: 30px; background-color: white; margin: 5%; border-radius: 10px; box-shadow: 0px 0px 5px #b81414;}
+.entrega h1 {color: grey; margin-top: 50px; text-align: center;}
+.entrega label {color: grey; font-weight: bold; text-align: left; margin: 5px 0}
+.entrega input {background-color: #b81414; border: none; height: 40px; border-radius: 10px; color: white; padding: 10px; width: 100%; margin-bottom: 10px}
+.entrega input::placeholder {color: white;}
+.entrega input:focus {outline: none;}
+.enviar {background-color: green; padding: 10px; color: white; cursor: pointer; border-radius: 10px; font-weight: bold; width: 100%}
+.entrega h6 {margin: 20px 0}
+/* </main> */
 
-.h2 {color: #b81414}
+/* <footer> */
+footer {background-color: #b81414; text-align: center; padding: 5px; width: 100%;}
+footer hr {border: 1px solid white}
+footer img {width: 100px; margin-bottom: 20px}
+footer h6 {color: white}
+.p {color: white; font-size: 14px}
+.p a {color: white; font-weight: bold}
+.copy {color: white; font-size: 12px}
+/* </footer> */
 
-.carrinho {margin-left: 10%; width: 80%; margin-top: 50px; background-color: #ffffff; padding: 1%; padding-bottom: 20px; border: 2px solid #b81414; border-radius: 5px; height: 100%}
+@media screen and (max-width: 700px) {
+body {background-color: white; margin-top: 60px}
+/* <header> */
+.iconmenu {width: 25px; margin-left: 30px}
+.logo {width: 60px; margin-left: 20px}
+.cxpesquisa {height: 40px; padding: 8px}
+.inputpesquisa {width: 70%; font-size: 14px}
+.lupa {width: 22px}
+.carrinho-container {padding-right: 30px}
+.carrinho {width: 50px}
+.propaganda {display: none}
+/* </header> */
 
-.entrega {display: none; margin-left: 10%; width: 80%; margin-top: 50px; background-color: #ffffff; padding: 1%; padding-bottom: 20px; border: 2px solid #b81414; border-radius: 5px; height: 100%}
+/* <main> */
 
-input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    
-    .produto-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .inputs-container {
-      margin-left: 10px;
-    }  
-    
-input:focus {
-  outline: none;
+/* </main> */
 }
-    
-
-img {max-width: 30%}
-
-hr {color: #b81414; border: 1px solid #b81414;}
-
-button {font-size: 20px; background-color: #4CAF50; color: white; padding: 5px 10px; border: none; border-radius: 4px; margin: 10px}
-
-button:hover {background-color: #45a049;}
-
-
 </style>
 </head>
-<body onload="carregarPagina()">
-<table class="fundo">
-<td class="fc">FINALIZAR COMPRA</td>
-<td><a href="index.html"><img class="logo" src="https://i.postimg.cc/BbfF2nQ8/logojgloot.png" alt="logo"></a></td>
-<td><a href="index.html"><img class="voltar" src="https://i.postimg.cc/ZYgb7Mrc/voltar.png" alt="voltar"></a>
-</td>
-    </table>
+<body>
+<header>
+            <table class="topo">
+                <div id="overlay" class="overlay"></div>
+                    <td><img onclick="openNav()" class="iconmenu" src="https://i.postimg.cc/LsRgvpfc/menu.jpg" alt="icone menu" > <!-- Icone Menu -->
+            <div id="mySidenav">
+                        
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Botão de fechar -->
+                            
+                            <h5>Redes Sociais:</h5> 
+                            <a href="https://wa.me/5593992244987">WhatsApp</a>
+                            <br>
+                            <a href="https://www.instagram.com/_jgloot_/">Intagram</a>
+                            <br>
+                            <a href="https://www.tiktok.com/@_jgloot_">TikTok</a>
+                                
+                            <hr style="border: 1px solid white">
+                            <h5>Categorias:</h5>
+                            <br>
+                            <p onclick="categoriasmenu('acessorios')">&#8986; Acessórios</p>
+                            <br>
+                            <p onclick="categoriasmenu('eletronicos')">&#128241; Eletrônicos</p>
+                            <br>
+                            <p onclick="categoriasmenu('beleza')">&#128132; Beleza</p>
+                            <br>
+                            <p onclick="categoriasmenu('esportes')">&#128095; Esportes e Calçados</p>
+                            <br>
+                            <p onclick="categoriasmenu('papelaria')">&#9999; Papelaria</p>
+                            <br>
+                            <p onclick="categoriasmenu('veiculos')">&#128663; Veículos</p>
+                            <br>
+                            <p onclick="categoriasmenu('sexshop')">&#128139; Sex shop</p>
+                            <br>
+                            <p onclick="categoriasmenu('vestuario')">&#128085; Vestuário</p>
+                            <br>
+                        </div>
+                    </td>
+                        
+                        <td><a href="index.html"><img class="logo" src="https://i.postimg.cc/BbfF2nQ8/logojgloot.png" alt="logo"></a></td> <!-- Logo -->
+
+                        <td>
+                <div class="cxpesquisa"> <!-- Caixa De Pesquisa -->
+                <form action="index.html" method="GET">
+                        <input class="inputpesquisa" id="campopesquisa" type="text" name="termo" placeholder="Busca instantânea"> <!-- Input De Busca-->
+                        <button type="submit"><img class="lupa" src="https://i.postimg.cc/V65b3F61/lupa.jpg" alt="lupa"></button> <!-- Lupa -->
+                </form>
+                        </div>
+            </td>
+                
+                    <td class="carrinho-container">
+                        <a href="carrinho.html">
+                        <div class="carrinho-inner">
+                            <img class="carrinho" src="https://i.postimg.cc/yNKD8bxK/carrinho.png" alt="carrinho"> <!-- Icone Carrinho -->
+                            <p class="quanticar">0</p> <!-- Quantidade Carrinho -->
+                        </div>
+                        </a>
+            </td>
+
+                        <td><a href="https://api.whatsapp.com/send?phone=5593991991685"><img class="propaganda" src="https://i.postimg.cc/T36mL6xH/propagandatopo.png" alt="propaganda"></a></td> <!-- Propaganda -->
+            </table>
+        </header>
+
+        <main>
+            <form id="formulario" action="https://api.sheetmonkey.io/form/uxvqPncPLPexLG3HAgf2K9" method="post">
+            <!---------------Carrinho vazio-------------->
     
-  <form id="formulario" action="https://api.sheetmonkey.io/form/uxvqPncPLPexLG3HAgf2K9" method="post">
-<table class="carrinho">
-    <h2 class="h2">Confirme o pedido</h2>
+            <div id="mensagemCarrinhoVazio" style="display: none;">
+                <h2>Seu carrinho está vazio</h2><br>
+                    <a href="produtos.html"><span class="botaoconferir">Confira nossos produtos</span></a>
+            </div>
 
-    <div id="itensCarrinho"></div>
-    
-<h3>Total: <span id="precoTotalCarrinho">R$</span></h3>
- 
-    <button id="finalizar">Finalizar compra</button>
-</table>
+            <!---------------Carrinho-------------->
 
+            <h3 id="txcarrinho">Meu Carrinho</h3>
+            <div id="divglobal">
+                
+                <table class="divcarrinho">
+                    <thead>
+                            <tr class="ths">
+                                <th class="thproduto">Produto</th>
+                                <th class="thvazio"></th>
+                                <th class="thquantidade">Quantidade</th>
+                                <th class="thtotal">Total</th>
+                                <th class="remover"></th>
+                            </tr>
+                    </thead>
+                    <tbody class="carrinho-produtos">
+                    <!-- Os produtos serão adicionados dinamicamente aqui -->
+                    </tbody>
+                </table>
 
-<div id="entrega" class="entrega">
-    <h1 class="enderecoparaentrega">ENDEREÇO PARA ENTREGA</h1>
+                <div class="inforcarrinho">
+                    <table class="tabletotal">
+                    	<tr>
+                            <th><h5 class="h4total">Produtos:</h4></th>
+                            <th><input type="text" name="A pagar" id="precoTotal" readonly></th>
+                        </tr>
+                        <tr>
+                            <th><h5 class="frete">Frete:</h4></th>
+                            <th class="todoofrete"><input type="text" id="campofrete" placeholder="Digite seu CEP" maxlength="9" name="cep" required>
+                            <span class="calcular" onclick="calcular()">Calcular</span>
+                            <p id="frete">A taxa de entrega aparecerá aqui</p>
+                            <p id="precofrete"></p></th>                        
+                        </tr>
+                        <tr>
+                        	<th><h5>Total:</h4></th>
+                            <th><input type="text" name="tudo" id="precofinal" readonly></th>
+                        </tr>
+                        </table>
+                    	<p onclick="continuar()" class="continuar">Continuar</p>
 
-    
-    
-        <label for="cliente">Nome completo:</label>
-        <input class="inputentrega" placeholder="Nome de quem receberá o produto." type="text" id="cliente" name="cliente" required>
+                 </div>
+            </div>
+            
+			<div class="limite"></div>
+            
+            <div id="entrega" class="entrega">
+                        <h1 class="enderecoparaentrega">ENDEREÇO PARA ENTREGA</h1>
+                            <label for="nome">Nome completo:</label><br>
+                            <input class="inputentrega" placeholder="Nome de quem receberá o produto." type="text" id="nome" name="nome" required>
+							<br>
+                            <label for="endereco">Bairro:</label><br>
+                            <input class="inputentrega" placeholder="Digite o nome do seu bairro." type="text" id="bairro" name="bairro" required>
+							<br>
+                            <label for="cidade">Rua/Travessa/Avenida:</label><br>
+                            <input class="inputentrega" placeholder="Digite o nome da rua/travessa/avenida." type="text"  id="rua" name="rua" required>
+							<br>
+                            <label for="cidade">Número:</label><br>
+                            <input class="inputentrega" placeholder="Digite o número da sua localidade." type="number" id="numero" name="numero" required>
+							<br>
+                            <label for="cidade">Ponto de referência (opcional):</label><br>
+                            <input class="inputentrega" placeholder="Digite um ponto de referência, escola, igreja, algo próximo." type="text" id="complemento" name="complemento">
+							<br>
+                            <label for="cliente">Número de telefone:</label><br>
+                            <input class="inputentrega" placeholder="Para confirmação de pagamento, informações, entre outros..." type="text" id="telefone" name="telefone" maxlength="15" required>
+							<br>
+                            <h6>Após confirmação de pagamento entraremos em contato (pode demorar alguns minutos).</h6>
 
-        <label for="endereco">Bairro:</label>
-        <input class="inputentrega" placeholder="Digite o nome do bairro." type="text" id="bairro" name="bairro" required>
+                            <input class="inputentrega" type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
 
-        <label for="cidade">Rua/Travessa/Avenida:</label>
-        <input class="inputentrega" placeholder="Digite o nome da rua/travessa/avenida." type="text"  id="rua" name="rua" required>
+                            <button class="enviar" type="submit" onclick="setPrecoCookie()">Finalizar compra</button>
+             </div>
+            </form>
+        </main>
         
-        <label for="cidade">Número:</label>
-        <input class="inputentrega" placeholder="Digite o número da sua localidade." type="number" id="numero" name="numero" required>
+        <footer>
+			<img class="logoft" src="https://i.postimg.cc/BbfF2nQ8/logojgloot.png" alt="logo">
+	
+			<h6>Sobre nós</h6>
+			<p class="p"><a href="https://www.instagram.com/_jgloot_/">Conheça a JGLoot e os nossos objetivos</a></p>
+			<hr>
+			<h6>Anucie seus produtos</h6>
+			<p class="p">Preencha <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhuFpzp3EjnIlVT7WQPRmiuR9JU67ogPpiGjKPTi4Py-GYwQ/viewform?usp=sf_link">Este formulário</a> para anuciar seus produtos em nosso site, mais informações em <a href="https://wa.me/5593992244987">nosso WhatsApp</a>.</p>
+			<hr>
+			<h6>Divulgue sua loja</h6>
+			<p class="p">Preencha <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuq6cA0gnn44n50N8XNeVOuBwYkRLg8Q7RuaczjFqsagqGhQ/viewform?usp=sf_link">Este formulário</a> para divulgar sua loja em nosso site e redes sociais, mais informações em <a href="https://wa.me/5593992244987">nosso WhatsApp</a>.</p>
+			<hr>
+			<h6>Termos de Uso e Política de Privacidade</h6>
+			<p class="p">Inseguro sobre seus dados? Leia nosso <a href="https://sites.google.com/view/usoeprivacidade">Termos de Uso e Política de Privacidade</a> e tenha garantia da segurança de nosso site, mais informações em <a href="https://wa.me/5593992244987">nosso WhatsApp</a>.</p>
+            <hr>
+            <p class="copy">&copy; 2024 Todos os direitos reservados > 54.710.799 JOAO GABRIEL VASCONCELOS TRINDADE</p>
+		</footer>
+<script>
+//Quantidade carrinho
+window.onload = function() {
+	  var listaProdutos = JSON.parse(localStorage.getItem('listaProdutos')) || [];
+      document.querySelector('.quanticar').textContent = listaProdutos.length;
+}
 
-		<label for="complemento">Ponto de referência (opcional):</label>
-        <input class="inputentrega" placeholder="Digite um ponto de referência, escola, igreja, algo próximo." type="text" id="complemento" name="complemento">
-        
-        <label for="cliente">Número de telefone:</label>
-        <input class="inputentrega" placeholder="Para confirmação de pagamento, informações, entre outros..." type="text" id="telefone" name="telefone" maxlength="15" required>
-        
-        <h6>Após confirmação de pagamento entraremos em contato (pode demorar alguns minutos).</h6>
-        
-        <input class="inputentrega" type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
-        
-        <button class="enviar" type="submit">Enviar</button>
-    </div>
-  </form>
+//Menu celular
+var overlay = document.getElementById('overlay');
+function openNav() {
+		overlay.classList.add('active');
+		if (window.innerWidth < 700) {
+			document.getElementById("mySidenav").style.width = "50%";
+		} else {
+			document.getElementById("mySidenav").style.width = "400px";
+		}
+}
 
-  <script>
-       function getCookie(name) {
-            var cookieArray = document.cookie.split(';');
-            var cookie = cookieArray.find(c => c.includes(name));
-            if (cookie) {
-                return parseFloat(cookie.split('=')[1]);
-            }
-            return null;
-        }
+function closeNav() {
+		overlay.classList.remove('active');
+		document.getElementById("mySidenav").style.width = "0";
+}
+overlay.addEventListener('click', closeNav);
+
+//Redireciona para categoria escolhida
+function categoriasmenu(categoria) {
+            // Atualiza a URL da página adicionando o termo da categoria como parâmetro
+            window.location.href = 'https://jgloot.github.io/JGLoot-1.1/index.html?termo=' + categoria;
+}
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Recupera os produtos salvos no localStorage
     var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
-
-    // Recupera o novo produto, se houver, e o adiciona à lista de produtos salvos
     var novoProduto = JSON.parse(localStorage.getItem('produto'));
     if (novoProduto) {
         produtosSalvos.push(novoProduto);
-        localStorage.setItem('carrinho', JSON.stringify(produtosSalvos)); // Atualiza o localStorage com a lista de produtos atualizada
-        localStorage.removeItem('produto'); // Remove o novo produto do localStorage
+        localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
+        localStorage.removeItem('produto');
     }
 
-    // Exibe os produtos na tabela
-    var tabela = document.querySelector('.carrinho');
-    tabela.innerHTML = ''; // Limpa o conteúdo da tabela
+    var tabela = document.querySelector('.carrinho-produtos');
+    tabela.innerHTML = '';
 
-    // Adiciona cada produto à tabela
+    var total = 0;
+
     produtosSalvos.forEach(function (produto, index) {
         var newRow = document.createElement('tr');
+        var precoTotalProduto = produto.preco * produto.quantidade;
+        total += precoTotalProduto;
+
         newRow.innerHTML = `
-            <td>${produto.nome}</td>
-            <td>${produto.loja}</td>
-            <td>${produto.preco}</td>
-            <td>${produto.cor}</td>
-            <td>${produto.quantidade}</td>
             <td><img src="${produto.img}" alt="Imagem do Produto"></td>
-            <td><button class="remover-produto" data-index="${index}">Remover</button></td>
+            <td><input type="text" value="${produto.nome}" class="produto-input" id="nome" data-index="${index}" data-field="nome" readonly>
+            <input type="text" value="${produto.cor}" class="produto-input" id="cor" data-index="${index}" data-field="cor" readonly>
+            <input type="text" value="${produto.loja}" class="produto-input" id="loja" data-index="${index}" data-field="loja" readonly>
+            <input type="text" value="R$${produto.preco},00" class="produto-input" id="preco" data-index="${index}" data-field="preco" readonly></td>
+            <td><input type="number" value="${produto.quantidade}" class="quantidade-input" data-index="${index}"></td>
+            <td><input type="text" value="R$${precoTotalProduto},00" class="produto-input" id="total" data-index="${index}" data-field="total" readonly></td>
+            <td><img src="https://i.postimg.cc/85Jm02My/removericon.jpg" alt="Remover" class="remover-produto" data-index="${index}"></td>
+            <!-- Inputs ocultos -->
+            <input type="hidden" name="Imagem_do_produto_${index}" value="${produto.img}">
+            <input type="hidden" name="Produto_${index}" value="${produto.nome}">
+            <input type="hidden" name="Loja_${index}" value="${produto.loja}">
+            <input type="hidden" name="Preco_${index}" value="${produto.preco}">
+            <input type="hidden" name="Cor_${index}" value="${produto.cor}">
+            <input type="hidden" name="Tamanho_${index}" value="${produto.tamanho}">
+            <input type="hidden" name="Quantidade_${index}" value="${produto.quantidade}">
         `;
         tabela.appendChild(newRow);
     });
 
-    // Adiciona um evento de clique a cada botão "Remover"
+    // Mostrar o total na página
+    var precoTotalInput = document.getElementById('precoTotal');
+    precoTotalInput.value = `R$${total},00`;
+
+    document.querySelectorAll('.quantidade-input').forEach(function (input) {
+        input.addEventListener('change', function () {
+            var index = parseInt(input.getAttribute('data-index'));
+            var novaQuantidade = parseInt(input.value);
+            if (!isNaN(novaQuantidade) && novaQuantidade >= 0) {
+                produtosSalvos[index].quantidade = novaQuantidade;
+                localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
+
+                // Atualizar o preço total do produto
+                var precoTotalProduto = produtosSalvos[index].preco * novaQuantidade;
+                var precoTotalElement = input.parentElement.nextElementSibling;
+                precoTotalElement.textContent = `R$${precoTotalProduto},00`;
+
+                // Recalcular o total
+                total = 0;
+                produtosSalvos.forEach(function (produto) {
+                    total += produto.preco * produto.quantidade;
+                });
+                precoTotalInput.value = `R$${total},00`;
+            } else {
+                input.value = produtosSalvos[index].quantidade;
+            }
+        });
+    });
+
     document.querySelectorAll('.remover-produto').forEach(function (botao) {
         botao.addEventListener('click', function () {
             var index = parseInt(botao.getAttribute('data-index'));
-            produtosSalvos.splice(index, 1); // Remove o produto do array de produtos salvos
-            localStorage.setItem('carrinho', JSON.stringify(produtosSalvos)); // Atualiza o localStorage com a lista de produtos atualizada
-            tabela.deleteRow(index); // Remove a linha correspondente da tabela
+            produtosSalvos.splice(index, 1);
+            localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
+            tabela.deleteRow(index);
+            
+            var listaProdutos = JSON.parse(localStorage.getItem('listaProdutos')) || [];
+      		document.querySelector('.quanticar').textContent = listaProdutos.length;
+
+            // Recalcular o total
+            total = 0;
+            produtosSalvos.forEach(function (produto) {
+                total += produto.preco * produto.quantidade;
+            });
+            precoTotalInput.value = `R$${total},00`;
         });
     });
 });
 
-  </script>
+window.addEventListener('scroll', function() {
+    var inforcarrinho = document.querySelector('.inforcarrinho');
+    var footer = document.querySelector('.limite');
+    var inforcarrinhoHeight = inforcarrinho.offsetHeight;
+    var footerOffset = footer.offsetTop;
+    var scrollTop = window.scrollY;
+
+    if ((scrollTop + window.innerHeight) > footerOffset) {
+        inforcarrinho.style.bottom = (window.innerHeight + scrollTop - footerOffset) + 'px';
+    } else {
+        inforcarrinho.style.bottom = '0';
+    }
+});
+
+function continuar() {
+document.querySelector('.entrega').style.display = 'block';
+document.querySelector('.limite').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 </body>
 </html>
