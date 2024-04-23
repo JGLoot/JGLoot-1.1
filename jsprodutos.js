@@ -1,15 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    function atualizarExibicao() {
-        // Recupera os dados do carrinho do localStorage
-        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-        
-        // Calcula a quantidade total de produtos no carrinho
-        let quantidadeTotal = carrinho.reduce((total, produto) => total + produto.quantidade, 0);
-        
-        // Atualiza a exibição com a quantidade total de produtos
-        document.querySelector('.quanticar').textContent = quantidadeTotal;
+    function atualizarQuantidadeProdutosSalvos() {
+        var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
+        var quantidadeProdutosSalvos = produtosSalvos.length;
+        var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
     }
-    atualizarExibicao();
+
+    // Chamar a função inicialmente
+    atualizarQuantidadeProdutosSalvos();
     executarPesquisa();
 });
 
@@ -91,7 +89,7 @@ function additem() {
     carrinho.push(produto);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    atualizarExibicao();
+    atualizarQuantidadeProdutosSalvos();
     alert('Produto adicionado ao carrinho!');
 }
 
