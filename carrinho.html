@@ -284,12 +284,6 @@ body {background-color: white; margin-top: 60px}
             <p class="copy">&copy; 2024 Todos os direitos reservados > 54.710.799 JOAO GABRIEL VASCONCELOS TRINDADE</p>
 		</footer>
 <script>
-//Quantidade carrinho
-window.onload = function() {
-	  var listaProdutos = JSON.parse(localStorage.getItem('listaProdutos')) || [];
-      document.querySelector('.quanticar').textContent = listaProdutos.length;
-}
-
 //Menu celular
 var overlay = document.getElementById('overlay');
 function openNav() {
@@ -321,6 +315,11 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
         localStorage.removeItem('produto');
     }
+
+    // Mostrar a quantidade de produtos salvos
+    var quantidadeProdutosSalvos = produtosSalvos.length;
+    var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
 
     var tabela = document.querySelector('.carrinho-produtos');
     tabela.innerHTML = '';
@@ -388,9 +387,6 @@ document.addEventListener('DOMContentLoaded', function () {
             produtosSalvos.splice(index, 1);
             localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
             tabela.deleteRow(index);
-            
-            var listaProdutos = JSON.parse(localStorage.getItem('listaProdutos')) || [];
-      		document.querySelector('.quanticar').textContent = listaProdutos.length;
 
             // Recalcular o total
             total = 0;
@@ -398,9 +394,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 total += produto.preco * produto.quantidade;
             });
             precoTotalInput.value = `R$${total},00`;
+
+            // Atualizar a quantidade de produtos salvos
+            quantidadeProdutosSalvos = produtosSalvos.length;
+            quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
         });
     });
 });
+
 
 window.addEventListener('scroll', function() {
     var inforcarrinho = document.querySelector('.inforcarrinho');
