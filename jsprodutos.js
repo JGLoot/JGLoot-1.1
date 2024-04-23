@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Função para atualizar a quantidade de produtos salvos
     function atualizarQuantidadeProdutosSalvos() {
-          var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-	  var quantidadeTotalProdutos = carrinho.length;
-	  var quanticarElement = document.querySelector('.quanticar');
-	  if (quanticarElement) {
-	    quanticarElement.textContent = quantidadeTotalProdutos.toString();
-	  }
+        var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
+        var quantidadeProdutosSalvos = produtosSalvos.length;
+        var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
     }
 
     // Chamar a função inicialmente
@@ -98,7 +96,8 @@ function additem() {
     var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     carrinho.push(produto);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    
+
+	atualizarQuantidadeProdutosSalvos();
     alert('Produto adicionado ao carrinho!');
 }
 
