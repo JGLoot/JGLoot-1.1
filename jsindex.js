@@ -1,8 +1,12 @@
-window.onload = function() {
-	var listaProdutos = JSON.parse(localStorage.getItem('carrinho')) || [];
-    	document.querySelector('.quanticar').textContent = listaProdutos.length;
+document.addEventListener('DOMContentLoaded', function () {
+    var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];    
+    // Mostrar a quantidade de produtos salvos
+    var quantidadeProdutosSalvos = produtosSalvos.length;
+    var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
 	executarPesquisa();
-}
+});
+	
 // Função para ler o termo de pesquisa da URL
         function obterTermoPesquisa() {
             // Obtém o valor do parâmetro 'termo' da URL
