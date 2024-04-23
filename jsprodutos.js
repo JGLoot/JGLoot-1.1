@@ -89,7 +89,7 @@ function additem() {
     carrinho.push(produto);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
-    atualizarExibicao()
+    atualizarExibicao();
     alert('Produto adicionado ao carrinho!');
 }
 
