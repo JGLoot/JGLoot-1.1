@@ -1,12 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];    
-    // Mostrar a quantidade de produtos salvos
-    var quantidadeProdutosSalvos = produtosSalvos.length;
-    var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
-    quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
-	executarPesquisa();
+    // Função para atualizar a quantidade de produtos salvos
+    function atualizarQuantidadeProdutosSalvos() {
+        var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
+        var quantidadeProdutosSalvos = produtosSalvos.length;
+        console.log("Quantidade de produtos salvos:", quantidadeProdutosSalvos);
+    }
+
+    // Chamar a função inicialmente
+    atualizarQuantidadeProdutosSalvos();
+    executarPesquisa();
+
+    // Escutar mudanças no localStorage
+    window.addEventListener('storage', function (event) {
+        // Se o evento foi causado pela chave 'carrinho', atualizar a quantidade de produtos salvos
+        if (event.key === 'carrinho') {
+            atualizarQuantidadeProdutosSalvos();
+        }
+    });
 });
-	
+
 // Função para ler o termo de pesquisa da URL
         function obterTermoPesquisa() {
             // Obtém o valor do parâmetro 'termo' da URL
