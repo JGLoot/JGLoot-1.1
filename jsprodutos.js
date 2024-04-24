@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {    
         var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
         var quantidadeProdutosSalvos = produtosSalvos.length;
-        var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    	var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
     	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
     executarPesquisa();
 });
@@ -84,7 +84,12 @@ function additem() {
     carrinho.push(produto);
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
 
+    var quantidadeProdutosSalvos = carrinho.length;
+    var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
+    quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
+        
     alert('Produto adicionado ao carrinho!');
+    
 }
 
 // Função para mostrar a div de entrega e verificar se uma cor foi selecionada
