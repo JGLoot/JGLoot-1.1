@@ -58,16 +58,21 @@ function mudarImagemCor(novaImagemURL) {
         document.getElementById('img-principal').src = novaImagemURL;
 }
 
-function selecionarImagem(imagemClicada) {
-  // Remove a classe 'imagemSelecionada' de todas as imagens
-  var imagens = document.querySelectorAll('.thumbnail');
-  imagens.forEach(function(imagem) {
-    imagem.classList.remove('imagemSelecionada');
-  });
+// Obtém todas as imagens
+var imagens = document.querySelectorAll('.thumbnail');
 
-  // Adiciona a classe 'imagemSelecionada' à imagem clicada
-  imagemClicada.classList.add('imagemSelecionada');
-}
+// Adiciona um ouvinte de evento de clique a cada imagem
+imagens.forEach(function(imagem) {
+  imagem.addEventListener('click', function() {
+    // Remove a classe 'imagemSelecionada' de todas as imagens
+    imagens.forEach(function(outraImagem) {
+      outraImagem.classList.remove('imagemSelecionada');
+    });
+
+    // Adiciona a classe 'imagemSelecionada' apenas à imagem clicada
+    imagem.classList.add('imagemSelecionada');
+  });
+});
 
 /////////////////////////////////////////////////// ADD ITEM //////////////////////////////////////////////////////////////////////////
 
