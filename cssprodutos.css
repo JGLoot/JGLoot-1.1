@@ -1,7 +1,7 @@
-body {background-color: #dcdcdc; margin-top: 95px}
+body {background-color: #dcdcdc;}
 
 /* <header> */
-header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 2}
+header {background-color: #b81414; width: 100%; z-index: 2}
 .topo {width: 100%;}
 .overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 1}
 .overlay.active {display: block}
@@ -28,9 +28,9 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 /* </header> */
 
 /* <div class="produto-principal"> */
-.produto-principal {background-color: white; margin: 150px 5% 0px 5%; box-shadow: 0px 0px 5px #b81414; padding: 20px 10px}
+.produto-principal {background-color: white; margin: 50px 5% 0px 5%; box-shadow: 0px 0px 5px #b81414; padding: 20px 10px}
 .imgzoom {overflow: hidden; position: relative;}
-.img-principal {width: 100%; transition: transform 0.3s ease;}
+.img-principal {width: 90%; display: block; margin: 0 auto;transition: transform 0.3s ease;}
 .thumbnails-container {display: flex; justify-content: space-between;}
 .thumbnail {width: 15%; margin-top: 10px; border-radius: 5px; border: 1px solid transparent}
 .thumbnail:hover {box-shadow: 0px 0px 5px #b81414}
