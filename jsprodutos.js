@@ -58,6 +58,17 @@ function mudarImagemCor(novaImagemURL) {
         document.getElementById('img-principal').src = novaImagemURL;
 }
 
+function selecionarImagem(imagemClicada) {
+  // Remove a classe 'imagemSelecionada' de todas as imagens
+  var imagens = document.querySelectorAll('.thumbnail');
+  imagens.forEach(function(imagem) {
+    imagem.classList.remove('imagemSelecionada');
+  });
+
+  // Adiciona a classe 'imagemSelecionada' à imagem clicada
+  imagemClicada.classList.add('imagemSelecionada');
+}
+
 /////////////////////////////////////////////////// ADD ITEM //////////////////////////////////////////////////////////////////////////
 
 function additem() {
