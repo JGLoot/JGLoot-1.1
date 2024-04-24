@@ -1,23 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Função para atualizar a quantidade de produtos salvos
-    function atualizarQuantidadeProdutosSalvos() {
         var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
         var quantidadeProdutosSalvos = produtosSalvos.length;
         var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
     	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
-    }
-
-    // Chamar a função inicialmente
-    atualizarQuantidadeProdutosSalvos();
-    executarPesquisa();
-
-    // Escutar mudanças no localStorage
-    window.addEventListener('storage', function (event) {
-        // Se o evento foi causado pela chave 'carrinho', atualizar a quantidade de produtos salvos
-        if (event.key === 'carrinho') {
-            atualizarQuantidadeProdutosSalvos();
-        }
-    });
 });
 
 // Função para ler o termo de pesquisa da URL
