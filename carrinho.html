@@ -309,6 +309,9 @@ function setCookie(name, value, days) {
   console.log("Cookie definido:", name, "=", value, "(expira em", days, "dias)");
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
+
+// Log adicional para verificar os valores passados ​​para a função setCookie
+console.log("Valores passados para setCookie:", precoFinalNumerico, 1);
 	
 //Menu celular
 var overlay = document.getElementById('overlay');
