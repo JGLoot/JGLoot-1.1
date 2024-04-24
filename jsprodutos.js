@@ -82,9 +82,12 @@ function additem() {
     var tamanhoSelecionado = document.querySelector('input[name="tamanho"]:checked');
     var tamanho = tamanhoSelecionado ? tamanhoSelecionado.value : "N/A";
     
-	if (!corSelecionada) {
-        alert('Por favor, selecione uma cor antes de adicionar o produto ao carrinho.');
-        return;
+    // Verifica se há um input de cor selecionado, apenas se houver, exige a seleção de cor
+    if (document.querySelector('input[name="cor"]:checked')) {
+        if (!corSelecionada) {
+            alert('Por favor, selecione uma cor antes de adicionar o produto ao carrinho.');
+            return;
+        }
     }
     
     var produto = {
@@ -94,7 +97,7 @@ function additem() {
         cor: corSelecionada,
         quantidade: quantidadeProduto,
         img: imgproduto,
-	tamanho: tamanho
+        tamanho: tamanho
     };
 
     var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
@@ -106,7 +109,6 @@ function additem() {
     quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
         
     alert('Produto adicionado ao carrinho!');
-    
 }
 
 // Função para mostrar a div de entrega e verificar se uma cor foi selecionada
