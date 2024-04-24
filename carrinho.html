@@ -441,6 +441,11 @@ window.addEventListener('scroll', function() {
 });
 
 function continuar() {
+    var precoFinal = document.getElementById("precofinal").value;
+    if (precoFinal === "") {
+        alert("Frete inválido!");
+        return;
+    }
 document.querySelector('.entrega').style.display = 'block';
 document.querySelector('.limite').scrollIntoView({ behavior: 'smooth' });
 }
