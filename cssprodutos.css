@@ -55,7 +55,9 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 .inputquant::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0;}
 .inputquant{-moz-appearance: textfield;}
 .comprar {background-color: green; padding: 3%; color: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
+.comprar:hover {background-color:#006400}
 .addcar {background-color: #b81414; padding: 3%; color: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
+.addcar:hover {background-color:#990000}
 .entrega {display: none; text-align: center; padding: 30px}
 .entrega h1 {color: grey; margin-top: 50px}
 .entrega label {color: grey; font-weight: bold; text-align: left; margin: 5px 0}
@@ -93,6 +95,7 @@ footer h6 {color: white}
 .produto2 p {color: grey; font-size: 12px}
 .produto2 h5 {color: green}
 .article2 span {display: block; margin: 0 auto; background-color: #b81414; padding: 10px; font-weight: bold; border-radius: 10px; cursor: pointer; width: 50%; text-align: center}
+.article2 span:hover {background-color:#990000}
 .article2 span a {text-decoration: none; color: white}
 /* </article2> */
 
