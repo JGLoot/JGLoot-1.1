@@ -53,11 +53,11 @@ function mudarImagem(element) {
     // Remove a classe 'selected' de todas as imagens
     var thumbnails = document.getElementsByClassName("thumbnail");
     for (var i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].classList.remove("selected");
+        thumbnails[i].classList.remove("imagemSelecionada");
     }
 
     // Adiciona a classe 'selected' à imagem clicada
-    element.classList.add("selected");
+    element.classList.add("imagemSelecionada");
 
     // Obtém a URL da imagem clicada e atualiza a imagem principal
     const url = element.src;
