@@ -27,7 +27,7 @@ overlay.addEventListener('click', closeNav);
 //Redireciona para categoria escolhida
 function categoriasmenu(categoria) {
             // Atualiza a URL da página adicionando o termo da categoria como parâmetro
-            window.location.href = 'https://jgloot.github.io/JGLoot-1.1/index.html?termo=' + categoria;
+            window.location.href = 'index.html?termo=' + categoria;
 }
 
 //Zoom na imagem
