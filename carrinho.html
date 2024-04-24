@@ -40,8 +40,10 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 
 /* <main> */
 /*---------------------------------------------------Carrinho--------------------------------------------------*/
-#mensagemCarrinhoVazio {margin-top: 30%; text-align: center; display: flex; justify-content: center; align-items: center; height: 100vh;}
-.botaoconferir {background-color: #191919; border-radius: 20px; padding: 20px; color: white; margin-top: 300px}    
+#mensagemCarrinhoVazio {margin-top: 30%; text-align: center; display: flex; justify-content: center; align-items: center; height: 100vh; color: #b81414}
+.botaoconferir {background-color: #b81414; border-radius: 20px; padding: 20px; color: white; margin-top: 300px}
+#mensagemCarrinhoVazio a {text-decoration: none;}
+.botaoconferir:hover {background-color: #990000;}
 #txcarrinho {color: #b81414; margin: 150px 5% 0 5%}
 #divglobal {margin: 5% 5% 300px 5%}
 .divcarrinho {width: 100%; background-color: white; border-radius: 10px; box-shadow: 0px 0px 5px #b81414;}
@@ -189,7 +191,7 @@ body {background-color: white; margin-top: 60px}
     
             <div id="mensagemCarrinhoVazio" style="display: none;">
                 <h2>Seu carrinho está vazio</h2><br>
-                    <a href="produtos.html"><span class="botaoconferir">Confira nossos produtos</span></a>
+                    <a href="https://jgloot.com.br/#produtos"><span class="botaoconferir">Confira nossos produtos</span></a>
             </div>
 
             <!---------------Carrinho-------------->
@@ -283,9 +285,10 @@ body {background-color: white; margin-top: 60px}
             <hr>
             <p class="copy">&copy; 2024 Todos os direitos reservados > 54.710.799 JOAO GABRIEL VASCONCELOS TRINDADE</p>
 		</footer>
-	
+        
 <script type="text/javascript" src="./jscepsprodutos.js"></script>
 <script>
+
 //Menu celular
 var overlay = document.getElementById('overlay');
 function openNav() {
@@ -384,24 +387,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.querySelectorAll('.remover-produto').forEach(function (botao) {
-        botao.addEventListener('click', function () {
-            var index = parseInt(botao.getAttribute('data-index'));
-            produtosSalvos.splice(index, 1);
-            localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
-            tabela.deleteRow(index);
+    botao.addEventListener('click', function () {
+        var index = parseInt(botao.getAttribute('data-index'));
+        produtosSalvos.splice(index, 1);
+        localStorage.setItem('carrinho', JSON.stringify(produtosSalvos));
 
-            // Recalcular o total
-            total = 0;
-            produtosSalvos.forEach(function (produto) {
-                total += produto.preco * produto.quantidade;
-            });
-            precoTotalInput.value = `R$${total},00`;
+        // Remover o elemento da tabela
+        tabela.deleteRow(index);
 
-            // Atualizar a quantidade de produtos salvos
-            quantidadeProdutosSalvos = produtosSalvos.length;
-            quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
+        // Atualizar os índices dos botões de remoção
+        document.querySelectorAll('.remover-produto').forEach(function (botao, newIndex) {
+            botao.setAttribute('data-index', newIndex);
         });
-    });
+        
+        if (produtosSalvos.length === 0) {
+            document.getElementById('mensagemCarrinhoVazio').style.display = 'block';
+            document.getElementById('divglobal').style.display = 'none';
+            document.getElementById('txcarrinho').style.display = 'none';
+        }
+
+        // Recalcular o total
+        total = 0;
+        produtosSalvos.forEach(function (produto) {
+            total += produto.preco * produto.quantidade;
+        });
+        precoTotalInput.value = `R$${total},00`;
+
+        // Atualizar a quantidade de produtos salvos
+        quantidadeProdutosSalvos = produtosSalvos.length;
+        quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
+    	});
+	});
+    if (produtosSalvos.length === 0) {
+        document.getElementById('mensagemCarrinhoVazio').style.display = 'block';
+        document.getElementById('divglobal').style.display = 'none';
+        document.getElementById('txcarrinho').style.display = 'none';
+    }
 });
 
 
