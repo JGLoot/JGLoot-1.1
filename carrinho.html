@@ -297,6 +297,7 @@ function setCookie(name, value, days) {
     expires = "; expires=" + date.toUTCString();
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
+  console.log("Cookie definido: ", name, "=", value, " (expira em ", days, " dias)");
 }
 
 // Obtendo o valor do input
@@ -307,6 +308,7 @@ var precoFinalNumerico = precoFinalInput.replace(/[^0-9]/g, '');
 
 // Armazenando o valor numérico em um cookie chamado 'resultadoFinal' com validade de 1 dia (você pode ajustar esse valor conforme necessário)
 setCookie('resultadoFinal', precoFinalNumerico, 1);
+console.log("Valor numérico armazenado no cookie: ", precoFinalNumerico);
 	
 //Menu celular
 var overlay = document.getElementById('overlay');
