@@ -300,10 +300,13 @@ function setCookie(name, value, days) {
 }
 
 // Obtendo o valor do input
-var precoFinal = document.getElementById('precofinal').value;
+var precoFinalInput = document.getElementById('precofinal').value;
 
-// Armazenando o valor em um cookie chamado 'resultadoFinal' com validade de 1 dia (você pode ajustar esse valor conforme necessário)
-setCookie('resultadoFinal', precoFinal, 1);
+// Removendo caracteres não numéricos do valor do input
+var precoFinalNumerico = precoFinalInput.replace(/[^0-9]/g, '');
+
+// Armazenando o valor numérico em um cookie chamado 'resultadoFinal' com validade de 1 dia (você pode ajustar esse valor conforme necessário)
+setCookie('resultadoFinal', precoFinalNumerico, 1);
 	
 //Menu celular
 var overlay = document.getElementById('overlay');
