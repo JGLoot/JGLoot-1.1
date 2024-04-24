@@ -80,6 +80,7 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 .todoofrete {width: 100%; text-align: right}
 #precoTotal:focus {outline: none}
 #precofinal {width: 100%; text-align: right; border: 0; border-radius: 10px; padding: 5px; font-size: 20px; font-weight: bold;}
+#precofinal:focus {outline: none}
 .continuar {width: 100%; background-color: green; margin-top: 5px; color: white; border-radius: 10px; padding: 10px; margin-bottom: 10px; border: 0; text-align: center}
 
 .limite {height: 20px}
@@ -288,18 +289,6 @@ body {background-color: white; margin-top: 60px}
         
 <script type="text/javascript" src="./jscepsprodutos.js"></script>
 <script>
-// Função para definir um cookie
-function setCookie(name, value, days) {
-  var expires = "";
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-  console.log("Cookie definido: ", name, "=", value, " (expira em ", days, " dias)");
-}
-
 // Obtendo o valor do input
 var precoFinalInput = document.getElementById('precofinal').value;
 
@@ -308,7 +297,18 @@ var precoFinalNumerico = precoFinalInput.replace(/[^0-9]/g, '');
 
 // Armazenando o valor numérico em um cookie chamado 'resultadoFinal' com validade de 1 dia (você pode ajustar esse valor conforme necessário)
 setCookie('resultadoFinal', precoFinalNumerico, 1);
-console.log("Valor numérico armazenado no cookie: ", precoFinalNumerico);
+
+// Função para definir um cookie
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  console.log("Cookie definido:", name, "=", value, "(expira em", days, "dias)");
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 	
 //Menu celular
 var overlay = document.getElementById('overlay');
