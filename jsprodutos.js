@@ -76,14 +76,15 @@ function additem() {
     var loja = document.getElementById('loja').textContent;
     var precoProduto = parseFloat(document.getElementById('precodoproduto').textContent.replace('R$', '').trim());
     var corSelecionadaInput = document.querySelector('input[name="cor"]:checked');
-    var corSelecionada = corSelecionadaInput ? corSelecionadaInput.value : "";
+    var corSelecionada = corSelecionadaInput ? corSelecionadaInput.value : null; // Mudança aqui
     var quantidadeProduto = document.getElementById('quantidade').value;
     var imgproduto = document.getElementById('img-principal').src;
     var tamanhoSelecionado = document.querySelector('input[name="tamanho"]:checked');
-    var tamanho = tamanhoSelecionado ? tamanhoSelecionado.value : "N/A";
+    var tamanho = tamanhoSelecionado ? tamanhoSelecionado.value : "";
     
-    // Verifica se há um input de cor selecionado, apenas se houver, exige a seleção de cor
-    if (document.querySelector('input[name="cor"]:checked')) {
+    // Verifica se há opções de seleção de cor na página
+    var opcoesCor = document.querySelectorAll('input[name="cor"]');
+    if (opcoesCor.length > 0) {
         if (!corSelecionada) {
             alert('Por favor, selecione uma cor antes de adicionar o produto ao carrinho.');
             return;
@@ -94,7 +95,7 @@ function additem() {
         nome: nomeProduto,
         loja: loja,
         preco: precoProduto,
-        cor: corSelecionada,
+        cor: corSelecionada || "", // Mudança aqui
         quantidade: quantidadeProduto,
         img: imgproduto,
         tamanho: tamanho
