@@ -76,7 +76,7 @@ function additem() {
     var loja = document.getElementById('loja').textContent;
     var precoProduto = parseFloat(document.getElementById('precodoproduto').textContent.replace('R$', '').trim());
     var corSelecionadaInput = document.querySelector('input[name="cor"]:checked');
-    var corSelecionada = corSelecionadaInput ? corSelecionadaInput.value : "N/A";
+    var corSelecionada = corSelecionadaInput ? corSelecionadaInput.value : "";
     var quantidadeProduto = document.getElementById('quantidade').value;
     var imgproduto = document.getElementById('img-principal').src;
     var tamanhoSelecionado = document.querySelector('input[name="tamanho"]:checked');
