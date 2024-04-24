@@ -49,30 +49,25 @@ function zoomImage(event) {
       img.style.transform = 'scale(1)';
     }
     
-function mudarImagem(url) {
-      const img = document.getElementById('img-principal');
-      img.src = url;
+function mudarImagem(element) {
+    // Remove a classe 'selected' de todas as imagens
+    var thumbnails = document.getElementsByClassName("thumbnail");
+    for (var i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].classList.remove("selected");
     }
+
+    // Adiciona a classe 'selected' à imagem clicada
+    element.classList.add("selected");
+
+    // Obtém a URL da imagem clicada e atualiza a imagem principal
+    const url = element.src;
+    const imgPrincipal = document.getElementById('img-principal');
+    imgPrincipal.src = url;
+}
 	
 function mudarImagemCor(novaImagemURL) {
         document.getElementById('img-principal').src = novaImagemURL;
 }
-
-// Obtém todas as imagens
-var imagens = document.querySelectorAll('.thumbnail');
-
-// Adiciona um ouvinte de evento de clique a cada imagem
-imagens.forEach(function(imagem) {
-  imagem.addEventListener('click', function() {
-    // Remove a classe 'imagemSelecionada' de todas as imagens
-    imagens.forEach(function(outraImagem) {
-      outraImagem.classList.remove('imagemSelecionada');
-    });
-
-    // Adiciona a classe 'imagemSelecionada' apenas à imagem clicada
-    imagem.classList.add('imagemSelecionada');
-  });
-});
 
 /////////////////////////////////////////////////// ADD ITEM //////////////////////////////////////////////////////////////////////////
 
