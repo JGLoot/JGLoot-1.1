@@ -292,8 +292,8 @@ body {background-color: white; margin-top: 60px}
 // Obtendo o valor do input
 var precoFinalInput = document.getElementById('precofinal').value;
 
-// Removendo caracteres não numéricos do valor do input
-var precoFinalNumerico = precoFinalInput.replace(/[^0-9]/g, '');
+// Removendo caracteres não numéricos do valor do input e mantendo apenas números e o ponto decimal
+var precoFinalNumerico = precoFinalInput.replace(/[^0-9.]/g, '');
 
 // Armazenando o valor numérico em um cookie chamado 'resultadoFinal' com validade de 1 dia (você pode ajustar esse valor conforme necessário)
 setCookie('resultadoFinal', precoFinalNumerico, 1);
@@ -309,9 +309,6 @@ function setCookie(name, value, days) {
   console.log("Cookie definido:", name, "=", value, "(expira em", days, "dias)");
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
-
-// Log adicional para verificar os valores passados ​​para a função setCookie
-console.log("Valores passados para setCookie:", precoFinalNumerico, 1);
 	
 //Menu celular
 var overlay = document.getElementById('overlay');
