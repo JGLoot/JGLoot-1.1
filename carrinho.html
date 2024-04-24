@@ -288,7 +288,23 @@ body {background-color: white; margin-top: 60px}
         
 <script type="text/javascript" src="./jscepsprodutos.js"></script>
 <script>
+// Função para definir um cookie
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
 
+// Obtendo o valor do input
+var precoFinal = document.getElementById('precofinal').value;
+
+// Armazenando o valor em um cookie chamado 'resultadoFinal' com validade de 1 dia (você pode ajustar esse valor conforme necessário)
+setCookie('resultadoFinal', precoFinal, 1);
+	
 //Menu celular
 var overlay = document.getElementById('overlay');
 function openNav() {
