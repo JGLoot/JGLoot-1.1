@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Obtém o valor do parâmetro 'termo' da URL
             var urlParams = new URLSearchParams(window.location.search);
             return urlParams.get('termo') || ''; // Retorna o termo de pesquisa ou uma string vazia
+    executarPesquisa();
         }
 
         // Função para filtrar os produtos com base no termo de pesquisa
