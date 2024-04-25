@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var quantidadeProdutosSalvos = produtosSalvos.length;
     	var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
     	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
-    executarPesquisa();
 });
 
 
