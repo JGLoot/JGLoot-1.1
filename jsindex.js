@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var quantidadeProdutosSalvos = produtosSalvos.length;
         var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
     	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
+     executarPesquisa();
 });
 
 // Função para ler o termo de pesquisa da URL
@@ -10,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Obtém o valor do parâmetro 'termo' da URL
             var urlParams = new URLSearchParams(window.location.search);
             return urlParams.get('termo') || ''; // Retorna o termo de pesquisa ou uma string vazia
-    executarPesquisa();
         }
 
         // Função para filtrar os produtos com base no termo de pesquisa
