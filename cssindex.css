@@ -1,4 +1,4 @@
-body {background-color: #dcdcdc; margin-top: 95px}
+body {background-color: #dcdcdc; margin-top: 90px}
 
 /* <header> */
 header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 2}
@@ -13,17 +13,17 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 #mySidenav p {color: white; cursor: pointer; font-size: 15px;}
 #mySidenav p:hover {color: grey}
 #mySidenav .closebtn {position: absolute; top: 0; right: 10px; font-size: 36px;}
-.logo {width: 90px; margin-left: 50px}
-.cxpesquisa {height: 50px; background-color: white; border-radius: 30px; padding: 12px}
+.logo {width: 80px; margin-left: 50px}
+.cxpesquisa {height: 40px; background-color: white; border-radius: 30px; padding: 8px}
 .inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
 .inputpesquisa::placeholder {color: #b81414; font-weight: bold}
 .inputpesquisa:focus {outline: none;}
-.lupa {width: 25px; float: right; cursor: pointer}
+.lupa {width: 20px; cursor: pointer;}
 .carrinho-container {position: relative; cursor: pointer}
 .carrinho-inner {position: relative; text-align: center;}
-.carrinho {display: inline-block; max-width: 60px; height: auto;}
+.carrinho {display: inline-block; max-width: 50px; height: auto;}
 .quanticar {position: absolute; top: 45%; left: 60%; transform: translate(-50%, -50%); margin: 0; color: #b81414; font-weight: bold}
-.propaganda {width: 190px; float: right; margin-left: 10px;}
+.propaganda {width: 170px; float: right; margin-left: 10px;}
 /* </header> */
 
 /* <span> */
