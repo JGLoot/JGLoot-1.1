@@ -34,7 +34,7 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 .thumbnails-container {display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 20px}
 .thumbnail {width: 15%; margin-top: 20px; border-radius: 5px; border: 1px solid grey}
 .thumbnail:hover {box-shadow: 0px 0px 5px #b81414}
-.imagemSelecionada {border: 1px solid #b81414}
+.imagemSelecionada {border: 2px solid #b81414}
 .inforproduto {border-left: 1px solid #b81414}
 .inforproduto hr {margin: 30px 0;}
 .inforproduto h5 {color: #b81414; font-weight: bold; text-align: justify}
