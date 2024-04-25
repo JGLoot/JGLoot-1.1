@@ -105,7 +105,7 @@ footer h6 {color: white}
 /* </figure> Anúncio*/
 
 @media screen and (max-width: 700px) {
-body {background-color: white; margin-top: 60px}
+body {background-color: white}
 /* <header> */
 .iconmenu {width: 25px; margin-left: 30px}
 .logo {width: 60px; margin-left: 20px}
@@ -118,7 +118,7 @@ body {background-color: white; margin-top: 60px}
 /* </header> */
 
 /* <div class="produto-principal"> */
-.produto-principal {margin: 80px 3% 0px 3%; padding: 20px}
+.produto-principal {margin: 20px 3% 0px 3%; padding: 20px}
 .imagens, .inforproduto {float: none; width: 100%}
 .inforproduto {border: 0; margin-top: 50px}
 /* </div class="produto-principal"> */
