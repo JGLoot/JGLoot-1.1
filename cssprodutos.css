@@ -32,7 +32,7 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 .imgzoom {overflow: hidden; position: relative;}
 .img-principal {width: 90%; display: block; margin: 0 auto;transition: transform 0.3s ease;}
 .thumbnails-container {display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 20px}
-.thumbnail {width: 15%; margin-top: 20px; border-radius: 5px;}
+.thumbnail {width: 15%; margin-top: 20px; border-radius: 5px; border: 1px solid grey}
 .thumbnail:hover {box-shadow: 0px 0px 5px #b81414}
 .imagemSelecionada {border: 1px solid #b81414}
 .inforproduto {border-left: 1px solid #b81414}
