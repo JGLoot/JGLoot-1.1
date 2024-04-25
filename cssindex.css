@@ -18,7 +18,7 @@ header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index
 .inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
 .inputpesquisa::placeholder {color: #b81414; font-weight: bold}
 .inputpesquisa:focus {outline: none;}
-.lupa {width: 20px; cursor: pointer;}
+.lupa {width: 20px; cursor: pointer; float: right}
 .carrinho-container {position: relative; cursor: pointer}
 .carrinho-inner {position: relative; text-align: center;}
 .carrinho {display: inline-block; max-width: 50px; height: auto;}
