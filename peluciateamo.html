@@ -35,140 +35,6 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JGLoot">
 <style>
-body {background-color: #dcdcdc;}
-
-/* <header> */
-header {background-color: #b81414; width: 100%; z-index: 2}
-.topo {width: 100%;}
-.overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 1}
-.overlay.active {display: block}
-.iconmenu {width: 30px; margin-left: 50px; cursor: pointer}
-#mySidenav {height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: #b81414; overflow-x: hidden; padding-top: 40px; transition: 0.5s; text-align: center}
-#mySidenav a {text-decoration: none; font-size: 15px; color: white; display: block; transition: 0.2s;}
-#mySidenav a:hover {color: grey;}
-#mySidenav h5 {color: white}
-#mySidenav p {color: white; cursor: pointer; font-size: 15px;}
-#mySidenav p:hover {color: grey}
-#mySidenav .closebtn {position: absolute; top: 0; right: 10px; font-size: 36px;}
-.logo {width: 80px; margin-left: 50px}
-.cxpesquisa {height: 40px; background-color: white; border-radius: 30px; padding: 8px}
-.inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
-.inputpesquisa::placeholder {color: #b81414; font-weight: bold}
-.inputpesquisa:focus {outline: none;}
-.lupa {width: 20px; cursor: pointer;}
-.cxpesquisa button {border: 0; background-color: transparent; float: right; padding: 0; margin-top: -2px}
-.carrinho-container {position: relative; cursor: pointer}
-.carrinho-inner {position: relative; text-align: center;}
-.carrinho {display: inline-block; max-width: 50px; height: auto;}
-.quanticar {position: absolute; top: 45%; left: 60%; transform: translate(-50%, -50%); margin: 0; color: #b81414; font-weight: bold}
-.propaganda {width: 170px; float: right; margin-left: 10px;}
-/* </header> */
-
-/* <div class="produto-principal"> */
-.produto-principal {background-color: white; margin: 50px 5% 0px 5%; box-shadow: 0px 0px 5px #b81414; padding: 20px 10px}
-.imgzoom {overflow: hidden; position: relative;}
-.img-principal {width: 90%; display: block; margin: 0 auto;transition: transform 0.3s ease;}
-.thumbnails-container {display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 20px}
-.thumbnail {width: 15%; margin-top: 20px; border-radius: 5px; border: 1px solid grey}
-.thumbnail:hover {box-shadow: 0px 0px 5px #b81414}
-.imagemSelecionada {border: 2px solid #b81414}
-.inforproduto {border-left: 1px solid #b81414}
-.inforproduto hr {margin: 30px 0;}
-.inforproduto h5 {color: #b81414; font-weight: bold; text-align: justify}
-.inforproduto a {color: grey;}
-.inforproduto h1 {color: green; margin-top: 20px}
-.inforproduto label {color: #b81414; font-size: 17px; font-weight: bold; margin-bottom: 5px}
-.inforproduto input {background-color: #b81414; border: none; height: 40px; border-radius: 10px; color: white; padding: 10px; margin-bottom: 5px}
-.inforproduto input::placeholder {color: white;}
-.inforproduto input:focus {outline: none;}
-#campofrete {width: 50%}
-.calcular {background-color: green; color: white; padding: 10px; border-radius: 10px; font-weight: bold; cursor: pointer}
-.calcular:hover {background-color:#006400}
-.inforproduto p {color: grey; font-weight: bold}
-.cor {display: none;}
-.labelcor {display: inline-block; padding: 5px 10px; cursor: pointer; box-shadow: 0px 0px 5px #b81414; border-radius: 5px; margin: 5px 2px 5px 0}
-.cor:checked + label {background-color: green; color: white;}
-.inputquant {width: 20%; text-align: center}
-.inputquant::-webkit-inner-spin-button,
-.inputquant::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0;}
-.inputquant{-moz-appearance: textfield;}
-.comprar {background-color: green; padding: 3%; color: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
-.comprar:hover {background-color:#006400}
-.addcar {background-color: #b81414; padding: 3%; color: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
-.addcar:hover {background-color:#990000}
-.entrega {display: none; text-align: center; padding: 30px}
-.entrega h1 {color: grey; margin-top: 50px}
-.entrega label {color: grey; font-weight: bold; text-align: left; margin: 5px 0}
-.entrega input {background-color: #b81414; border: none; height: 40px; border-radius: 10px; color: white; padding: 10px; width: 98%; margin-bottom: 10px}
-.entrega input::placeholder {color: white;}
-.entrega input:focus {outline: none;}
-.enviar {background-color: green; padding: 10px; color: white; cursor: pointer; border-radius: 10px; font-weight: bold; width: 90%}
-.entrega h6 {margin: 20px 0}
-/* <div class="produto-principal"> */
-
-/* <div class="descricao"> */
-.descricao {background-color: white; margin: 20px 5%; box-shadow: 0px 0px 5px #b81414; padding: 20px}
-.descricao h5 {color: #b81414}
-/* </div class="descricao"> */
-
-/* <footer> */
-footer {background-color: #b81414; text-align: center; padding: 5px; width: 100%;}
-footer hr {border: 1px solid white}
-footer img {width: 100px; margin-bottom: 20px}
-footer h6 {color: white}
-.p {color: white; font-size: 14px}
-.p a {color: white; font-weight: bold}
-.copy {color: white; font-size: 12px}
-/* </footer> */
-
-/* <article2> */
-.article2 {margin: 0 5% 5% 5%; padding-top: 10px; background-color: white; padding: 3%; box-shadow: 0px 0px 5px #b81414;}
-.article2 h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414;}
-.produtos2 {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
-.produto2 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 50px; flex: 0 0 calc(15% - 1px); padding: 5px}
-.produto2:hover {transform: scale(1.1); background-color: #ffcccc;}
-.produto2 a {text-decoration: none}
-.produto2 img {width: 100%; max-width: 200px; min-width: 80px; display: block; margin: 0 auto;}
-.produto2 h6 {color: #b81414}
-.produto2 p {color: grey; font-size: 12px}
-.produto2 h5 {color: green}
-.article2 span {display: block; margin: 0 auto; background-color: #b81414; padding: 10px; font-weight: bold; border-radius: 10px; cursor: pointer; width: 50%; text-align: center}
-.article2 span:hover {background-color:#990000}
-.article2 span a {text-decoration: none; color: white}
-/* </article2> */
-
-/* <figure> Anúncio*/
-.anuncio img {width: 60%; display: block; margin: 100px auto 100px auto; border-radius: 30px 0 30px 0}
-/* </figure> Anúncio*/
-
-@media screen and (max-width: 700px) {
-body {background-color: white}
-/* <header> */
-.iconmenu {width: 25px; margin-left: 30px}
-.logo {width: 60px; margin-left: 20px}
-.cxpesquisa {height: 40px; padding: 8px}
-.inputpesquisa {width: 70%; font-size: 14px}
-.lupa {width: 22px}
-.carrinho-container {padding-right: 30px}
-.carrinho {width: 50px}
-.propaganda {display: none}
-/* </header> */
-
-/* <div class="produto-principal"> */
-.produto-principal {margin: 20px 3% 0px 3%; padding: 20px}
-.imagens, .inforproduto {float: none; width: 100%}
-.inforproduto {border: 0; margin-top: 50px}
-/* </div class="produto-principal"> */
-
-/* <div class="descricao"> */
-.descricao {margin: 20px 3%;}
-/* </div class="descricao"> */
-
-/* <article2> */
-.article2 {margin: 0 3% 5% 3%;}
-.produto2 {flex: 0 0 calc(33% - 5px)}
-/* </article2> */
-}
 </style>
 </head>
 
@@ -267,6 +133,16 @@ body {background-color: white}
                     <p id="frete">A taxa de entrega aparecerá aqui</p>
                     <p id="precofrete"></p>
 
+                    <hr>
+
+		    <label>Escolha uma cor:</label><br>
+
+                    <input class="cor" id="cor1" type="radio" name="cor" value="1" onclick="mudarImagemCor('https://i.postimg.cc/8cLW9St1/1.png')" required>
+                    <label for="cor1" class="labelcor">1</label>
+                    
+                    <input class="cor" id="cor2" type="radio" name="cor" value="2" onclick="mudarImagemCor('https://i.postimg.cc/1tqNVSxp/2.png')" required>
+                    <label for="cor2" class="labelcor">2</label>
+                    
                     <hr>
                     
                     <label>Quantidade:</label>
