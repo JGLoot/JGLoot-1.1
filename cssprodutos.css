@@ -19,7 +19,7 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 .inputpesquisa::placeholder {color: #b81414; font-weight: bold}
 .inputpesquisa:focus {outline: none;}
 .lupa {width: 20px; cursor: pointer;}
-.cxpesquisa button {border: 0; background-color: transparent; float: right; padding-top: 0}
+.cxpesquisa button {border: 0; background-color: transparent; float: right; padding: 0; margin-top: -2px}
 .carrinho-container {position: relative; cursor: pointer}
 .carrinho-inner {position: relative; text-align: center;}
 .carrinho {display: inline-block; max-width: 50px; height: auto;}
