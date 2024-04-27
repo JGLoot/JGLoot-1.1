@@ -124,9 +124,13 @@ function mostrarDivEntrega() {
         return;
     }
     
-    if (!corSelecionada) {
-        alert('Por favor, escolha uma cor antes de prosseguir.');
-        return;
+    // Verifica se há opções de seleção de cor na página
+    var opcoesCor = document.querySelectorAll('input[name="cor"]');
+    if (opcoesCor.length > 0) {
+        if (!corSelecionada) {
+            alert('Por favor, selecione uma cor antes de adicionar o produto ao carrinho.');
+            return;
+        }
     }
 
     if (botaoComprar.dataset.clicado === 'true') {
