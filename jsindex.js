@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
     	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
      executarPesquisa();
-});
 
 // Função para ler o termo de pesquisa da URL
         function obterTermoPesquisa() {
@@ -163,3 +162,4 @@ function shuffleDivs() {
 	}
 }
 shuffleDivs();
+});
