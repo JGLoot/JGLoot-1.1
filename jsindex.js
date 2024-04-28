@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var quantidadeProdutosSalvosElemento = document.querySelector('.quanticar');
     	quantidadeProdutosSalvosElemento.textContent = quantidadeProdutosSalvos;
      executarPesquisa();
+});
 
 // Função para ler o termo de pesquisa da URL
         function obterTermoPesquisa() {
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-
+	
         // Função para rolar a página até a seção de produtos
         function rolarParaProdutos() {
             var produtosSection = document.getElementById('produtos');
@@ -162,4 +163,3 @@ function shuffleDivs() {
 	}
 }
 shuffleDivs();
-});
