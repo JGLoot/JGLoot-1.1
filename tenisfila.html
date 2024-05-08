@@ -313,34 +313,34 @@ body {background-color: white}
                     <hr>
                     
                     <label>Escolha um tamanho:</label><br>
-                    <input class="tamanho" id="t34" type="radio" name="tamanho" value="34" required>
+                    <input class="tamanho" id="34" type="radio" name="tamanho" value="34" required>
                     <label for="34" class="tamanho-label">34</label>
 
-                    <input class="tamanho" id="t35" type="radio" name="tamanho" value="35" required>
+                    <input class="tamanho" id="35" type="radio" name="tamanho" value="35" required>
                     <label for="35" class="tamanho-label">35</label>
 
-                    <input class="tamanho" id="t36" type="radio" name="tamanho" value="36" required>
+                    <input class="tamanho" id="36" type="radio" name="tamanho" value="36" required>
                     <label for="36" class="tamanho-label">36</label>
 
-                    <input class="tamanho" id="t37" type="radio" name="tamanho" value="37" required>
+                    <input class="tamanho" id="37" type="radio" name="tamanho" value="37" required>
                     <label for="37" class="tamanho-label">37</label>
 
-                    <input class="tamanho" id="t38" type="radio" name="tamanho" value="38" required>
+                    <input class="tamanho" id="38" type="radio" name="tamanho" value="38" required>
                     <label for="38" class="tamanho-label">38</label>
 
-                    <input class="tamanho" id="t39" type="radio" name="tamanho" value="39" required>
+                    <input class="tamanho" id="39" type="radio" name="tamanho" value="39" required>
                     <label for="39" class="tamanho-label">39</label>
 
-                    <input class="tamanho" id="t40" type="radio" name="tamanho" value="40" required>
+                    <input class="tamanho" id="40" type="radio" name="tamanho" value="40" required>
                     <label for="40" class="tamanho-label">40</label>
 
-                    <input class="tamanho" id="t41" type="radio" name="tamanho" value="41" required>
+                    <input class="tamanho" id="41" type="radio" name="tamanho" value="41" required>
                     <label for="41" class="tamanho-label">41</label>
 
-                    <input class="tamanho" id="t42" type="radio" name="tamanho" value="42" required>
+                    <input class="tamanho" id="42" type="radio" name="tamanho" value="42" required>
                     <label for="42" class="tamanho-label">42</label>
 
-                    <input class="tamanho" id="t43" type="radio" name="tamanho" value="43" required>
+                    <input class="tamanho" id="43" type="radio" name="tamanho" value="43" required>
                     <label for="43" class="tamanho-label">43</label>
 					
                     <hr>
@@ -496,44 +496,55 @@ document.addEventListener('DOMContentLoaded', function() {
     var corInputs = document.querySelectorAll('input[name="cor"]');
     var tamanhoInputs = document.querySelectorAll('.tamanho');
     var tamanhoLabels = document.querySelectorAll('.tamanho-label');
+    var tamanhoOcultado = null;
 
-    var tamanhosPorCor = {
-        "Preto": ["34", "35", "36", "37", "38"],
-        "Azul": ["34", "35", "36", "37", "39", "40", "41"],
-        "Preto C/ Sola Verde": ["34", "35", "36", "37", "38", "42"],
-        "Preto C/ Sola Rosa": ["34", "36", "39", "40", "41", "42", "43"],
-        "Preto C/ Sola Preto": ["34", "40", "43"],
-        "Preto C/ Sola Branca": ["38", "40", "41", "42", "43"],
-        "Preto C/ Sola Colorida": ["34", "36", "38", "40", "41", "42", "43"],
-        "Preto E Rosa": ["37", "38", "39", "40", "41", "42", "43"]
+    // Mapeamento de cores para os tamanhos que devem ser ocultados
+    var coresParaTamanhosOcultos = {
+    "Preto": ["34", "35", "36", "37", "38"],
+    "Azul": ["34", "35", "36", "37", "39", "40", "41"],
+    "Preto C/ Sola Verde": ["34", "35", "36", "37", "38", "42"],
+    "Preto C/ Sola Rosa": ["34", "36", "39", "40", "41", "42", "43"],
+    "Preto C/ Sola Preto": ["34", "40", "43"],
+    "Preto C/ Sola Branca": ["38", "40", "41", "42", "43"],
+    "Preto C/ Sola Colorida": ["34", "36", "38", "40", "41", "42", "43"],
+    "Preto E Rosa": ["37", "38", "39", "40", "41", "42", "43"],
     };
 
     corInputs.forEach(function(input) {
         input.addEventListener('change', function() {
-            var corSelecionada = this.value;
-            var tamanhosOcultar = tamanhosPorCor[corSelecionada] || [];
-
             tamanhoInputs.forEach(function(tamanhoInput) {
                 tamanhoInput.removeAttribute('disabled');
-                tamanhoInput.style.display = 'inline-block';
+                tamanhoInput.style.visibility = 'visible';
             });
             tamanhoLabels.forEach(function(tamanhoLabel) {
-                tamanhoLabel.style.display = 'inline-block';
+                tamanhoLabel.style.visibility = 'visible';
             });
 
-            tamanhosOcultar.forEach(function(tamanho) {
-                var tamanhoInput = document.getElementById("t" + tamanho);
-                var tamanhoLabel = document.querySelector('label[for="t' + tamanho + '"]');
-                if (tamanhoInput && tamanhoLabel) {
-                    tamanhoInput.setAttribute('disabled', 'disabled');
-                    tamanhoInput.style.display = 'none';
-                    tamanhoLabel.style.display = 'none';
-                }
-            });
+            if (tamanhoOcultado) {
+                tamanhoOcultado.checked = false;
+            }
+
+            var corSelecionada = this.value;
+            var tamanhosParaOcultar = coresParaTamanhosOcultos[corSelecionada];
+
+            if (tamanhosParaOcultar) {
+                tamanhosParaOcultar.forEach(function(tamanho) {
+                    ocultarTamanho(tamanho);
+                });
+            }
         });
     });
-});
 
+    function ocultarTamanho(valor) {
+        var tamanhoInput = document.getElementById(valor);
+        var tamanhoLabel = document.querySelector('label[for="' + valor + '"]');
+        if (tamanhoInput && tamanhoLabel) {
+            tamanhoInput.setAttribute('disabled', 'disabled');
+            tamanhoInput.style.visibility = 'hidden';
+            tamanhoLabel.style.visibility = 'hidden';
+        }
+    }
+});
 </script>	
 </body>
 </html>
