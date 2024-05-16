@@ -157,17 +157,17 @@ function calcular() {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
         npreco.style.color = "green";
-        npreco.textContent = "R$10,00";
+        npreco.textContent = "R$5,00";
     } else if (fretequinze.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
-        npreco.textContent = "R$15,00";
+        npreco.textContent = "R$10,00";
         npreco.style.color = "green";
     } else if (fretevinte.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
         npreco.style.color = "green";
-        npreco.textContent = "R$20,00";
+        npreco.textContent = "R$15,00";
     } else if (indisponivel.includes(ncep)) {
         txfrete.textContent = "Entrega indisponível.";
         npreco.style.color = "red";
