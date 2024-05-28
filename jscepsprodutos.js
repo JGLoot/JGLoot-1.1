@@ -138,9 +138,10 @@ function calcular() {
     produtosSalvos.forEach(function (produto) {
         totalProdutos += produto.preco * produto.quantidade;
     });
-    var ncep = cep.value;
-    var txfrete = precofrete;
-    var npreco = numeropreco;
+
+    var ncep = document.getElementById('cep').value;
+    var txfrete = document.getElementById('precofrete');
+    var npreco = document.getElementById('numeropreco');
     var fretegratis = cepsFreteGratis;
     var fretedez = cepsDezReais;
     var fretequinze = cepsQuinze;
@@ -149,10 +150,10 @@ function calcular() {
 
     if (fretegratis.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias";
-        npreco.style.color = 'green';
-        txfrete.style.color = "green"; 
+        txfrete.style.color = "green";
+        npreco.style.color = "green";
         npreco.textContent = "Gratuitamente";
-        document.getElementById('precofinal').value = 'R$' + totalProdutos.toFixed(2);
+        document.getElementById('precofinal').value = totalProdutos.toFixed(2);
     } else if (fretedez.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
@@ -161,8 +162,8 @@ function calcular() {
     } else if (fretequinze.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
-        npreco.textContent = "R$10,00";
         npreco.style.color = "green";
+        npreco.textContent = "R$10,00";
     } else if (fretevinte.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
@@ -170,12 +171,56 @@ function calcular() {
         npreco.textContent = "R$15,00";
     } else if (indisponivel.includes(ncep)) {
         txfrete.textContent = "Entrega indisponível.";
+        txfrete.style.color = "red";
         npreco.style.color = "red";
-    } else if (ncep === null || ncep === "" || ncep != fretegratis) {
+        npreco.textContent = "";
+    } else {
         txfrete.textContent = "CEP inválido.";
         txfrete.style.color = "red";
         npreco.textContent = "";
         document.getElementById('precofinal').value = "Digite um CEP válido";
+    }
+
+    var precoFreteElement = document.getElementById('precofrete');
+
+    // Verificar se o elemento existe e se contém um valor de frete válido
+    if (precoFreteElement) {
+        var precoFreteText = precoFreteElement.textContent.trim();
+        var precoFrete = parseFloat(precoFreteText.replace(/[^\d.,-]/g, '').replace(',', '.'));
+
+        // Se o valor do frete for válido, calcular o preço final
+        if (!isNaN(precoFrete)) {
+            var precoFinal = totalProdutos + precoFrete;
+            document.getElementById('precofinal').value = precoFinal.toFixed(2);
+        }
+    }
+}
+
+// Salvar o valor de precoFinal em um cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function continuar() {
+    var precoFinalElement = document.getElementById("precofinal");
+    if (precoFinalElement) {
+        var precoFinal = precoFinalElement.value;
+        if (precoFinal === "" || precoFinal === "Digite um CEP válido") {
+            alert("Frete inválido!");
+            return;
+        }
+        setCookie("precofinal", precoFinal, 7);
+        console.log("Valor salvo no cookie:", precoFinal);
+        document.querySelector('.entrega').style.display = 'block';
+        document.querySelector('.limite').scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error("Elemento de preço final não encontrado");
     }
 }
 
