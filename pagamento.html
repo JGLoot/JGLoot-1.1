@@ -10,20 +10,13 @@ function getCookie(name) {
     var cookie = cookieArray.find(c => c.includes(name));
     if (cookie) {
         var cookieValue = parseFloat(cookie.split('=')[1]);
-        console.log("Valor do cookie encontrado:", cookieValue);
-        if (!isNaN(cookieValue)) {
-            console.log("Valor do cookie válido:", cookieValue);
-            return cookieValue;
-        } else {
-            console.log("Valor do cookie não é um número válido.");
-            return null;
-        }
+        console.log("Valor recuperado do cookie:", cookieValue);
+        return cookieValue;
     }
-    console.log("Cookie não encontrado.");
     return null;
 }
 function finalizar() {
-var resultadoFinal = getCookie('precofinal');
+var resultadoFinal = getCookie("precofinal");
 if (resultadoFinal !== null) {
             if (Math.abs(resultadoFinal - 1.00) < 0.001) {
               window.location.href = 'https://cobranca.picpay.com/p/17041977776593fe9109cc4';
