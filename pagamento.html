@@ -10,9 +10,16 @@ function getCookie(name) {
     var cookie = cookieArray.find(c => c.includes(name));
     if (cookie) {
         var cookieValue = parseFloat(cookie.split('=')[1]);
-        console.log("Valor recuperado do cookie:", cookieValue);
-        return cookieValue;
+        console.log("Valor do cookie encontrado:", cookieValue);
+        if (!isNaN(cookieValue)) {
+            console.log("Valor do cookie válido:", cookieValue);
+            return cookieValue;
+        } else {
+            console.log("Valor do cookie não é um número válido.");
+            return null;
+        }
     }
+    console.log("Cookie não encontrado.");
     return null;
 }
 function finalizar() {
