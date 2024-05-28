@@ -203,6 +203,7 @@ function setCookie(name, value, days) {
     }
     // Formatar o valor para ter duas casas decimais
     var formattedValue = parseFloat(value).toFixed(2);
+    console.log("Valor a ser salvo no cookie:", formattedValue);
     document.cookie = name + "=" + (formattedValue || "") + expires + "; path=/";
 }
 
