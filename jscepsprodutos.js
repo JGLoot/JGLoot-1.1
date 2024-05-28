@@ -177,20 +177,6 @@ function calcular() {
         npreco.textContent = "";
         document.getElementById('precofinal').value = "Digite um CEP válido";
     }
-        
-    var precoFreteElement = document.getElementById('precofrete');
-        
-    // Verificar se o elemento existe e se contém um valor de frete válido
-    if (precoFreteElement) {
-        var precoFreteText = precoFreteElement.textContent.trim();
-        var precoFrete = parseFloat(precoFreteText.replace(/[^\d.,-]/g, ''));
-    
-        // Se o valor do frete for válido, calcular o preço final
-        if (!isNaN(precoFrete)) {
-            var precoFinal = totalProdutos + precoFrete;
-            document.getElementById('precofinal').value = 'R$' + precoFinal.toFixed(2); 
-        }
-    } 
 }
 
 document.getElementById('campofrete').addEventListener('input', function (e) {
