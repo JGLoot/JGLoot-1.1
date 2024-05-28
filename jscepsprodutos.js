@@ -138,10 +138,9 @@ function calcular() {
     produtosSalvos.forEach(function (produto) {
         totalProdutos += produto.preco * produto.quantidade;
     });
-
-    var ncep = document.getElementById('cep').value;
-    var txfrete = document.getElementById('precofrete');
-    var npreco = document.getElementById('numeropreco');
+    var ncep = cep.value;
+    var txfrete = precofrete;
+    var npreco = numeropreco;
     var fretegratis = cepsFreteGratis;
     var fretedez = cepsDezReais;
     var fretequinze = cepsQuinze;
@@ -150,10 +149,10 @@ function calcular() {
 
     if (fretegratis.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias";
-        txfrete.style.color = "green";
-        npreco.style.color = "green";
+        npreco.style.color = 'green';
+        txfrete.style.color = "green"; 
         npreco.textContent = "Gratuitamente";
-        document.getElementById('precofinal').value = totalProdutos.toFixed(2);
+        document.getElementById('precofinal').value = 'R$' + totalProdutos.toFixed(2);
     } else if (fretedez.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
@@ -162,8 +161,8 @@ function calcular() {
     } else if (fretequinze.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
-        npreco.style.color = "green";
         npreco.textContent = "R$10,00";
+        npreco.style.color = "green";
     } else if (fretevinte.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
@@ -171,16 +170,14 @@ function calcular() {
         npreco.textContent = "R$15,00";
     } else if (indisponivel.includes(ncep)) {
         txfrete.textContent = "Entrega indisponível.";
-        txfrete.style.color = "red";
         npreco.style.color = "red";
-        npreco.textContent = "";
-    } else {
+    } else if (ncep === null || ncep === "" || ncep != fretegratis) {
         txfrete.textContent = "CEP inválido.";
         txfrete.style.color = "red";
         npreco.textContent = "";
         document.getElementById('precofinal').value = "Digite um CEP válido";
     }
-
+  
     var precoFreteElement = document.getElementById('precofrete');
 
     // Verificar se o elemento existe e se contém um valor de frete válido
