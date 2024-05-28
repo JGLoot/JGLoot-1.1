@@ -439,7 +439,29 @@ window.addEventListener('scroll', function() {
         inforcarrinho.style.bottom = '0';
     }
 });
-	
+
+// Salvar o valor de precoFinal em um cookie
+            function setCookie(name, value, days) {
+              var expires = "";
+              if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+            function continuar() {
+                var precoFinal = document.getElementById("precofinal").value;
+                var inputValue = precoFinal.value;
+                setCookie("precofinal", inputValue, 7);
+                console.log("Valor salvo no cookie:", inputValue);
+                if (precoFinal === "") {
+                    alert("Frete inválido!");
+                    return;
+                }
+            document.querySelector('.entrega').style.display = 'block';
+            document.querySelector('.limite').scrollIntoView({ behavior: 'smooth' });
+            }
 </script>
 </body>
 </html>
