@@ -188,11 +188,7 @@ function calcular() {
         // Se o valor do frete for válido, calcular o preço final
         if (!isNaN(precoFrete)) {
             var precoFinal = totalProdutos + precoFrete;
-            document.getElementById('precofinal').value = 'R$' + precoFinal.toFixed(2);
-
-            // Coockie
-            setCookie("resultadoFinal", precoFinal.toFixed(2), 7);
-            console.log("Valor salvo no cookie:", precoFinal.toFixed(2));
+            document.getElementById('precofinal').value = 'R$' + precoFinal.toFixed(2); 
         }
     } 
 }
