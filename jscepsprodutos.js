@@ -203,15 +203,16 @@ function setCookie(name, value, days) {
     }
     // Formatar o valor para ter duas casas decimais
     var formattedValue = parseFloat(value).toFixed(2);
-    console.log("Valor a ser salvo no cookie:", formattedValue);
     document.cookie = name + "=" + (formattedValue || "") + expires + "; path=/";
 }
 
 function continuar() {
     var precoFinalElement = document.getElementById("precofinal");
     if (precoFinalElement) {
-        var precoFinal = precoFinalElement.value;
-        if (precoFinal === "" || precoFinal === "Digite um CEP válido") {
+        var precoFinalText = precoFinalElement.value;
+        // Remover o prefixo "R$" e converter para número
+        var precoFinal = parseFloat(precoFinalText.replace('R$', '').trim());
+        if (isNaN(precoFinal)) {
             alert("Frete inválido!");
             return;
         }
