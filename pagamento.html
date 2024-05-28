@@ -14,7 +14,7 @@ return parseFloat(cookie.split('=')[1]);
 return null;
 }
 function finalizar() {
-var resultadoFinal = getCookie('precoFinal');
+var resultadoFinal = getCookie('precofinal');
 if (resultadoFinal !== null) {
             if (Math.abs(resultadoFinal - 1.00) < 0.001) {
               window.location.href = 'https://cobranca.picpay.com/p/17041977776593fe9109cc4';
