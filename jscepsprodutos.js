@@ -200,6 +200,15 @@ function calcular() {
               }
               document.cookie = name + "=" + (value || "") + expires + "; path=/";
             }
+            function continuar() {
+                var precoFinal = document.getElementById("precofinal").value;
+                var inputValue = precoFinal.value;
+                setCookie("precofinal", inputValue, 7);
+                console.log("Valor salvo no cookie:", inputValue);
+                if (precoFinal === "") {
+                    alert("Frete inválido!");
+                    return;
+            }
         }
     } 
 }
