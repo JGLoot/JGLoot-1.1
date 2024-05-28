@@ -191,7 +191,15 @@ function calcular() {
             document.getElementById('precofinal').value = 'R$' + precoFinal.toFixed(2);
 
             // Salvar o valor de precoFinal em um cookie
-            document.cookie = "resultadoFinal=" + precoFinal.toFixed(2);
+            function setCookie(name, value, days) {
+              var expires = "";
+              if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+              }
+              document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
         }
     } 
 }
