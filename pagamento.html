@@ -9,10 +9,10 @@ function getCookie(name) {
     var cookieArray = document.cookie.split(';');
     var cookie = cookieArray.find(c => c.includes(name));
     if (cookie) {
-        var cookieValue = parseFloat(cookie.split('=')[1]);
+        var cookieValue = cookie.split('=')[1].trim(); // Remove espaços em branco
         if (!isNaN(cookieValue)) {
-            console.log("Valor recuperado do cookie:", cookieValue);
-            return cookieValue;
+            console.log("Valor recuperado do cookie:", parseFloat(cookieValue).toFixed(2));
+            return parseFloat(cookieValue).toFixed(2); // Formatar para duas casas decimais
         } else {
             console.error("Valor do cookie não é um número válido:", cookieValue);
         }
