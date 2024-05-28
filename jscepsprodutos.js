@@ -208,6 +208,9 @@ function calcular() {
                 if (precoFinal === "") {
                     alert("Frete inválido!");
                     return;
+                }
+            document.querySelector('.entrega').style.display = 'block';
+            document.querySelector('.limite').scrollIntoView({ behavior: 'smooth' });
             }
         }
     } 
