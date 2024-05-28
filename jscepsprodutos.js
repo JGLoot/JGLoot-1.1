@@ -190,28 +190,9 @@ function calcular() {
             var precoFinal = totalProdutos + precoFrete;
             document.getElementById('precofinal').value = 'R$' + precoFinal.toFixed(2);
 
-            // Salvar o valor de precoFinal em um cookie
-            function setCookie(name, value, days) {
-              var expires = "";
-              if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-              }
-              document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-            function continuar() {
-                var precoFinal = document.getElementById("precofinal").value;
-                var inputValue = precoFinal.value;
-                setCookie("precofinal", inputValue, 7);
-                console.log("Valor salvo no cookie:", inputValue);
-                if (precoFinal === "") {
-                    alert("Frete inválido!");
-                    return;
-                }
-            document.querySelector('.entrega').style.display = 'block';
-            document.querySelector('.limite').scrollIntoView({ behavior: 'smooth' });
-            }
+            // Coockie
+            setCookie("resultadoFinal", precoFinal.toFixed(2), 7);
+            console.log("Valor salvo no cookie:", precoFinal.toFixed(2));
         }
     } 
 }
