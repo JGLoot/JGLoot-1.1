@@ -28,18 +28,18 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 /* </header> */
 
 /* <div class="produto-principal"> */
-.produto-principal {background-color: white; margin: 50px 5% 0px 5%; box-shadow: 0px 0px 5px #b81414; padding: 20px 10px}
+.produto-principal {background-color: white; margin: 50px 5% 0px 5%; box-shadow: 0px 0px 5px #b81414; padding: 30px 20px}
 .imgzoom {overflow: hidden; position: relative;}
-.img-principal {width: 90%; display: block; margin: 0 auto;transition: transform 0.3s ease;}
-.thumbnails-container {display: flex; flex-wrap: wrap; justify-content: space-between; padding: 0 20px}
-.thumbnail {width: 15%; margin-top: 20px; border-radius: 5px; border: 1px solid grey}
+.img-principal {width: 80%; display: block; margin: 0 auto;transition: transform 0.3s ease;}
+.thumbnails-container {display: flex; flex-wrap: wrap; padding: 0 40px}
+.thumbnail {width: 15%; margin-top: 20px; border-radius: 5px; border: 1px solid grey; margin-left: 10px}
 .thumbnail:hover {box-shadow: 0px 0px 5px #b81414}
 .imagemSelecionada {border: 2px solid #b81414}
-.inforproduto {border-left: 1px solid #b81414}
+.inforproduto {border-left: 1px solid #b81414; padding: 0 20px}
 .inforproduto hr {margin: 30px 0;}
 .inforproduto h5 {color: #b81414; font-weight: bold; text-align: justify}
 .inforproduto a {color: grey;}
-.inforproduto h1 {color: green; margin-top: 20px}
+.inforproduto h1 {color: green; margin-top: 20px; margin-bottom: 0}
 .inforproduto label {color: #b81414; font-size: 17px; font-weight: bold; margin-bottom: 5px}
 .inforproduto input {background-color: #b81414; border: none; height: 40px; border-radius: 10px; color: white; padding: 10px; margin-bottom: 5px}
 .inforproduto input::placeholder {color: white;}
@@ -47,7 +47,7 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 #campofrete {width: 50%}
 .calcular {background-color: green; color: white; padding: 10px; border-radius: 10px; font-weight: bold; cursor: pointer}
 .calcular:hover {background-color:#006400}
-.inforproduto p {color: grey; font-weight: bold}
+.inforproduto p {color: green; font-weight: bold}
 .cor {display: none;}
 .labelcor {display: inline-block; padding: 5px 10px; cursor: pointer; box-shadow: 0px 0px 5px #b81414; border-radius: 5px; margin: 5px 2px 5px 0}
 .cor:checked + label {background-color: green; color: white;}
@@ -58,10 +58,21 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 .inputquant::-webkit-inner-spin-button,
 .inputquant::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0;}
 .inputquant{-moz-appearance: textfield;}
-.comprar {background-color: green; padding: 3%; color: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
-.comprar:hover {background-color:#006400}
-.addcar {background-color: #b81414; padding: 3%; color: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
-.addcar:hover {background-color:#990000}
+
+/* <div class="spans"> */
+.spans {width: 100%;}
+.spans hr {color: white; margin: 0}
+.spans span {display: block; width: 100%; margin-bottom: 10px; text-align: center;}
+.comprar, .addcar, .retirar {padding: 10px 0; border-radius: 5px; font-weight: bold; color: white; cursor: pointer;}
+.comprar { background-color: green; }
+.comprar:hover { background-color: #006400; }
+.addcar { background-color: green; }
+.addcar:hover { background-color: #006400; }
+.retirar { background-color: #b81414; }
+.retirar:hover { background-color: #990000; }
+.retirar a { text-decoration: none; color: white; }
+/* </div class="spans"> */
+
 .entrega {display: none; text-align: center; padding: 20px}
 .entrega h1 {color: grey; margin-top: 40px}
 .entrega label {color: grey; font-weight: bold; text-align: left; margin: 5px 0}
