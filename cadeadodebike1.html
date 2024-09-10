@@ -108,21 +108,23 @@
             <input type="hidden" name="loja" value="Sol A Sol">
             
         	  <div class="row">
-            	<div class="col-6 col-sx-12 imagens">
+            	<div class="col-7 col-sx-12 imagens">
                 	<div class="imgzoom"  onmousemove="zoomImage(event)" onmouseout="resetZoom()">
-                		<img class="img-principal" id="img-principal" src="https://i.postimg.cc/J0QXKyrJ/ccdadadc-49a2-49a4-9f9c-2a7fd414c213.jpg">
+                		<img class="img-principal" id="img-principal" src="https://i.postimg.cc/Fs32KybC/283a7cee-ebb1-4f92-8d96-8e46623d3325.jpg">
                     </div>
 					
                     <div class="thumbnails-container">
-                        <img class="thumbnail" src="https://i.postimg.cc/J0QXKyrJ/ccdadadc-49a2-49a4-9f9c-2a7fd414c213.jpg" alt="Miniatura 0" onclick="mudarImagem(this)">
+                        <img class="thumbnail" src="https://i.postimg.cc/Fs32KybC/283a7cee-ebb1-4f92-8d96-8e46623d3325.jpg" alt="Miniatura 0" onclick="mudarImagem(this)">
+			<img class="thumbnail" src="https://i.postimg.cc/t4zw39Mh/144b34c6-7cd1-4571-ad3d-86ac55a4faeb.jpg" alt="Miniatura 0" onclick="mudarImagem(this)">
                     </div>
 				</div>
                 
-				<div class="col-6 col-xs-12 inforproduto">
+				<div class="col-5 col-xs-12 inforproduto">
                 
-                    <h5 id="nomedoproduto">Cadeado Mangueira Para Bicicleta Idea</h5>
+                    <h5 id="nomedoproduto">Cadeado Mangueira Para Bicicleta Idea Verde</h5>
                     <a href="https://www.instagram.com/comercial_sol_a_sol/" id="loja">Sol A Sol</a>
                     <h1 id="precodoproduto">R$30,00</h1>
+		    <p>Ou 12x de 3,12</p>
                     <hr>
                     
                     <label>Frete:</label><br>
@@ -130,28 +132,18 @@
                     <span class="calcular" onclick="calcular()">Calcular</span>
                     <p id="frete">A taxa de entrega aparecerá aqui</p>
                     <p id="precofrete"></p>
-                    
-                    <hr>
-                    
-                    <label>Escolha uma cor:</label><br>
 
-                    <input class="cor" id="cor1" type="radio" name="cor" value="Verde" required>
-                    <label for="cor1" class="labelcor">Verde</label>
-                    
-                    <input class="cor" id="cor3" type="radio" name="cor" value="Azul" required>
-                    <label for="cor3" class="labelcor">Azul</label>
-                    
-                    <input class="cor" id="cor5" type="radio" name="cor" value="Vermelho" required> 
-                    <label for="cor5" class="labelcor">Vermelho</label>
                     <hr>
 					
                     <label>Quantidade:</label>
                     <input class="inputquant" type="number" id="quantidade" name="quantidade" min="1" value="1">
                     <hr>
-                    <br>
                     
-                    <span id="comprar" class="comprar">Comprar</span>
-                    <span class="addcar" onclick="additem()" id="addcar">Adicionar Ao Carrinho</span>
+                    <div class="spans">
+                    <span id="comprar" class="comprar">Comprar</span><hr>
+                    <span class="addcar" onclick="additem()" id="addcar">Adicionar Ao Carrinho</span><hr>
+                    <span class="retirar"><a href="https://wa.me/5593992244987">Retirar na loja</a></span>
+                    </div>
                     <hr>
                 </div>
           	  </div>
