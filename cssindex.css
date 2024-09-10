@@ -83,9 +83,9 @@ section h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-botto
 .produto:hover {transform: scale(1.1); background-color: #ffcccc;}
 .produto a {text-decoration: none}
 .produto img {display: block; margin: 0 auto; width: 100%;}
-.produto h6 {color: #b81414; margin-top: 5px}
-.produto p {color: grey; font-size: 12px}
-.produto h4 {color: green}
+.produto h6 {color: #b81414; margin-top: 5px; margin-bottom: 20px}
+.produto p {color: green; font-size: 15px}
+.produto h4 {color: green; margin-bottom: 0}
 /* </section> */
 
 /* <footer> */
