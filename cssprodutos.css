@@ -70,7 +70,7 @@ header {background-color: #b81414; width: 100%; z-index: 2}
 .addcar:hover { background-color: #006400; }
 .retirar { background-color: #b81414; }
 .retirar:hover { background-color: #990000; }
-.retirar a { text-decoration: none; color: white; }
+.spans a { text-decoration: none; color: white; }
 /* </div class="spans"> */
 
 .entrega {display: none; text-align: center; padding: 20px}
