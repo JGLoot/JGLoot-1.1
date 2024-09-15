@@ -1,7 +1,7 @@
 body {background-color: #dcdcdc; margin-top: 85px}
 
 /* <header> */
-header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 2}
+header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 4}
 .topo {width: 100%;}
 .overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 1}
 .overlay.active {display: block}
@@ -37,13 +37,17 @@ span p {margin: 5px; font-size: 14px; font-weight: bold; text-align: center}
 .carousel img {width: 100%;height: auto;display: none;}
 .carousel img.active {display: block;animation: fade 1s ease-in-out;}
 @keyframes fade {from {opacity: 0;}to {opacity: 1;}}
-.prev,.next {position: absolute;top: 50%;transform: translateY(-50%); color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 1;}
+.prev,.next {position: absolute;top: 35%;transform: translateY(-50%); color: white;border: none;cursor: pointer;padding: 10px;font-size: 20px;z-index: 1;}
 .prev {left: 0;}
 .next {right: 0;}
 /* </figure> Banners*/
 
+/* <div class="gradient"> */
+.gradient {background: linear-gradient(to bottom, transparent 60%, #dcdcdc); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
+/* </div> */
+
 /* <div class="tudo"> */
-.tudo {background-color: white; margin: 0 5% 5% 5%}
+.tudo {margin: -10% 5% 5% 5%; z-index: 3; position: relative; }
 /* </div> */
 
 /* <article1> */
@@ -78,7 +82,7 @@ span p {margin: 5px; font-size: 14px; font-weight: bold; text-align: center}
 /* <section> */
 section {margin: 0 3% 100px 3%}
 section h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414; padding-top: 5%}
-.produtos {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
+.produtos {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%;}
 .produto {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 20px; flex: 0 0 calc(20% - 20px); padding: 6px; float: left; margin-bottom: 30px}
 .produto:hover {transform: scale(1.1); background-color: #ffcccc;}
 .produto a {text-decoration: none}
@@ -115,8 +119,12 @@ body {background-color: white; margin-top: 60px}
 span p {font-size: 13px}
 /* </span> */
 
+/* <span class="gradient"> */
+.gradient {background: linear-gradient(to bottom, transparent 60%, white);}
+/* </span> */
+
 /* <div class="tudo"> */
-.tudo {margin: 0}
+.tudo {margin: -10% 0 0 0}
 /* </div> */
 
 /* <article1> */
