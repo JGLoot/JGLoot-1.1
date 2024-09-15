@@ -123,6 +123,8 @@ const searchInput = document.getElementById('campopesquisa');
 const produtos = document.querySelectorAll('.produto');
 var article = document.querySelectorAll('article');
 var figure = document.querySelectorAll('figure');
+var tudo = document.querySelectorAll('.tudo');
+var gradient = document.querySelectorAll('.gradient');
 
 searchInput.addEventListener('input', function() {
 	const filtro = this.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -142,7 +144,13 @@ searchInput.addEventListener('input', function() {
 			figure.forEach(figureItem => {
 				figureItem.style.display = 'none';
 			});
-
+            		tudo.forEach(tudoItem => { 
+            			tudoItem.style = 'margin-top: 5%';
+            		});
+			gradient.forEach(gradientItem => {
+				gradientItem.style.display = 'none';
+			});
+			
 	// Exiba ou oculte os produtos com base no filtro
 	produtos.forEach(produto => {
 		const dataName = produto.getAttribute('data-name').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
