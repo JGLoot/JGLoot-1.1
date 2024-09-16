@@ -144,6 +144,12 @@ searchInput.addEventListener('input', function() {
 			figure.forEach(figureItem => {
 				figureItem.style.display = 'block';
 			});
+			tudo.forEach(tudoItem => { 
+            			tudoItem.style = 'margin-top: -8%';
+            		});
+			gradient.forEach(gradientItem => {
+				gradientItem.style.display = 'block';
+			});
 		} else {
 			// Se houver texto no campo de pesquisa, oculte o figure e o article
 			article.forEach(articleItem => {
