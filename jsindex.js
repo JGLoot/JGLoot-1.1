@@ -74,6 +74,8 @@ function categoriasmenu(categoria) {
 		var produtos = document.querySelectorAll(".produto");
 		var article = document.querySelectorAll('article');
 		var figure = document.querySelectorAll('figure');
+		var tudo = document.querySelectorAll('.tudo');
+		var gradient = document.querySelectorAll('.gradient');
 		produtos.forEach(function(produto) {
 			var categoriasProduto = produto.getAttribute("data-name").split(" ");
 			if (categoriasProduto.includes(categoria)) {
@@ -87,6 +89,12 @@ function categoriasmenu(categoria) {
 		});
 		figure.forEach(function(elem) {
 			elem.style.display = "none";
+		});
+		tudo.forEach(function(elem) { 
+            		elem.style = 'margin-top: 5%';
+            	});
+		gradient.forEach(function(elem) {
+			elem.style.display = 'none';
 		});
 		document.getElementById("mySidenav").style.width = "0";
 		overlay.classList.remove('active');
