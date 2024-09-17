@@ -132,7 +132,7 @@ body {background-color: white}
 /* </header> */
 
 /* <div class="produto-principal"> */
-.produto-principal {margin: 20px 3% 0px 3%; padding: 20px}
+.produto-principal {margin: 20px 3% 0px 3%; padding: 10px}
 .imagens, .inforproduto {float: none; width: 100%}
 .inforproduto {border: 0; margin-top: 40px}
 /* </div class="produto-principal"> */
