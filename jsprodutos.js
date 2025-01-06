@@ -118,7 +118,7 @@ function mostrarDivEntrega() {
     var corSelecionada = Array.from(cores).some(cor => cor.checked);
     var precoFrete = document.getElementById('precofrete').textContent.trim();
 // Verifica se o texto do preço do frete é válido
-    var precosValidos = ["Gratuitamente", "R$10,00", "R$15,00", "R$20,00"];
+    var precosValidos = ["Gratuitamente", "R$5,00", "R$10,00", "R$15,00", "R$20,00"];
     if (!precosValidos.includes(precoFrete)) {
         alert('CEP inválido.');
         return;
