@@ -164,7 +164,6 @@ function calcular() {
         npreco.style.color = 'green';
         txfrete.style.color = "green"; 
         npreco.textContent = "R$10,00";
-        document.getElementById('precofinal').value = 'R$' + totalProdutos.toFixed(2);
     } else if (frete7.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por:";
         txfrete.style.color = "green";
