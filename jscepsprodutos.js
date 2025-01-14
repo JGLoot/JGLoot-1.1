@@ -157,7 +157,7 @@ function calcular() {
     var frete12 = zona_leste12;
     var frete11 = zona_sul11;
     var frete20 = cepsVinte;
-    var indisponivel = cepIndisponivel
+    var indisponivel = cepIndisponivel;
 
     if (frete10.includes(ncep)) {
         txfrete.textContent = "Chegará em até 2 dias por";
