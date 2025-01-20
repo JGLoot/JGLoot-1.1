@@ -189,7 +189,15 @@ function calcular() {
         txfrete.style.color = "green";
         npreco.style.color = "green";
         npreco.textContent = "R$20,00";
-    } else if (indisponivel.includes(ncep)) {
+    } else if (
+        !frete10.includes(ncep) &&
+        !frete7.includes(ncep) &&
+        !frete8.includes(ncep) &&
+        !frete12.includes(ncep) &&
+        !frete11.includes(ncep) &&
+        !frete20.includes(ncep) &&
+        !indisponivel.includes(ncep)
+    ) {
         txfrete.textContent = "Entrega indisponível.";
         npreco.style.color = "red";
     } else if (ncep === null || ncep === "") {
