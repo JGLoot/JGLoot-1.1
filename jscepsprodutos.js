@@ -189,6 +189,11 @@ function calcular() {
         txfrete.style.color = "green";
         npreco.style.color = "green";
         npreco.textContent = "R$20,00";
+    } else if (ncep === null || ncep === "") {
+        txfrete.textContent = "CEP inválido.";
+        txfrete.style.color = "red";
+        npreco.textContent = "";
+        document.getElementById('precofinal').value = "Digite um CEP válido";
     } else if (
         !frete10.includes(ncep) &&
         !frete7.includes(ncep) &&
@@ -200,11 +205,6 @@ function calcular() {
     ) {
         txfrete.textContent = "Entrega indisponível.";
         npreco.style.color = "red";
-    } else if (ncep === null || ncep === "") {
-        txfrete.textContent = "CEP inválido.";
-        txfrete.style.color = "red";
-        npreco.textContent = "";
-        document.getElementById('precofinal').value = "Digite um CEP válido";
     }
   
     var precoFreteElement = document.getElementById('precofrete');
