@@ -6,19 +6,19 @@
 <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/SQ9jc494/favicon-JG.png"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 <link rel="stylesheet" type="text/css" href="cssprodutos.css" media="screen" />
 
-<title>Guarda Chuva Sombrinha Dobrável Preto</title> 
+<title>Guarda Chuva Sombrinha Preto</title> 
 
 <!-- NOME DO PRODUTO -->
 
-<meta property="og:title" content="Guarda Chuva Sombrinha Dobrável Preto - R$ 50,00">
+<meta property="og:title" content="Guarda Chuva Sombrinha Preto - R$ 44,00">
 
 <!-- DESCRIÇÃO DO PRODUTO -->
 
-<meta property="og:description" content="Um guarda-chuva clássico preto para toda a família.">
+<meta property="og:description" content="Um guarda-chuva grande preto para toda a família.">
 
 <!-- IMAGEM DO PRODUTO -->
 
-<meta property="og:image" content="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lpg90ojmoled02.webp" />
+<meta property="og:image" content="https://i.postimg.cc/D0XQmpyw/Sombrinha-40-00.png" />
 
 <!-- URL DO PRODUTO -->
 
@@ -26,7 +26,7 @@
 
 <!-- PREÇO DO PRODUTO -->
 
-<meta property="product:price:amount" content="50.00">
+<meta property="product:price:amount" content="44.00">
 <meta property="product:price:currency" content="BRL">
 
 <!-- PADRÃO (IGNORAR) -->
@@ -104,26 +104,25 @@
           <div class="produto-principal">
           
             <form id="colorForm" onsubmit="enviar()" action="https://api.sheetmonkey.io/form/7eqrTSyTcDuJHDqiJagaZS" method="post">
-			<input type="hidden" name="produto" value="Guarda Chuva Sombrinha Dobrável Preto">
+			<input type="hidden" name="produto" value="Guarda Chuva Sombrinha Preto">
             <input type="hidden" name="loja" value="Produto Oficial JGLoot">
             
         	  <div class="row">
             	<div class="col-6 col-sx-12 imagens">
                 	<div class="imgzoom"  onmousemove="zoomImage(event)" onmouseout="resetZoom()">
-                		<img class="img-principal" id="img-principal" src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lpg90ojmoled02.webp">
+                		<img class="img-principal" id="img-principal" src="https://i.postimg.cc/D0XQmpyw/Sombrinha-40-00.png">
                     </div>
 					
                     <div class="thumbnails-container">
-                        <img class="thumbnail" src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lpg90ojmoled02.webp" alt="Miniatura 0" onclick="mudarImagem(this)">
-                        <img class="thumbnail" src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-lo4s950uao93ba.webp" alt="Miniatura 0" onclick="mudarImagem(this)">
+                        <img class="thumbnail" src="https://i.postimg.cc/D0XQmpyw/Sombrinha-40-00.png" alt="Miniatura 0" onclick="mudarImagem(this)">
                         </div>
 				</div>
                 
 				<div class="col-6 col-xs-12 inforproduto">
                 
-                    <h5 id="nomedoproduto">Guarda Chuva Sombrinha Dobrável Preto</h5>
+                    <h5 id="nomedoproduto">Guarda Chuva Sombrinha Grande Preto</h5>
                     <a href="https://www.instagram.com/_jgloot_/" id="loja">Produto Oficial JGLoot</a>
-                    <h1 id="precodoproduto">R$50,00</h1>
+                    <h1 id="precodoproduto">R$44,00</h1>
 		    <p></p>
                     <hr>
                     
@@ -179,10 +178,7 @@
           <div class="descricao">
            			<h5>Descrição do produto:</h5>
                     <br>
-                    <p style="text-align: justify">A superfície do guarda-chuva de poliéster 170T de alta qualidade passou por acabamento, impressão e tingimento, vapor e modelagem para garantir boa densidade e uniformidade do tecido.<br>
-
-Diâmetro de abertura 107cm,as 8 varetas e a haste central em ferro garantem um desempenho à prova de vento e são mais leves.O guarda-chuva inteiro pesa apenas 210 gramas, o que equivale ao peso de 2 maçãs.
-</p>
+                    <p style="text-align: justify">Guarda Chuva Grande de até 2 pessoas, material pvc médio, 1,5m aproximadamente.</p>
            </div>
            
            <article class="article2">
@@ -223,7 +219,7 @@ Diâmetro de abertura 107cm,as 8 varetas e a haste central em ferro garantem um 
 /////////////////////////////////////////////////// COOKIE PREÇO //////////////////////////////////////////////////////////////////////////
 
 function setPrecoCookie() {
-    var precoUnidade = 50.00;
+    var precoUnidade = 44.00;
     var quantidade = parseInt(document.getElementById('quantidade').value) || 1; 
     var frete = parseFloat(document.getElementById('precofrete').textContent.replace('R$', '').trim()) || 0;
     var precoTotal = (precoUnidade * quantidade) + frete;
