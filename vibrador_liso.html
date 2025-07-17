@@ -6,27 +6,27 @@
 <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/SQ9jc494/favicon-JG.png"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 <link rel="stylesheet" type="text/css" href="cssprodutos.css" media="screen" />
 
-<title>Filtro Anti Pólen</title> 
+<title>Vibrador Ponto G Liso A Prova Dágua</title> 
 
 <!-- NOME DO PRODUTO -->
 
-<meta property="og:title" content="Filtro Anti Pólen Cabine Bosch Fiat Fire 8/16v CB0515 - R$ 33,00">
+<meta property="og:title" content="Vibrador Ponto G Liso A Prova Dágua - R$ 35,00">
 
 <!-- DESCRIÇÃO DO PRODUTO -->
 
-<meta property="og:description" content="Garanta já sua limpeza">
+<meta property="og:description" content="Cor Preto">
 
 <!-- IMAGEM DO PRODUTO -->
 
-<meta property="og:image" content="https://i.postimg.cc/mg9ZJkhM/10.png" />
+<meta property="og:image" content="https://i.postimg.cc/rsyLw7Vk/Vibr4d0r-Ponto-G-liso.jpg" />
 
 <!-- URL DO PRODUTO -->
 
-<meta property="og:url" content="https://jgloot.com.br/filtro_bosch.html">
+<meta property="og:url" content="https://jgloot.com.br/vibrador_liso.html">
 
 <!-- PREÇO DO PRODUTO -->
 
-<meta property="product:price:amount" content="33.00">
+<meta property="product:price:amount" content="35.00">
 <meta property="product:price:currency" content="BRL">
 
 <!-- PADRÃO (IGNORAR) -->
@@ -35,6 +35,154 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JGLoot">
 <style>
+body {background-color: #dcdcdc;}
+
+/* <header> */
+header {background-color: #b81414; width: 100%; z-index: 2}
+.topo {width: 100%;}
+.overlay {position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: none; z-index: 1}
+.overlay.active {display: block}
+.iconmenu {width: 30px; margin-left: 50px; cursor: pointer}
+#mySidenav {height: 100%; width: 0; position: fixed; z-index: 2; top: 0; left: 0; background-color: #b81414; overflow-x: hidden; padding-top: 40px; transition: 0.5s; text-align: center}
+#mySidenav a {text-decoration: none; font-size: 15px; color: white; display: block; transition: 0.2s;}
+#mySidenav a:hover {color: grey;}
+#mySidenav h5 {color: white}
+#mySidenav p {color: white; cursor: pointer; font-size: 15px;}
+#mySidenav p:hover {color: grey}
+#mySidenav .closebtn {position: absolute; top: 0; right: 10px; font-size: 36px;}
+.logo {width: 80px; margin-left: 50px}
+.cxpesquisa {height: 40px; background-color: white; border-radius: 30px; padding: 8px}
+.inputpesquisa {border: none; width: 80%; color: #b81414; background-color:transparent; font-weight: bold}
+.inputpesquisa::placeholder {color: #b81414; font-weight: bold}
+.inputpesquisa:focus {outline: none;}
+.lupa {width: 20px; cursor: pointer;}
+.cxpesquisa button {border: 0; background-color: transparent; float: right; padding: 0; margin-top: -2px}
+.carrinho-container {position: relative; cursor: pointer}
+.carrinho-inner {position: relative; text-align: center;}
+.carrinho {display: inline-block; max-width: 50px; height: auto;}
+.quanticar {position: absolute; top: 45%; left: 60%; transform: translate(-50%, -50%); margin: 0; color: #b81414; font-weight: bold}
+.propaganda {width: 170px; float: right; margin-left: 10px;}
+/* </header> */
+
+/* <div class="produto-principal"> */
+.produto-principal {background-color: white; margin: 50px 5% 0px 5%; box-shadow: 0px 0px 5px #b81414; padding: 30px 20px}
+.imgzoom {overflow: hidden; position: relative;}
+.img-principal {width: 80%; display: block; margin: 0 auto;transition: transform 0.3s ease;}
+.thumbnails-container {display: flex; flex-wrap: wrap; padding: 0 40px}
+.thumbnail {width: 15%; margin-top: 20px; border-radius: 5px; border: 1px solid grey; margin-left: 10px}
+.thumbnail:hover {box-shadow: 0px 0px 5px #b81414}
+.imagemSelecionada {border: 2px solid #b81414}
+.inforproduto {border-left: 1px solid #b81414; padding: 0 50px}
+.inforproduto hr {margin: 30px 0;}
+.inforproduto h5 {color: #b81414; font-weight: bold; text-align: justify}
+.inforproduto a {color: grey;}
+.inforproduto h1 {color: green; margin-top: 20px; margin-bottom: 0}
+.inforproduto label {color: #b81414; font-size: 17px; font-weight: bold; margin-bottom: 5px}
+.inforproduto input {background-color: #b81414; border: none; height: 40px; border-radius: 10px; color: white; padding: 10px; margin-bottom: 5px}
+.inforproduto input::placeholder {color: white;}
+.inforproduto input:focus {outline: none;}
+#campofrete {width: 50%}
+.calcular {background-color: green; color: white; padding: 10px; border-radius: 10px; font-weight: bold; cursor: pointer}
+.calcular:hover {background-color:#006400}
+.inforproduto p {color: green; font-weight: bold}
+.cor {display: none;}
+.labelcor {display: inline-block; padding: 5px 10px; cursor: pointer; box-shadow: 0px 0px 5px #b81414; border-radius: 5px; margin: 5px 2px 5px 0}
+.cor:checked + label {background-color: green; color: white;}
+.tamanho {display: none}
+.tamanho-label {display: inline-block; padding: 5px 10px; cursor: pointer; box-shadow: 0px 0px 5px #b81414; border-radius: 5px; margin: 5px 2px 5px 0}
+.tamanho:checked + label {background-color: green; color: white;} 
+.inputquant {width: 20%; text-align: center}
+.inputquant::-webkit-inner-spin-button,
+.inputquant::-webkit-outer-spin-button {-webkit-appearance: none; margin: 0;}
+.inputquant{-moz-appearance: textfield;}
+
+/* <div class="spans"> */
+.spans {width: 100%;}
+.spans hr {color: white; margin: 0}
+.spans span {display: block; width: 100%; margin-bottom: 10px; text-align: center;}
+.comprar, .addcar, .retirar {padding: 10px 0; border-radius: 5px; font-weight: bold; color: white; cursor: pointer;}
+.comprar { background-color: green; }
+.comprar:hover { background-color: #006400; }
+.addcar { background-color: green; }
+.addcar:hover { background-color: #006400; }
+.retirar { background-color: #b81414; }
+.retirar:hover { background-color: #990000; }
+.spans a { text-decoration: none; color: white; }
+/* </div class="spans"> */
+
+.entrega {display: none; text-align: center; padding: 20px}
+.entrega h1 {color: grey; margin-top: 40px}
+.entrega label {color: grey; font-weight: bold; text-align: left; margin: 5px 0}
+.entrega input {background-color: #b81414; border: none; height: 40px; border-radius: 10px; color: white; padding: 10px; width: 98%; margin-bottom: 10px}
+.entrega input::placeholder {color: white;}
+.entrega input:focus {outline: none;}
+.enviar {background-color: green; padding: 10px; color: white; cursor: pointer; border-radius: 10px; font-weight: bold; width: 90%}
+.entrega h6 {margin: 20px 0}
+/* <div class="produto-principal"> */
+
+/* <div class="descricao"> */
+.descricao {background-color: white; margin: 20px 5%; box-shadow: 0px 0px 5px #b81414; padding: 20px}
+.descricao h5 {color: #b81414}
+/* </div class="descricao"> */
+
+/* <footer> */
+footer {background-color: #b81414; text-align: center; padding: 5px; width: 100%;}
+footer hr {border: 1px solid white}
+footer img {width: 100px; margin-bottom: 20px}
+footer h6 {color: white}
+.p {color: white; font-size: 14px}
+.p a {color: white; font-weight: bold}
+.copy {color: white; font-size: 12px}
+/* </footer> */
+
+/* <article2> */
+.article2 {margin: 0 5% 5% 5%; padding-top: 10px; background-color: white; padding: 3%; box-shadow: 0px 0px 5px #b81414;}
+.article2 h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-bottom: 3px solid #b81414;}
+.produtos2 {display: flex; flex-wrap: wrap; text-align: center; justify-content: space-between; width: 100%}
+.produto2 {background-color: white; box-shadow: 0px 0px 5px #b81414; transition: transform 0.2s ease; margin-bottom: 50px; flex: 0 0 calc(15% - 1px); padding: 5px}
+.produto2:hover {transform: scale(1.1); background-color: #ffcccc;}
+.produto2 a {text-decoration: none}
+.produto2 img {width: 100%; max-width: 200px; min-width: 80px; display: block; margin: 0 auto;}
+.produto2 h6 {color: #b81414}
+.produto2 p {color: grey; font-size: 12px}
+.produto2 h5 {color: green}
+.article2 span {display: block; margin: 0 auto; background-color: #b81414; padding: 10px; font-weight: bold; border-radius: 10px; cursor: pointer; width: 50%; text-align: center}
+.article2 span:hover {background-color:#990000}
+.article2 span a {text-decoration: none; color: white}
+/* </article2> */
+
+/* <figure> Anúncio*/
+.anuncio img {width: 60%; display: block; margin: 100px auto 100px auto; border-radius: 30px 0 30px 0}
+/* </figure> Anúncio*/
+
+@media screen and (max-width: 700px) {
+body {background-color: white}
+/* <header> */
+.iconmenu {width: 25px; margin-left: 30px}
+.logo {width: 60px; margin-left: 20px}
+.cxpesquisa {height: 40px; padding: 8px}
+.inputpesquisa {width: 70%; font-size: 14px}
+.lupa {width: 22px}
+.carrinho-container {padding-right: 30px}
+.carrinho {width: 50px}
+.propaganda {display: none}
+/* </header> */
+
+/* <div class="produto-principal"> */
+.produto-principal {margin: 20px 3% 0px 3%; padding: 10px}
+.imagens, .inforproduto {float: none; width: 100%}
+.inforproduto {border: 0; margin-top: 40px}
+/* </div class="produto-principal"> */
+
+/* <div class="descricao"> */
+.descricao {margin: 20px 3%;}
+/* </div class="descricao"> */
+
+/* <article2> */
+.article2 {margin: 0 3% 5% 3%;}
+.produto2 {flex: 0 0 calc(33% - 5px)}
+/* </article2> */
+}
 </style>
 </head>
 
@@ -104,27 +252,25 @@
           <div class="produto-principal">
           
             <form id="colorForm" onsubmit="enviar()" action="https://api.sheetmonkey.io/form/7eqrTSyTcDuJHDqiJagaZS" method="post">
-			<input type="hidden" name="produto" value="Filtro Anti Pólen Cabine Bosch Fiat Fire 8/16v CB0515">
-            <input type="hidden" name="loja" value="Lancia">
+			<input type="hidden" name="produto" value="Vibrador Ponto G Liso A Prova Dágua">
+            <input type="hidden" name="loja" value="Sedução Feminina">
             
         	  <div class="row">
             	<div class="col-6 col-sx-12 imagens">
                 	<div class="imgzoom"  onmousemove="zoomImage(event)" onmouseout="resetZoom()">
-                		<img class="img-principal" id="img-principal" src="https://i.postimg.cc/mg9ZJkhM/10.png">
+                		<img class="img-principal" id="img-principal" src="https://i.postimg.cc/rsyLw7Vk/Vibr4d0r-Ponto-G-liso.jpg">
                     </div>
 					
                     <div class="thumbnails-container">
-                        <img class="thumbnail" src="https://i.postimg.cc/mg9ZJkhM/10.png" alt="Rosa" onclick="mudarImagem(this)">
-                        <img class="thumbnail" src="https://i.postimg.cc/Dy8wQBTx/11.png" alt="Rosa" onclick="mudarImagem(this)">
-                        <img class="thumbnail" src="https://i.postimg.cc/wBdxpzsr/12.png" alt="Rosa" onclick="mudarImagem(this)">
+                    	<img class="thumbnail" src="https://i.postimg.cc/rsyLw7Vk/Vibr4d0r-Ponto-G-liso.jpg" alt="Miniatura 0" onclick="mudarImagem(this)">
                     </div>
 				</div>
                 
 				<div class="col-6 col-xs-12 inforproduto">
                 
-                    <h5 id="nomedoproduto">Filtro Anti Pólen Cabine Bosch Fiat Fire 8/16v CB0515</h5>
-                    <a href="https://www.instagram.com/lancia_stm/" id="loja">Lancia Auto Mecânica</a>
-                    <h1 id="precodoproduto">R$33,00</h1>
+                    <h5 id="nomedoproduto">Vibrador Ponto G Liso A Prova Dágua</h5>
+                    <a href="https://www.instagram.com/sedu__feminina/" id="loja">Sedução Feminina</a>
+                    <h1 id="precodoproduto">R$35,00</h1>
 		    <p></p>
                     <hr>
                     
@@ -133,7 +279,7 @@
                     <span class="calcular" onclick="calcular()">Calcular</span>
                     <p id="frete">A taxa de entrega aparecerá aqui</p>
                     <p id="precofrete"></p>
-                    
+
                     <hr>
 					
                     <label>Quantidade:</label>
@@ -180,7 +326,7 @@
           <div class="descricao">
            			<h5>Descrição do produto:</h5>
                     <br>
-                    <p style="text-align: justify">Entre em contato para mais detalhes</p>
+                    <p style="text-align: justify">5343-Vibrador Ponto G liso.<br>Uma vibração.<br>Resistente a água.<br>Material: TPE,ABS e Componentes eletrônicos.<br>Antes e após o uso lave com água fria e sabão neutro ou bactericida, seque com papel toalha ou deixe secar naturalmente.Não molhe o compartimento de pilhas quando houver. Guardar em local seco e separado de outros produtos. Não compartilhe o mesmo acessório com outras pessoas para evitar doenças sexualmente transmissíveis. Utilize sempre lubrificantes à base de água. Pessoas alérgicas a composição do produto não deve utilizá-lo. Não utilizar em áreas inflamadas ou com lacerações. Em caso de patologia existente procure um médico.<br>Utiliza 1 pilha de AA não inclusa.<br>Tamanho: 3.2x13.2cm.<br>Acessório de uso adulto.<br>Origem: China.<br>Validade Indeterminada.<br>Contém: 1 peça.<br>Não tóxico.</p>
            </div>
            
            <article class="article2">
@@ -221,7 +367,7 @@
 /////////////////////////////////////////////////// COOKIE PREÇO //////////////////////////////////////////////////////////////////////////
 
 function setPrecoCookie() {
-    var precoUnidade = 33.00;
+    var precoUnidade = 35.00;
     var quantidade = parseInt(document.getElementById('quantidade').value) || 1; 
     var frete = parseFloat(document.getElementById('precofrete').textContent.replace('R$', '').trim()) || 0;
     var precoTotal = (precoUnidade * quantidade) + frete;
