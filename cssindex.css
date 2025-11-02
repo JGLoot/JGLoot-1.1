@@ -1,4 +1,4 @@
-body {background-color: #dcdcdc; margin-top: 85px}
+body {background-color: #2b0f81; margin-top: 85px}
 
 /* <header> */
 header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 4}
@@ -43,11 +43,11 @@ span p {margin: 5px; font-size: 14px; font-weight: bold; text-align: center}
 /* </figure> Banners*/
 
 /* <div class="gradient"> */
-.gradient {background: linear-gradient(to bottom, transparent 60%, #dcdcdc); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
+.gradient {background: linear-gradient(to bottom, transparent 60%, #2b0f81); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
 /* </div> */
 
 /* <div class="tudo"> */
-.tudo {margin: -8% 5% 5% 5%; z-index: 3; position: relative; }
+.tudo {margin: -6% 5% 5% 5%; z-index: 3; position: relative; }
 /* </div> */
 
 /* <article1> */
@@ -87,8 +87,8 @@ section h3 {color: #b81414; text-align: center; margin: 0 0 40px 0; border-botto
 .produto:hover {transform: scale(1.1); background-color: #ffcccc;}
 .produto a {text-decoration: none}
 .produto img {display: block; margin: 0 auto; width: 100%;}
-.produto h6 {color: #b81414; margin-top: 5px; margin-bottom: 20px}
-.produto p {color: green; font-size: 12px}
+.produto h6 {color: #b81414; margin-top: 5px; margin-bottom: 0}
+.produto p {color: red; font-size: 12px; margin: 0}
 .produto h4 {color: green; margin-bottom: 0}
 /* </section> */
 
