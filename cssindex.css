@@ -120,7 +120,7 @@ span p {font-size: 13px}
 /* </span> */
 
 /* <span class="gradient"> */
-.gradient {background: linear-gradient(to bottom, transparent 60%, white);}
+.gradient {background: linear-gradient(to bottom, transparent 60%, #2b0f81);}
 /* </span> */
 
 /* <div class="tudo"> */
