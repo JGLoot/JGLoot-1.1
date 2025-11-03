@@ -103,7 +103,7 @@ footer h6 {color: white}
 /* </footer> */
 
 @media screen and (max-width: 700px) {
-body {background-color: white; margin-top: 60px}
+body {background-color: #2b0f81; margin-top: 60px}
 /* <header> */
 .iconmenu {width: 25px; margin-left: 30px}
 .logo {width: 60px; margin-left: 20px}
