@@ -1,4 +1,30 @@
-body {background-color: #2b0f81; margin-top: 85px}
+        /* ======== FUNDO COM COR NATALINA ======== */
+body {
+    background-color: #b81414;
+    margin-top: 85px;
+    overflow-x: hidden !important;
+}
+
+/* ======== NEVE CSS (NÃO ALTERA O LAYOUT) ======== */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    color: white;
+    font-size: 18px;
+    pointer-events: none;
+    animation: fall linear infinite;
+    z-index: 9999;
+    opacity: 0.9;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
 
 /* <header> */
 header {background-color: #b81414; position: fixed; top: 0; width: 100%; z-index: 4}
@@ -43,7 +69,7 @@ span p {margin: 5px; font-size: 14px; font-weight: bold; text-align: center}
 /* </figure> Banners*/
 
 /* <div class="gradient"> */
-.gradient {background: linear-gradient(to bottom, transparent 60%, #2b0f81); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
+.gradient {background: linear-gradient(to bottom, transparent 60%, #b81414); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
 /* </div> */
 
 /* <div class="tudo"> */
@@ -102,9 +128,11 @@ footer h6 {color: white}
 .copy {color: white; font-size: 12px}
 /* </footer> */
 
+
+/******************** RESPONSIVO ********************/
 @media screen and (max-width: 700px) {
-body {background-color: #2b0f81; margin-top: 60px}
-/* <header> */
+body {background-color: #b81414; margin-top: 60px}
+
 .iconmenu {width: 25px; margin-left: 30px}
 .logo {width: 60px; margin-left: 20px}
 .cxpesquisa {height: 40px; padding: 8px}
@@ -113,30 +141,28 @@ body {background-color: #2b0f81; margin-top: 60px}
 .carrinho-container {padding-right: 30px}
 .carrinho {width: 50px}
 .propaganda {display: none}
-/* </header> */
 
-/* <span> */
 span p {font-size: 13px}
-/* </span> */
 
-/* <span class="gradient"> */
 .gradient {background: linear-gradient(to bottom, transparent 60%, #2b0f81);}
-/* </span> */
 
-/* <div class="tudo"> */
 .tudo {margin: -6% 0 0 0}
-/* </div> */
 
-/* <article1> */
-.article1 h3 {margin-top: 20px}
 .produto1 {flex: 0 0 calc(33% - 5px)}
-/* </article1> */
-
-/* <article2> */
 .produto2 {flex: 0 0 calc(33% - 5px)}
-/* </article2> */
-
-/* <section> */
 .produto {flex: 0 0 calc(33% - 5px)}
-/* </section> */
 }
+
+/* ====== Imagens 1:1 para todos os produtos ====== */
+
+.produto img,
+.produto1 img,
+.produto2 img {
+    width: 100%;
+    aspect-ratio: 1 / 1;      /* força a proporção quadrada */
+    object-fit: contain;        /* preenche sem distorcer */
+    object-position: center;  /* centraliza a imagem */
+    border-radius: 5px;       /* opcional: deixa mais bonito */
+    display: block;
+}
+.produto h7 {color: green}
