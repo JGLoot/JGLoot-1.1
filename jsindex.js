@@ -1,16 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-    for (let i = 0; i < 40; i++) {
-        let floco = document.createElement("div");
-        floco.classList.add("snowflake");
-        floco.textContent = "❄";
-
-        floco.style.left = Math.random() * 100 + "vw";
-        floco.style.animationDuration = (6 + Math.random() * 6) + "s";
-        floco.style.fontSize = (12 + Math.random() * 18) + "px";
-
-        document.body.appendChild(floco);
-    }
-});
 document.addEventListener('DOMContentLoaded', function () {
         var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
         var quantidadeProdutosSalvos = produtosSalvos.length;
