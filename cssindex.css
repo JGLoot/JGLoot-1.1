@@ -1,29 +1,7 @@
-        /* ======== FUNDO COM COR NATALINA ======== */
-body {
-    background-color: #b81414;
+ body {
+    background-color: #2b0f81;
     margin-top: 85px;
     overflow-x: hidden !important;
-}
-
-/* ======== NEVE CSS (NÃO ALTERA O LAYOUT) ======== */
-.snowflake {
-    position: fixed;
-    top: -10px;
-    color: white;
-    font-size: 18px;
-    pointer-events: none;
-    animation: fall linear infinite;
-    z-index: 9999;
-    opacity: 0.9;
-}
-
-@keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-    }
 }
 
 /* <header> */
