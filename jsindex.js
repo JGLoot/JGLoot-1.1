@@ -1,3 +1,38 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const produtos = document.querySelectorAll(".produto");
+
+  produtos.forEach(produto => {
+    const precoAtualEl = produto.querySelector("h4");
+    const precoAntigoEl = produto.querySelector("p s");
+
+    if (!precoAtualEl || !precoAntigoEl) return;
+
+    // Extrai preço (R$35,50 → 35.50)
+    let precoOriginal = precoAtualEl.innerText
+      .replace("R$", "")
+      .replace(".", "")
+      .replace(",", ".")
+      .trim();
+
+    precoOriginal = parseFloat(precoOriginal);
+    if (isNaN(precoOriginal)) return;
+
+    // 30% de desconto
+    let precoDesconto = precoOriginal * 0.7;
+
+    // Arredonda para baixo e força ,00
+    precoDesconto = Math.floor(precoDesconto);
+
+    // Formata para real brasileiro
+    const formatar = valor =>
+      "R$" + valor.toFixed(2).replace(".", ",");
+
+    // Aplica
+    precoAntigoEl.innerText = formatar(precoOriginal);
+    precoAtualEl.innerText = formatar(precoDesconto);
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
         var produtosSalvos = JSON.parse(localStorage.getItem('carrinho')) || [];
         var quantidadeProdutosSalvos = produtosSalvos.length;
