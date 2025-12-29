@@ -1,5 +1,5 @@
  body {
-    background-color: #2b0f81;
+    background-color: #dcdcdc;
     margin-top: 85px;
     overflow-x: hidden !important;
 }
@@ -47,7 +47,7 @@ span p {margin: 5px; font-size: 14px; font-weight: bold; text-align: center}
 /* </figure> Banners*/
 
 /* <div class="gradient"> */
-.gradient {background: linear-gradient(to bottom, transparent 60%, #b81414); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
+.gradient {background: linear-gradient(to bottom, transparent 60%, #dcdcdc); height: 200px; margin: 0; margin-top: -200px; z-index: 2; position: absolute; left: 0;right: 0;}
 /* </div> */
 
 /* <div class="tudo"> */
